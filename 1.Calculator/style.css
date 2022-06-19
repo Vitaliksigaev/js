@@ -1,0 +1,96 @@
+#result {
+    color:brown;
+}
+#calcSvp {
+    display: flex;
+
+}
+#calcSvpSum {
+    text-align: center;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.calcSvpSum div {
+  width: 300px;
+}
+#calcSvpFoto {
+    width: 50%;
+}
+input {
+	text-align: center;
+	padding: 10px;
+	width: 23%;
+	height: 15px;
+	border: 0px solid #ff8c00;
+}
+.box_input {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #c6c6c69e;
+  border-radius: 4px;
+}
+.results {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+}
+#result {
+  font-size: 26px;
+  color: white;
+}
+
+
+#buttonCalc {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px;
+}
+
+
+.box_input button {
+  display: inline-block;	
+	box-sizing: border-box;
+	padding: 0 20px;
+	outline: none;
+	border: none;  
+	border-radius: 6px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 25px;
+	font-weight: 600;
+	text-decoration: none;
+	color: #385898;
+	background-color: #e7f3ff;
+	cursor: pointer;
+	user-select: none;
+	appearance: none;
+	touch-action: manipulation;
+}
+
+.box_input button:focus-visible {
+	box-shadow: 0 0 0 2px #666;
+}
+.box_input button:hover {
+	background-color: #DBE7F2;
+  transform: scale(1.2);
+}
+.box_input button:active {
+	transform: scale(0.96);
+}
+.box_input button:disabled {
+	pointer-events: none;
+	opacity: 0.65;
+}
