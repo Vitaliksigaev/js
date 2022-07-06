@@ -991,11 +991,965 @@ for (let key in obj) {
 console.log(sum);*/
 
 //71
-
+/*
 for (let i = 0, j = 0; i <= 9; i++, j += 2) {
 	console.log(i, j);
 }
+*/
+//Дан массив с числами. Запустите цикл, который будет по очереди выводить элементы этого массива в консоль до тех пор, пока не встретится элемент со значением 0. После этого цикл должен завершить свою работу.
+
+/*
+let arr = [ 20, 2, 50, 4, 0, 3000, 6];
+for (let elem of arr) {
+	if (elem == 0) {
+		break; // выйдем из цикла
+	}
+    console.log(elem);
+}
+*/
+
+//Дан массив с числами. Найдите сумму элементов, расположенных от начала массива до первого отрицательного числа.
+/*
+let arr = [ 20, 2, 50, -4, 0, 3000, 6];
+let sum = 0;
+for (let elem of arr) {
+	if (elem < 0) {
+		break; // выйдем из цикла
+	}
+    sum += elem;
+}
+console.log(sum);*/
+
+//Дан массив с числами. Найдите позицию первого числа 3 в этом массиве (считаем, что это число обязательно есть в массиве).
+/*
+let arr = [ 20, 2, 50, 3, 0, 3000, 6];
+let i = 1;
+for (let elem of arr) {
+	if (elem == 3) {
+        console.log(i);
+		break; 
+	}
+    i += 1 ;
+}*/
 
 
+//Определите, сколько целых чисел, начиная с числа 1, нужно сложить, чтобы сумма получилась больше 100.
+/*
+let sum = 0;
+for (let i = 1, j = 1; ; i++, j ++) {
+    if (sum >= 100) {
+		break; 
+	}
+    sum += i;
+    console.log(sum , 'Чисел сложено ' + j);
+}*/
 
 
+// 75 Работа с флагами в JavaScript
+
+//Проверьте, что в этом массиве есть элемент 'c'. Если есть - выведите 'да', а если нет - выведите 'нет'.
+/*
+let arr = ['a', 'b', 'c', 'd', 'e'];
+let flag = false;
+
+for (let elem of arr) {
+	if (elem == 'c') {
+		flag = true;
+		break;
+	}
+}
+
+if (flag === true) {
+	console.log('да');
+} else {
+	console.log('нет');
+}*/
+
+
+// задачка для себя. Посчитать сколько 'c' есть в массиве. 5
+/*
+let arr = ['a', 'b', 'c', 'd', 'e', 'c', 'd', 'e', 'c', 'd', 'e', 'c', 'c'];
+let sum = 0 ;
+
+for (let elem of arr) {
+	if (elem == 'c') {
+        sum += 1;
+	}
+}
+	console.log(sum);
+*/
+
+//Давайте напишем код, который будет проверять число на то, простое оно или нет. Простое число - это число, которое не делится ни на одно другое число (кроме как на 1 и на само себя - на это делятся все числа).
+/*
+let num = 31;
+let flag = true; 
+
+for (let i = 2; i < num; i++) {
+    console.log(num % i , i);
+    if( num % i == 0 ) {
+        flag = false; 
+        break;
+    }
+}
+console.log(flag);
+*/
+/*
+let num = 500;
+
+while (num > 10) {
+	num = num / 2;
+}
+console.log(num);
+*/
+//Дано число num с неким начальным значением. Умножайте его на 3 столько раз, пока результат умножения не станет больше 1000. Какое число получится? Посчитайте количество итераций, необходимых для этого.
+/*
+let num = 1;
+let num1 = 0;
+while (num < 1000) {
+	num = num*3;
+    num1 +=1;
+    console.log(num, 'итерация ' + num1);
+}*/
+/*
+for (var num = 1, num1 = 0; num < 1000; num = num*3, num1 +=1); 
+    console.log(num, 'итерация ' + num1);*/
+
+//78 Формирование строк через циклы в JavaScript
+
+//С помощью цикла сформируйте строку, заполненную 5-тью нулями.
+/*
+    let str = '';
+    for (let i = 0; i < 5; i++) {
+        str = str + '0';
+    }
+    
+    console.log(str);*/
+    
+//С помощью цикла сформируйте строку '123456789' и запишите ее в переменную str. Выведите значение этой переменной на экран.
+/*
+let str = '';
+for (let i = 1; i <= 9; i++) {
+	str = str + i;
+}
+console.log(str);
+*/
+
+//С помощью цикла сформируйте строку '987654321' и запишите ее в переменную str. Выведите значение этой переменной на экран
+/*
+let str = '';
+for (let i = 9; i > 0; i--) {
+	str = str + i;
+}
+console.log(str);*/
+
+//С помощью цикла сформируйте строку '-1-2-3-4-5-6-7-8-9-' и запишите ее в переменную str. Выведите значение этой переменной на экран.
+/*
+let str = '-';
+for (let i = 1; i < 10; i++) {
+	str = str + i + '-';
+}
+console.log(str);*/
+
+//Переберите циклом числа от 10 до 1000 и выведите на экран те числа, сумма двух первых цифр которых равна 5.
+/*
+for (let i = 10; i <= 1000; i++) {
+	let str = String(i); 
+	
+	if (Number(str[0]) + Number(str[1]) == 5 ) {
+		console.log(i);
+	}
+}
+*/
+/*
+let result = '';
+for (let i = 1; i <= 30; i++) {
+	result += i;
+}
+console.log(result);
+*/
+//С помощью двух вложенных циклов выведите на экран следующую строку: 111222333444555666777888999
+/*
+for (let i = 1; i <= 9; i++) {
+	for (let j = 1; j <= 3; j++) {
+		document.write(i);
+	}
+}*/
+
+//С помощью двух вложенных циклов выведите на экран следующую строку: 
+//11 12 13 21 22 23 31 32 33
+/*
+for (let i = 1; i <= 3; i++) {
+	for (let j = 1; j <= 3; j++) {
+		document.write(i + '' + j + ' ');
+	}
+}*/
+//С помощью цикла заполните массив числами от 1 до 100.
+
+/*
+let arr = [];
+
+for (let i = 0; i <= 100; i++) {
+    arr[i] = i + 1;
+}
+console.log(arr);*/
+/*
+let arr = [];
+
+for (let i = 2, j = 0; i <= 100; i += 2, j++) {
+	arr[j] = i;
+}
+
+console.log(arr);*/
+
+//С помощью цикла заполните массив нечетными числами в промежутке от 1 до 99.
+/*
+let arr = [];
+for (let i = 1, j = 0; i<=99; j++, i+=2) {
+    arr[j] = i;
+}
+console.log(arr);*/
+
+//83
+
+
+//Дан массив с числами. Переберите этот массив циклом и возведите каждый элемент этого массива в квадрат.
+/*
+let arr = [];
+for ( let i = 0; i < 10; i++) {
+    arr[i] = (i+2)**2;
+}
+console.log(arr);*/
+
+//Дан массив с числами. Переберите этот массив циклом и отнимите от каждого элемента единицу.
+/*
+let arr = [1, 2, 3, 4, 5];
+for(let i = 0;i < arr.length; i++) {
+    arr[i] -= 1;
+}
+console.log(arr);
+*/
+
+//Дан массив с числами. Переберите этот массив циклом и прибавьте к каждому элементу 10.
+/*
+
+let arr = [1, 2, 3, 4, 5];
+for(let i = 0;i < arr.length; i++) {
+    arr[i] += 10;
+}
+console.log(arr);*/
+
+
+//84
+
+//Объявите пустой массив, а затем заполните его числами от 1 до 10. Используйте для этого метод push.
+/*
+let arr = [];
+for (let i=1;i<=10;i++) {
+    arr.push(i);
+}
+console.log(arr);
+*/
+
+//Используя цикл и метод push заполните массив 10-ю буквами 'x'.
+/*
+let arr = [];
+for (let i=1;i<=10;i++) {
+    arr.push('x');
+}
+console.log(arr);*/
+
+//Дан массив с числами. Переберите его циклом и запишите в новый массив только положительные из чисел
+/*
+let arr = [1, 2, -3, 4, 5, -2, 3, 4, -5, 2, 3, -4, -5];
+let result = [];
+
+for (let elem of arr) {
+	if (elem > 0) {
+		result.push(elem);
+	}
+}
+console.log(result);
+*/
+/*
+let arr = ['a', 'b', 'c', 'd', 'e'];
+let result = [];
+
+for (let i = arr.length - 1; i >= 0; i--) {
+	result.push(arr[i]);
+}
+
+console.log(result);*/
+
+/*
+let arr = [];
+
+arr.push('a');
+arr.push('b');
+arr.push('c');
+console.log(arr);*/
+
+/*
+let arr = [];
+
+for (let i = 1; i <= 5; i++) {
+	arr.push(i);
+}
+
+console.log(arr);
+*/
+
+/*
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let result = [];
+
+for (let elem of arr) {
+	if (elem % 2 != 0) {
+		result.push(elem);
+	}
+}
+
+console.log(result);*/
+
+//Объявите пустой объект, а затем заполните его названиями дней недели в качестве ключей, и порядковыми номерами дней недели в качестве значений.
+/*
+let obj = {};
+
+obj['пн'] = 1;
+obj['вт'] = 2;
+obj['ср'] = 3;
+obj['чт'] = 4;
+obj['пт'] = 5;
+obj['сб'] = 6;
+obj['вс'] = 7;
+
+console.log(obj);*/
+
+//Даны два массива: первый с названиями дней недели, а второй - с их порядковыми номерами:
+
+/*
+let arr1 = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+let arr2 = [1, 2, 3, 4, 5, 6, 7];
+let obj = {};
+
+for (let i=0; i<=6; i++) {
+    obj[arr1[i]] = arr2[i];
+    console.log(obj);
+}
+console.log(obj);*/
+
+//Модифицируйте предыдущую задачу так, чтобы ключами стали номера дней, а значениями - их названия.
+/*
+let arr1 = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+let arr2 = [1, 2, 3, 4, 5, 6, 7];
+let obj = {};
+
+for (let i=0; i<=6; i++) {
+    obj[arr2[i]] = arr1[i];
+    console.log(obj);
+}
+console.log(obj);*/
+
+//Запишите в новый объект те элементы, значения которых расположены в промежутке от 10 до 20.
+/*
+let obj = {'a': 12, 'b': 21, 'c': 13, 'd': 23, 'e': 17};
+let obj2 = {};
+for (let key in obj) {
+    if(obj[key] > 10 && obj[key] < 20) {
+        obj2[key] = obj[key];
+    }
+}
+console.log(obj2);*/
+
+
+//Запишите в новый объект дни недели, номера которых являются нечетными числами.
+/*
+let obj = {1: 'пн', 2: 'вт', 3: 'ср', 4: 'чт', 5: 'пт', 6: 'сб', 7: 'вс'};
+let obj2 = {};
+for (let key in obj) {
+    if(key % 2 == 0) {
+        obj2[key] = obj[key];
+    }
+}
+console.log(obj2);
+*/
+
+
+//Переберите этот объект циклом и возведите каждый элемент этого объекта в квадрат.
+/*
+let obj = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}; 
+for (let key in obj) {
+	obj[key] = obj[key] ** 2;
+}
+console.log(obj); */
+
+//Самостоятельно, не подсматривая в мой код, выполните переворот какого-нибудь объекта.
+
+/*
+let obj = {1: 'пн', 2: 'вт', 3: 'ср', 4: 'чт', 5: 'пт', 6: 'сб', 7: 'вс'};
+let obj2 = {};
+console.log(obj);
+
+for (let key in obj) {
+    console.log(key);
+    console.log(obj[key]);
+    obj2[obj[key]] = key;
+
+
+}
+console.log(obj2);*/
+
+//Практика на циклы с массивами и объектами JavaScript
+//https://code.mu/ru/javascript/book/prime/loops/filling-changing-training/
+/*
+//Увеличьте зарплату каждого работника на 10%.
+
+let obj = {
+	employee1: 100,
+	employee2: 200,
+	employee3: 300,
+	employee4: 400,
+	employee5: 500,
+	employee6: 600,
+	employee7: 700,
+};
+
+for (let key in obj) {
+    obj[key] = Math.round(obj[key]*1.1);
+    console.log(obj[key])
+}
+*/
+
+//Модифицируйте предыдущую задачу так, чтобы зарплата увеличивалась только тем работникам, у которых она меньше или равна 400.
+/*
+let obj = {
+	employee1: 100,
+	employee2: 200,
+	employee3: 300,
+	employee4: 400,
+	employee5: 500,
+	employee6: 600,
+	employee7: 700,
+};
+
+for (let key in obj) {
+    if(obj[key]<=400) {
+        obj[key] = Math.round(obj[key]*1.1);
+    }
+    console.log(obj[key])
+}*/
+
+//С помощью этих массивов создайте новый объект, сделав его ключами элементы первого массива, а значениями - элементы второго.
+/*
+let arr1 = [1, 2, 3, 4, 5];
+let arr2 = [6, 7, 8, 9, 10];
+let obj = {};
+for (let i = 0; i < arr1.length; i++) {
+    obj[arr1[i]] = arr2[i]; 
+}
+console.log(obj);*/
+
+//Найдите сумму ключей этого объекта и поделите ее на сумму значений.
+/*
+let obj = {1: 6, 2: 7, 3: 8, 4: 9, 5: 10};
+let sum = 0;
+let sum1 = 0;
+for( let key in obj) {
+    sum += Number(key);
+    sum1 += Number(obj[key]);
+}
+console.log(sum/sum1);
+*/
+
+//Запишите ключи этого объекта в один массив, а значения - в другой.
+/*
+let obj = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}; 
+let arr1 = [];
+let arr2 = [];
+
+for(let key in obj) {
+        arr1.push(key);
+        arr2.push(obj[key]);
+}
+console.log(arr1);
+console.log(arr2);*/
+
+//Запишите в новый массив элементы, значение которых начинается с цифры 1 или цифры 2. То есть у вас в результате получится вот такой массив:
+/*
+let obj = {
+	1: 125,
+	2: 225,
+	3: 128,
+	4: 356,
+	5: 145,
+	6: 281,
+	7: 452,
+};
+let arr = [];
+
+for(let key in obj) {
+    let num1 = Number(String(obj[key])[0]);
+    if (num1 == 1 || num1 == 2  ) {
+        arr.push(obj[key]);
+    }
+
+}
+console.log(arr);
+*/
+
+//---
+/*
+let arr = ['a', 'b', 'c', 'd', 'e'];
+let obj = {};
+
+for (let i = 0; i<arr.length; i++) {
+    obj[ i + 1 ] = arr[i];
+}
+console.log(obj);
+*/
+
+//87 Подсчет количества элементов в массиве JavaScript
+
+//Подсчитайте количество цифр 3 в этом массиве.
+
+/*
+let arr = [1, 2, 3, 2, 4, 3, 5, 6, 3, 2, 3];
+let counter2 = 0;
+let counter3 = 0;
+for (let elem of arr) {
+	if (elem == 3 || elem == 2 ) {
+        if (elem == 3) {
+            counter3++;  
+        } else {
+            counter2++;
+        }
+
+	}
+}
+console.log('2 = ' + counter2);
+console.log('3 = ' + counter3);*/
+//Модифицируйте предыдущую задачу так, чтобы в одном цикле одновременно подсчитывалось и количество троек, и количество двоек.
+/*
+let arr = ['a', 'b', 'c', 'a', 'a', 'b'];
+let count = {a: 0, b: 0, c: 0};
+
+for (let elem of arr) {
+    count[elem] = count [elem] + 1;
+
+}
+
+console.log(count); 
+*/
+//Дана строка. Подсчитайте сколько раз в ней встречается каждый из ее символов.
+/*
+let word = 'sdfasdf dsfadsfa sfasdfa';
+console.log(word.length);
+
+let count = {a: 0, b: 0, c: 0};
+
+
+for (let elem of word) {
+    count[elem] = 0;
+}
+for (let elem of word) {
+    count[elem]++;
+}
+
+console.log(count); 
+
+*/
+
+//88 Получение соседей элементов в массиве JavaScript
+
+
+//Дан массив с числами. Переберите его циклом и в каждой итерации цикла выведите следующий элемент массива.
+/*
+let arr = [1, 2, 3, 4, 5];
+
+for (let i = 0; i < arr.length-1; i++) {
+	console.log(arr[i + 1]);
+}*/
+
+//Модифицируйте предыдущую задачу так, чтобы в каждой итерации цикла выводилась сумма текущего и следующего элемента массива.
+/*
+let arr = [1, 2, 3, 4, 5];
+
+for (let i = 0; i < arr.length-1; i++) {
+	console.log(arr[i + 1] + arr[i]);
+}*/
+
+
+//Дан массив с числами. Переберите его циклом и в каждой итерации цикла выведите два предыдущих элемента массива.
+/*
+let arr = [1, 2, 3, 4, 5];
+
+for (let i = 2; i < arr.length ; i++) {
+	console.log(arr[i - 1] + ' ' + arr[i - 2]);
+}*/
+
+//Модифицируйте предыдущую задачу так, чтобы в каждой итерации цикла выводилась сумма двух предыдущих элементов и текущего элемента массива.
+/*
+let arr = [1, 2, 3, 4, 5];
+
+for (let i = 2; i < arr.length ; i++) {
+	console.log(arr[i - 1] + arr[i - 2] + arr[i]);
+}*/
+
+//Дан массив с числами. Переберите его циклом и в каждой итерации цикла выведите сумму предыдущего, текущего и следующего элементов массива.
+/*
+let arr = [1, 2, 3, 4, 5];
+
+for (let i = 1; i < arr.length -1 ; i++) {
+	console.log(arr[i - 1] + arr[i + 1] + arr[i]);
+}*/
+
+
+//                      89 Получение чисел Фибоначчи в JavaScript
+
+/*
+let one = 0;
+let two = 1;
+
+for (let i = 1; i <= 10; i++) {
+	let current = one + two; // суммируем первые числа и записываем в объявленную переменную
+	
+	one = two; // перезаписываем первое число меняя местами второе на первое
+	two = current; // перезаписываем - обновляем второе число чтобы в следуюшей итерации уже сложить обновленное значение один и два
+	
+	console.log(current); // выводим сумму данной итерации
+}*/
+
+
+//Решите задачу на нахождение ряда чисел, каждое из которых равно сумме трех предыдущих, а первые три числа равны 0, 1 и 2.
+/*
+let one = 0;
+let two = 1;
+let tri = 2;
+
+for (let i = 1; i <= 10; i++) {
+	let current = one + two + tri; 
+	
+	one = two; 
+	two = tri; 
+    tri = current;
+
+	console.log(current); // выводим сумму данной итерации
+}*/
+
+// 90 Вывод пирамидок на JavaScript
+
+/*
+let str = '';
+
+for (let i = 0; i < 5; i++) {
+	str += 'xx';
+	document.write(str + '<br>');
+}
+*/
+
+/*
+let str = ''; 
+for (let i = 1; i <= 9; i++) {
+    for (let j = 1; j <= 3; j++) {
+	    str += i;
+    }
+    document.write(str + '<br>');
+}*/
+
+//Выведите на экран следующую пирамидку:
+/*
+for (let i = 1; i <= 9; i+=2) {
+    let str = ''; 
+    for (let j = 1; j <= i; j++) {
+	    str += i;
+    }
+    document.write(str + '<br>');
+}
+*/
+/*
+for (let i = 5; i >= 1; i--) {
+	let str = '';
+	
+	for (let j = 0; j < i; j++) {
+		str += 'xx';
+	}
+	
+	document.write(str + '<br>');
+}
+*/
+/*
+for (let i = 9; i >= 1; i--) {
+	let str = '';
+	
+	for (let j = 0; j < i; j++) {
+		str += i;
+	}
+	
+	document.write(str + '<br>');
+}
+*/
+
+// 91     
+//С помощью цикла сформируйте следующий массив:
+
+/*
+let arr = [];
+let str = '';
+
+for (let i = 0; i < 5; i++) {
+	str += 'xx';
+	arr.push(str);
+}
+
+console.log(arr);
+*/
+/*
+let arr = [];
+for (let i = 1; i <= 5; i++) {
+    let str = '';
+    for (let j = 0; j < 5; j++) {
+        str += i;
+    }
+    arr.push(str);
+}
+console.log(arr);*/
+
+
+//    92 
+
+//Возьмите из этого массива те элементы, у которых первая цифра 1 или 2, и найдите их сумму.
+/*
+let arr = [10, 20, 30, 40, 21, 32, 51];
+let sum = 0;
+for (let elem of arr) {
+	console.log(elem);
+}
+
+for (let elem of arr) {
+	let str = String(elem);
+    console.log(str);
+}
+
+for (let elem of arr) {
+    console.log(String(elem)[0]);
+}
+
+for (let elem of arr) {
+    if (String(elem)[0] == 1 ) {
+        console.log(elem);
+    }
+    if (String(elem)[0] == 2 ) {
+        console.log(elem);
+    }
+
+}
+for (let elem of arr) {
+    if (String(elem)[0] == 1 || String(elem)[0] == 2  ) {
+       sum += elem;
+    }
+}
+
+console.log(sum);*/
+
+
+//93
+//Исправьте ошибки, допущенные в следующем коде:
+/*
+let obj = {a: 10, b: 20, c: 30, d: 40, e: 50};
+let sum = 0;
+
+for (let elem in obj) {
+	if (elem[0] === '1' && elem[0] === '2') {
+		sum += +elem;
+	}
+}
+
+console.log(sum);*/
+
+// ИСПРАВЛЯЮ
+
+/*
+let obj = {a: 10, b: 20, c: 30, d: 40, e: 50};
+let sum = 0;
+
+for (let elem in obj) {
+    console.log(elem);
+    console.log(obj[elem]);
+    console.log(String(obj[elem]));
+    console.log(String(obj[elem])[0]);
+    let num0 = String(obj[elem])[0];
+    if (num0 == '1'  || num0 == '2') {
+		sum += +obj[elem];
+	}
+}
+console.log(sum);*/
+
+
+//94  Поиск ошибок в коде с циклами JavaScript
+
+/*
+for (let i = 0; i <= 10; i++) {
+	console.log(i);
+}
+*/
+/*
+
+for (let i = 10; i >= 0; i--) {
+	console.log(i);
+}
+
+*/
+/*
+for (let i = 10; i>= 0; i--) {
+	console.log(i);
+}*/
+/*
+let i = 0;
+
+while (i <= 10) {
+	console.log(i);
+	i++;
+}*/
+
+/*
+let res = 0;
+for (let i = 1; i <= 10; i++) {
+	res += i;
+}
+
+console.log(res);
+*/
+/*
+let res = 1;
+
+for (let i = 1; i <= 10; i++) {
+	res *= i;
+}
+
+console.log(res);
+*/
+/*
+let arr = ['1', '2', '3', '4', '5'];
+let sum = 0;
+
+for (let elem of arr) {
+	sum += Number(elem);
+}
+
+console.log(sum);*/
+/*
+let arr = ['1', '2', '3', '4', '5'];
+let sum = 0;
+
+for (let elem of arr) {
+	sum += +elem;
+}
+
+console.log(sum);*/
+/*
+let arr = ['1', '2', '3', '4', '5'];
+let sum = 0;
+
+for (let elem of arr) {
+	sum += +elem;
+}
+
+console.log(sum);*/
+
+/*
+let arr = ['1', '2', '3', '4', '5'];
+let sum = 0;
+
+for (let i = 0; i <= arr.length - 1; i++) {
+	sum += +arr[i];
+}
+
+console.log(sum);*/
+
+/*
+let arr = ['1', '2', '3', '4', '5'];
+let sum = 0;
+
+for (let i = 0; i <= arr.length - 1; i++) {
+	sum += +arr[i];
+}
+
+console.log(sum);*/
+
+/*
+let arr = ['1', '2', '3', '4', '5'];
+let sum = 0;
+
+for (let i = 0; i < arr.length; i++) {
+	sum += +arr[i];
+}
+
+console.log(sum);*/
+/*
+let arr = [1, 2, 3, 4, 5];
+for (let i = 0; i < arr.length; i++) {
+	arr[i] = arr[i] ** 2;
+}
+console.log(arr);*/
+
+
+/*
+let arr = [];
+for (let i = 1; i <= 5; i++) {
+	arr.push(i);
+}
+console.log(arr);*/
+/*
+let obj = {a: 1, b: 2, c: 3};
+let sum = 0;
+
+for (let elem in obj) {
+	sum += +obj[elem];
+}
+
+console.log(sum);*/
+
+/*
+let obj = {a: 1, b: 2, c: 3};
+let sum = 0;
+
+for (let key in obj) {
+	sum += +obj[key];
+}
+
+console.log(sum);*/
+
+/*
+let arr = [1, 2, 3, 4, 5];
+let res = '';
+
+for (let elem of arr) {
+	if (elem === 3) {
+		res = '+++';
+        break;
+	} else {
+		res = '---';
+	}
+}
+
+console.log(res);*/
+/*
+let arr = [1, 2, 3, 4, 5];
+let res = false;
+
+for (let elem of arr) {
+	if (elem === 3) {
+		res = true;
+		break;
+	}
+}
+
+console.log(res);*/
+
+/*
+let arr = [1, 2, 3, 4, 5];
+
+for (let elem of arr) {
+	if (elem % 2 == 0) {
+		console.log(elem);
+	}
+}*/
