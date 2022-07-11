@@ -1931,7 +1931,9 @@ for (let elem of arr) {
 	}
 }
 
-console.log(res);*/
+console.log(res);
+*/
+
 /*
 let arr = [1, 2, 3, 4, 5];
 let res = false;
@@ -1944,12 +1946,624 @@ for (let elem of arr) {
 }
 
 console.log(res);*/
-
 /*
+
 let arr = [1, 2, 3, 4, 5];
 
 for (let elem of arr) {
 	if (elem % 2 == 0) {
 		console.log(elem);
 	}
+}
+*/
+
+//Отработка циклов JavaScript
+
+//Выведите с помощью цикла столбец чисел от 1 до 100.
+/*
+for (let i = 1 ; i < 100; i++) {
+    console.log(i);
 }*/
+
+//Выведите с помощью цикла столбец чисел от 100 до 1.
+/*
+for (let i = 100 ; i > 0; i--) {
+    console.log(i);
+}*/
+//Выведите с помощью цикла столбец четных чисел от 1 до 100.
+/*
+for (let i = 0 ; i < 100; i+=2) {
+    console.log(i);
+}*/
+
+//Заполните массив 10-ю иксами с помощью цикла.
+/*
+let arr = [];
+for (let i = 0 ; i < 10; i++) {
+    arr.push('x');
+}
+console.log(arr);
+*/
+
+//Заполните массив числами от 1 до 10 с помощью цикла.
+/*
+let arr = [];
+for (let i = 1 ; i <= 10; i++) {
+    arr.push(i);
+}
+console.log(arr);
+*/
+
+
+//Дан массив с числами. С помощью цикла выведите только те элементы массива, которые больше нуля и меньше 10-ти.
+/*
+let arr = [ 1, 5 , 20 ,15 , -15];
+for (let i = 0 ; i <= arr.length; i++) {
+    if( arr[i] > 0 && arr[i] < 10) {
+        console.log(arr[i]);
+    }
+}
+*/
+
+//Дан массив с числами. С помощью цикла проверьте, что в нем есть элемент со значением 5.
+/*
+let arr = [ 1, 5 , 20 ,15 , -15];
+for (let i = 0 ; i <= arr.length; i++) {
+    if( arr[i] == 5) {
+        console.log(arr[i]);
+    }
+}
+*/
+
+//Дан массив с числами. С помощью цикла найдите сумму элементов этого массива.
+/*
+let arr = [ 1, 5 , 20 ,15 ];
+let sum = 0;
+for (let i = 0 ; i <= arr.length - 1; i++) {
+    console.log(arr[i]);
+    sum = sum + arr[i];
+}
+console.log(sum);
+*/
+
+//Дан массив с числами. С помощью цикла найдите сумму квадратов элементов этого массива.
+/*
+let arr = [ 1, 5 , 20 ,15 ];
+let sum = 0;
+for (let i = 0 ; i <= arr.length - 1; i++) {
+    console.log(arr[i]);
+    sum = sum + arr[i];
+}
+console.log(sum);
+
+*/
+
+//Дан массив с числами. Найдите среднее арифметическое его элементов (сумма элементов, делить на количество).
+/*
+let arr = [ 1, 5 , 20 ,15 ];
+let sum = 0;
+for (let i = 0 ; i <= arr.length - 1; i++) {
+    console.log(arr[i]);
+    sum = sum + arr[i];
+}
+console.log(sum / arr.length );
+*/
+
+//Напишите скрипт, который будет находить факториал числа. Факториал (обозначается !) - это произведение (умножение) всех целых чисел, меньше данного, и его самого. Например, 4! = 1*2*3*4.
+
+/*
+let num = 4;
+let sum = 1;
+for (let i = num ; i > 0; i--) {
+    sum = sum*i;
+}
+console.log(sum);
+*/
+
+//96 Многомерные массивы в JavaScript
+
+
+//Выведите с его помощью элементы с текстом 'l', 'e', 'g' и 'a'.
+/*
+let arr = [
+	['a', 'b', 'c'],
+	['d', 'e', 'f'],
+	['g', 'h', 'i'],
+	['j', 'k', 'l'],
+];
+console.log(arr[3][2])
+console.log(arr[1][1])
+console.log(arr[2][0])
+console.log(arr[0][0])
+*/
+
+//Обращаясь к каждому элементу массива найдите сумму всех его элементов.
+/*
+let arr = [[1, 2], [3, 4], [5, 6]];
+let sum = 0;
+for (let i = 0 ; i <arr.length; i++) {
+    console.log(arr[i])
+    for (let j = 0 ; j <arr[i].length; j++) {
+        console.log(arr[i][j]);
+        sum = sum + arr[i][j];
+    }
+}
+console.log(sum);
+*/
+
+//Обращаясь к каждому элементу массива найдите сумму всех его элементов.
+/*
+let arr = [
+	[
+		[1, 2],
+		[3, 4],
+	],
+	[
+		[5, 6],
+		[7, 8],
+	],
+];
+
+let sum = 0;
+for (let i = 0 ; i <arr.length; i++) {
+    for (let j = 0 ; j <arr[i].length; j++) {
+        for (let k = 0 ; k <arr[i][j].length; k++) {
+            sum = sum + arr[i][j][k];
+        }
+    }
+}
+console.log(sum);
+*/
+// 97 Перебор многомерных массивов в JavaScript
+
+
+/*
+let arr = [[1, 2, 3, 4, 5], [6, 7, 8], [9, 
+	10]]; 
+
+for (let subArr of arr) {
+	for (let elem of subArr) {
+		console.log(elem);
+	}
+}
+*/
+
+//С помощью вложенных циклов найдите сумму элементов этого массива.
+/*
+let arr = [[1, 2, 3], [4, 5], [6]];
+let sum = 0;
+for ( let subArr of arr) {
+    for ( let elem of subArr) {
+        sum += elem;
+        }
+}
+console.log(sum)
+*/
+
+//С помощью вложенных циклов найдите сумму элементов этого массива.
+/*
+let arr = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]];
+
+let sum = 0;
+for ( let subArr of arr) {
+    for ( let elem of subArr) {
+        for (let elem1 of elem) {
+            sum += elem1;
+        }
+    }
+}
+console.log(sum)
+*/
+
+//Решите предыдущие две задачи через цикл for.
+
+
+/*
+let arr = [[1, 2, 3], [4, 5], [6]];
+let sum = 0;
+for (let i = 0; i < arr.length; i++) {
+    for(let j = 0; j < arr[i].length; j++) {
+
+        sum += arr[i][j];
+        }
+}
+console.log(sum)
+
+*/
+/*
+let arr = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]];
+
+let sum = 0;
+for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+        for (let k = 0; k < arr[i][j].length; k++) {
+                sum += arr[i][j][k];
+        }
+    }
+}
+console.log(sum)*/
+
+//Сформируйте с помощью двух вложенных циклов следующий массив:
+
+
+/*
+let arr = [];
+
+for (let i = 0; i < 3; i++) {
+	arr[i] = [];
+	
+	for (let j = 0; j < 5; j++) {
+		arr[i].push(j + 1);
+	}
+}
+
+console.log(arr);
+*/
+
+
+//Сформируйте с помощью двух вложенных циклов следующий массив:
+/*
+let arr = [];
+
+for (let i = 0; i < 3; i++) {
+	arr[i] = [];
+	
+	for (let j = 0; j < 5; j++) {
+		arr[i].push('x');
+	}
+}
+
+console.log(arr);
+*/
+
+
+//Сформируйте с помощью трех вложенных циклов следующий массив:
+/*
+let arr = [];
+
+for (let i = 0; i < 3; i++) {
+	arr[i] = [];
+
+	for (let j = 0; j < 2; j++) {
+		arr[i][j] = [];
+        for (let k = 1; k < 6; k++) {
+            arr[i][j].push(k);
+        }
+	}
+}
+console.log(arr);
+*/
+/*
+let arr = [];
+
+for (let i = 0; i < 3; i++) {
+    arr[i] = [];
+	for (let j = 1; j <= 5; j++) {
+		arr[i].push(j);
+	}
+}
+
+console.log(arr);
+*/
+/*
+let arr = [];
+
+for (let i = 0; i < 3; i++) {
+	arr[i] = [];
+	
+	for (let j = 1; j <= 5; j++) {
+		arr[i].push(j);
+	}
+}
+
+console.log(arr);
+*/
+/*
+let arr = [];
+
+for (let i = 0; i < 3; i++) {
+	arr[i] = [];
+	
+	for (let j = 1; j <= 5; j++) {
+		arr[i].push(j);
+	}
+}
+
+console.log(arr);
+*/
+/*
+let arr = [];
+
+for (let i = 0; i < 3; i++) {
+	arr[i] = [];
+	
+	for (let j = 1; j <= 5; j++) {
+		arr[i].push(j);
+	}
+}
+
+console.log(arr);
+*/
+/*
+let arr = [];
+
+for (let i = 0; i < 3; i++) {
+	arr[i] = [];
+	
+	for (let j = 0; j <= 5; j++) {
+		arr[i][j] = j + 1;
+	}
+}
+
+console.log(arr);
+*/
+/*
+let arr = [];
+
+for (let i = 0; i < 3; i++) {
+	arr[i] = [];
+	
+	for (let j = 1; j <= 5; j++) {
+		arr[i].push(j);
+	}
+}
+
+console.log(arr);
+*/
+/*
+let arr = [];
+
+for (let i = 0; i < 3; i++) {
+	arr[i] = [];
+	
+	for (let j = 1; j <= 5; j++) {
+		arr[i].push(j);
+	}
+}
+
+console.log(arr);
+*/
+/*
+let arr = [];
+
+for (let i = 0; i < 3; i++) {
+	arr[i] = [];
+	
+	for (let j = 0; j <= 5; j++) {
+		arr[i][j] = j;
+	}
+}
+
+console.log(arr);
+*/
+
+/*
+let arr = [];
+
+for (let i = 0; i < 3; i++) {
+	arr[i] = [];
+	
+	for (let j = 1; j <= 5; j++) {
+		arr[i].push(j);
+	}
+}
+
+console.log(arr);*/
+
+/*
+let arr = [];
+
+for (let i = 0; i < 3; i++) {
+	arr[i] = [];
+	
+	for (let j = 0; j <= 5; j++) {
+		arr[i].push(j);
+	}
+}
+
+console.log(arr);
+*/
+/*
+let arr = [];
+for (let i = 0; i < 3; i++) {
+	arr[i] = [];
+	
+	for (let j = 0; j <= 5; j++) {
+		arr[i][j] = j;
+	}
+}
+
+console.log(arr);*/
+
+//Сформируйте с помощью двух вложенных циклов следующий массив:
+
+//[[1, 2], [3, 4], [5, 6], [7, 8]]
+
+/*
+let arr = [];
+
+for (let i = 0, k = 1; i < 4; 
+	i++) { 
+	arr[i] = [];
+	
+	for (let j = 0; j < 2; j++) {
+		arr[i][j] = k++;
+	}
+}
+
+console.log(arr);
+*/
+//Сформируйте с помощью двух вложенных циклов следующий массив:
+//[[2, 4, 6], [8, 10, 12], [14, 16, 18], [20, 22, 24]] 
+/*
+let arr = [] ;
+for ( let i = 0, k = 0; i< 4; i++) {
+    arr[i] = [];
+    for(let j = 0; j<3; j++ ){
+        arr[i][j] = k+=2;
+    }
+}
+console.log(arr);*/
+
+
+//Сформируйте с помощью трех вложенных циклов следующий трехмерный массив:
+//[[[1, 2], [3, 4]], [[5, 6], [7, 8]]]
+/*
+let arr = [];
+for (let i = 0, z=1; i< 2; i++) {
+    arr[i] = [];
+    for(let j = 0; j<2; j++) {
+        arr[i][j] = [];
+        for(let k = 0; k< 2; k ++) {
+            arr[i][j][k] = z ++;
+        }
+    }
+}
+console.log(arr);*/
+
+// Ошибки автора 
+/*
+let arr = [];
+
+for (let i = 0, k = 1; i < 3; i++) {
+	arr[i] = [];
+	
+	for (let j = 0; j < 3; j++) {
+		arr[i][j] = k;
+		k++;
+	}
+}
+
+console.log(arr);*/
+/*
+let arr = [];
+
+for (let i = 0, k = 1; i < 3; i++) {
+	arr[i] = [];
+	
+	for (let j = 0; j < 3; j++) {
+		arr[i][j] = k;
+        k++;
+	}
+}
+
+console.log(arr);
+*/
+
+/*
+let arr = [];
+let k = 1;
+
+for (let i = 0; i < 3; i++) {
+	arr[i] = [];
+	
+	for (let j = 0; j < 3; j++) {
+		arr[i][j] = k;
+		k++;
+	}
+}
+
+console.log(arr);*/
+/*
+let arr = [];
+let k = 1;
+
+for (let i = 0; i < 3; i++) {
+	arr[i] = [];
+	
+	for (let j = 0; j < 3; j++) {
+		arr[i][j] = k;
+		k++;
+	}
+}
+
+console.log(arr);*/
+/*
+let arr = [];
+
+for (let i = 0, k = 1; i < 3; 
+	i++) { 
+	arr[i] = [];
+	
+	for (let j = 0; j < 3; j++) {
+		arr[i][j] = k;
+        k++;
+	}
+}
+
+console.log(arr);*/
+
+/*
+let arr = [];
+
+for (let i = 0, k = 1; i < 3; 
+	i++) { 
+	arr[i] = [];
+	
+	for (let j = 0; j < 3; j++) {
+		arr[i][j] = k;
+        k++
+	}
+}
+
+console.log(arr);*/
+
+/*
+let arr = [];
+
+for (let i = 0, k = 1; i < 3; 
+	i++) { 
+	arr[i] = [];
+	
+	for (let j = 0; j < 3; j++) {
+		arr[i][j] = k;
+        k++;
+	}
+}
+
+console.log(arr);*/
+/*
+
+let arr = [];
+
+for (let i = 0, k = 1; i < 3; 
+	i++) { 
+	arr[i] = [];
+	
+	for (let j = 0; j < 3; j++) {
+		arr[i][j] = k++;
+	}
+}
+
+console.log(arr);*/
+/*
+let arr = [];
+let k = 1;
+
+for (let i = 0; i < 3; i++) {
+	arr[i] = [];
+	
+	for (let j = 0; j < 3; j++) {
+		arr[i][j] = k;
+		k++;
+	}
+}
+
+console.log(arr);*/
+/*
+let arr = [];
+
+for (let i = 0, k = 1; i < 3; 
+	i++) { 
+	arr[i] = [];
+	
+	for (let j = 0; j < 3; j++) {
+		arr[i][j] = k;
+        k++;
+	}
+}
+
+console.log(arr);*/
+
+
+// 99  Многомерные объекты в JavaScript
