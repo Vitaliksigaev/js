@@ -2567,3 +2567,616 @@ console.log(arr);*/
 
 
 // 99  Многомерные объекты в JavaScript
+
+//Найдите сумму элементов приведенного объекта.
+
+/*
+let sum  = 0 ;
+let obj = {
+	key1: {
+		key1: 1,
+		key2: 2,
+		key3: 3,
+	},
+	key2: {
+		key1: 4,
+		key2: 5,
+		key3: 6,
+	},
+	key3: {
+		key1: 7,
+		key2: 8,
+		key3: 9,
+	},
+}
+
+for (let i = 1; i<= 3; i++) {
+    for (let j = 1; j<= 3; j++) {
+        sum = sum + obj['key' + i]['key' + j]
+    }
+}
+
+console.log(sum);
+*/
+
+//Выведите на экран элемент 'b2' и элемент 'c1'.
+
+
+/*
+let obj = {
+	1: {
+		1: 'a1',
+		2: 'a2',
+		3: 'a3',
+	},
+	2: {
+		1: 'b1',
+		2: 'b2',
+		3: 'b3',
+	},
+	3: {
+		1: 'c1',
+		2: 'c2',
+		3: 'c3',
+	},
+}
+console.log(obj[2][2]);
+console.log(obj[3][1]);
+*/
+
+
+//Найдите сумму всех элементов-чисел.
+/*
+let sum = 0;
+
+let obj = {
+	key1: {
+		a: 1, b: 2, c: {
+			d: 3,
+			e: 4,
+		}, f: 5,
+	},
+	key2: {
+		g: 6, h: 7,
+	},
+}
+console.log(obj['key1']['a'] + obj['key1']['b'] + obj['key1']['f'] + obj['key1']['c']['d'] + obj['key1']['c']['e'] + obj['key2']['g']+ obj['key2']['h'])
+
+*/
+
+//Используя циклы, найдите сумму элементов этого объекта.
+
+
+/*
+let sum = 0;
+let obj = {
+	1: {
+		1: 11,
+		2: 12,
+		3: 13,
+	},
+	2: {
+		1: 21,
+		2: 22,
+		3: 23,
+	},
+	3: {
+		1: 24,
+		2: 25,
+		3: 26,
+	},
+}
+for (let key in obj) {
+	let subObj = obj[key];
+	for (let subKey in subObj) {
+		sum = sum + subObj[subKey];
+	}
+}
+console.log(sum);*/
+
+/*
+let months = {
+	'ru': [
+		'январь',
+		'февраль',
+		'март',
+		'апрель',
+		'май',
+		'июнь',
+		'июль',
+		'август',
+		'сентябрь',
+		'октябрь',
+		'ноябрь',
+		'декабрь',
+	],
+	'en': [
+		'january',
+		'february',
+		'march',
+		'april',
+		'may',
+		'june',
+		'july',
+		'august',
+		'september',
+		'october',
+		'november',
+		'december',
+	],
+};
+
+let lang = 'ru';
+let month = 5; 
+console.log(months[lang][month]);
+*/
+
+//Пусть даны также 3 переменные, содержащие год, месяц и день. Выведите дело, соответствующее значениям переменных.
+/*
+let affairs = {
+	'2018': {
+		11: {
+			29: ['дело111', 'дело112', 'дело113'],
+			30: ['дело121', 'дело122', 'дело123'],
+		},
+		12: {
+			30: ['дело211', 'дело212', 'дело213'],
+			31: ['дело221', 'дело222', 'дело223'],
+		},
+	},
+	'2019': {
+		12: {
+			29: ['дело311', 'дело312', 'дело313'],
+			30: ['дело321', 'дело322', 'дело323'],
+			31: ['дело331', 'дело332', 'дело333'],
+		}
+	},
+}
+let year = '2019';
+let num1 = 12;
+let num2 = 30;
+let num322 = 1 ;
+
+console.log(affairs[year][num1][num2][num322])*/
+
+//Автор следующего кода хотел вывести элемент со значением '24':
+/*
+let obj = {
+	key1: {
+		key2: '12',
+		key3: '13',
+	},
+	key2: {
+		key4: '24',
+		key5: '25',
+	},
+}
+
+let key1 = 'key2';
+let key2 = 'key4';
+console.log(obj[key1][key2]);*/
+
+/*
+
+let obj = {
+	key1: {
+		key2: '12',
+		key3: '13',
+	},
+	key2: {
+		key4: '24',
+		key5: '25',
+	},
+}
+
+let key1 = 'key2';
+let key2 = 'key4';
+console.log(obj[key1][key2]);*/
+/*
+let obj = {
+	key1: {
+		key2: '12',
+		key3: '13',
+	},
+	key2: {
+		key4: '24',
+		key5: '25',
+	},
+}
+
+let key1 = 'key2';
+let key2 = 'key4';
+console.log(obj[key1][key2]);
+*/
+
+/*
+let obj = {
+	key1: {
+		key2: '12',
+		key3: '13',
+	},
+	key2: {
+		key4: '24',
+		key5: '25',
+	},
+}
+
+let key1 = 'key2';
+let key4 = 'key4';
+console.log(obj[key1][key4]);*/
+
+//102 https://code.mu/ru/javascript/book/prime/multidimensionality/multi-structures/
+
+//Выведите на экран сумму зарплат первого и второго работников.
+
+/*
+let employees = [
+	{
+		name: 'name1',
+		salary: 300,
+	},
+	{
+		name: 'name2',
+		salary: 400,
+	},
+	{
+		name: 'name3',
+		salary: 500,
+	},
+];
+console.log(employees[0]['salary'] + employees[1]['salary']);*/''
+
+/*
+let students = {
+	'boys':  ['Коля', 'Вася', 'Петя'],
+	'girls': ['Даша', 'Маша', 'Лена'],
+};
+console.log(students['boys'][1])
+console.log(students['girls'][2])
+*/
+/*
+let users = [
+	{
+		name: 'name1',
+		age: 31,
+	},
+	{
+		name: 'name2',
+		age: 32,
+	},
+	{
+		name: 'name3',
+		age: 33,
+	},
+];
+
+for (let user of users) {
+	document.write(user.name + ' ' + user.age + '<br>');
+}*/
+
+//Выведите на экран данные каждого работника в формате имя - зарплата.
+
+/*
+let employees = [
+	{
+		name: 'name1',
+		salary: 300,
+	},
+	{
+		name: 'name2',
+		salary: 400,
+	},
+	{
+		name: 'name3',
+		salary: 500,
+	},
+];
+
+for(let emp of employees) {
+    document.write(emp.name +' ' + emp.salary + '<br>')
+}*/
+
+/*
+let sum= 0;
+let employees = [
+	{
+		name: 'name1',
+		salary: 300,
+	},
+	{
+		name: 'name2',
+		salary: 400,
+	},
+	{
+		name: 'name3',
+		salary: 500,
+	},
+];
+
+
+for(let emp of employees) {
+    sum += emp.salary;
+}
+console.log(sum)*/
+
+//Выведите на экран сумму зарплат тех работников, возраст которых равен или более 30 лет.
+/*
+let sum= 0;
+let employees = [
+	{
+		name: 'name1',
+		salary: 300,
+		age: 28,
+	},
+	{
+		name: 'name2',
+		salary: 400,
+		age: 29,
+	},
+	{
+		name: 'name3',
+		salary: 500,
+		age: 30,
+	},
+	{
+		name: 'name4',
+		salary: 600,
+		age: 31,
+	},
+	{
+		name: 'name5',
+		salary: 700,
+		age: 32,
+	},
+];
+
+for(let emp of employees) {
+    if(emp.age>=30){
+        sum += emp.salary;
+    }
+
+}
+console.log(sum)*/
+
+/*
+let employees = [
+	{
+		name: 'name1',
+		salary: 300,
+		dismissed: false,
+	},
+	{
+		name: 'name2',
+		salary: 400,
+		dismissed: true,
+	},
+	{
+		name: 'name3',
+		salary: 500,
+		dismissed: false,
+	},
+	{
+		name: 'name4',
+		salary: 600,
+		dismissed: true,
+	},
+	{
+		name: 'name5',
+		salary: 700,
+		dismissed: false,
+	},
+];
+
+for(let emp of employees) {
+    if(emp.dismissed == true ) {
+        document.write(emp.name + ' - ' + emp.salary + '<br>')
+    }
+}*/
+
+/*
+
+let students = {
+	'group1': ['student11', 'student12', 'student13'],
+	'group2': ['student21', 'student22', 'student23'],
+	'group3': ['student31', 'student32'],
+};
+
+for (let group in students) {
+	for (let name of students[group]) {
+		console.log(name);
+	}
+}
+*/
+
+//С помощью вложенных циклов выведите на экран все строки с данными.
+
+/*
+let data = {
+	1: [
+		'data11',
+		'data12',
+		'data13',
+	],
+	2: [
+		'data21',
+		'data22',
+		'data23',
+	],
+	3: [
+		'data31',
+		'data32',
+		'data33',
+		'data34',
+		'data35',
+	],
+	4: [
+		'data41',
+		'data42',
+	],
+};
+
+for (let name in data) {
+    for(let dataN of data[name]) {
+        console.log(dataN);
+    }
+}*/
+
+/*
+let data = [
+	{
+		1: 'data11',
+		2: 'data12',
+		3: 'data13',
+		4: 'data14',
+	},
+	{
+		1: 'data21',
+		2: 'data22',
+		3: 'data33',
+	},
+	{
+		1: 'data31',
+		2: 'data32',
+	},
+];
+
+for (let name of data) {
+    for(let dataN in name) {
+        console.log(name[dataN]);
+    }
+}*/
+
+//С помощью вложенных циклов выведите на экран все строки с данными.
+
+/*
+let data = [
+	{
+		1: [
+			'data111',
+			'data112',
+			'data113',
+		],
+		2: [
+			'data121',
+			'data122',
+			'data123',
+		],
+	},
+	{
+		1: [
+			'data211',
+			'data212',
+			'data213',
+		],
+		2: [
+			'data221',
+			'data222',
+			'data223',
+			'data224',
+		],
+		3: [
+			'data231',
+			'data232',
+			'data233',
+			'data234',
+			'data235',
+		],
+	},
+	{
+		1: [
+			'data411',
+			'data412',
+			'data413',
+		],
+		2: [
+			'data421',
+		],
+	},
+];
+
+for (let name of data) {
+    //console.log(name);
+    for(let dataN in name) {
+        //console.log(dataN);
+        for(let dataNa in name[dataN] ) {
+            console.log(name[dataN][dataNa])
+        }
+    }
+}*/
+
+
+//104  Математические методы
+/*
+console.log(Math.pow(2, 10));
+console.log(Math.sqrt(245));*/
+
+//Найдите квадратный корень из суммы кубов его элементов. Для решения воспользуйтесь циклом for.
+/*
+let num = [4, 2, 5, 19, 13, 0, 10];
+let sum = 0;
+for (let elem of num) {
+    console.log(elem**3);
+    sum += elem**3;
+}
+console.log((sum));
+console.log(Math.sqrt(sum));*/
+
+
+//Найдите квадратный корень из 379. Результат округлите до целых, до десятых, до сотых.
+/*
+let num = 379;
+let num1 = Math.sqrt(num);
+
+console.log(Math.round(num1));
+console.log(Math.round(Math.sqrt(num)));
+
+console.log(num1.toFixed(1));
+console.log((Math.sqrt(num)).toFixed(1));
+
+console.log(num1.toFixed(2));*/
+
+//Найдите квадратный корень из 587. Округлите результат в большую и меньшую стороны, запишите результаты округления в объект с ключами 'floor' и 'ceil'.
+/*
+let num = 587;
+let obj = {};
+
+let num1 = Math.sqrt(num);
+console.log(Math.ceil(num1));
+console.log(Math.floor(num1));
+obj['ceil'] = Math.ceil(num1);
+obj['floor'] = Math.floor(num1);
+console.log(obj);*/
+
+//Нахождение максимального и минимального числа
+/*
+let arr = [4, -2, 5, 19, -130, 0, 10];
+let max = Math.max.apply(null, arr);
+console.log(max);
+let min = Math.min.apply(null, arr);
+console.log(min);
+
+*/
+
+
+//Работа с рандомом
+
+//Выведите на экран случайное целое число от 1 до 100.
+/*
+function getRandomInt(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+console.log(getRandomInt(1, 100));*/
+
+
+//С помощью цикла заполните массив 10-ю случайными целыми числами.
+/*
+let arr = [];
+for ( let i = 0; i<=10; i++) {
+    arr.push(Math.floor(Math.random()*100 ))
+}
+console.log(arr);*/
+
+let a = -2;
+let b = 5;
+console.log(Math.abs(a - b));
