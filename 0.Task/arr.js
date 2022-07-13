@@ -3177,6 +3177,238 @@ for ( let i = 0; i<=10; i++) {
 }
 console.log(arr);*/
 
+/*
 let a = -2;
 let b = 5;
-console.log(Math.abs(a - b));
+console.log(Math.abs(a - b));*/
+
+//105 Строковые методы JavaScript
+
+//Дана строка 'js'. Сделайте из нее строку 'JS'.
+/*
+let str = 'js';
+let str1 = str.toUpperCase()
+console.log(str1);
+console.log(str1.toLowerCase());
+*/
+
+//Дана строка 'я учу javascript!'. Вырежьте из нее слово 'учу' и слово 'javascript' тремя разными способами (через substr, substring, slice).
+/*
+let str = 'я учу javascript!';
+let sub = str.substr(2, 3);
+console.log(sub);
+
+let sub1 = str.substring(2, 5);
+console.log(sub1);
+
+let sub2 = str.slice(2, 5);
+
+console.log(sub2);
+*/
+
+//Дана строка 'abcde'. Определите позицию буквы 'c' в этой строке.
+/*
+let str = 'abcdea';
+console.log(str.indexOf('c'));
+
+if(str.indexOf('a') >= 0) {
+	console.log(str.indexOf('a'));
+}
+*/
+//Дана строка. Проверьте, начинается ли эта строка с символа 'a'.
+/*
+if(str.indexOf('a') == 0) {
+	console.log(str.indexOf('a'));
+}
+*/
+
+//Дана строка. Проверьте, заканчивается ли эта строка на символ 'a'.
+/*
+if(str.lastIndexOf('a') == str.length-1 ) {
+	console.log('last a');
+}
+*/
+
+//Дана строка. Проверьте, начинается ли эта строка на 'http://'
+/*
+let str = 'https://code.mu/ru/javascript/book/prime/inbuilt/string/';
+console.log(str.indexOf('http://'));
+*/
+
+//Дана строка. Проверьте, заканчивается ли эта строка на '.html'.
+/*
+let str = 'https://code.mu/ru/javascript/book/prime/inbuilt/string/.html';
+console.log(str.lastIndexOf('.html'));
+*/
+
+//Дана строка. Проверьте, начинается ли эта строка на 'http://'.
+/*
+let str = 'https://code.mu/ru/javascript/book/prime/inbuilt/string/.html';
+
+console.log(str.startsWith('http://')); 
+console.log(str.startsWith('https://')); 
+console.log(str.endsWith('.html'));
+*/
+
+
+//Дана строка '1-2-3-4-5'. С помощью метода split запишите каждое число этой строки в отдельный элемент массива.
+/*
+let str = '1-2-3-4-5';
+let arr = str.split('-');
+console.log(arr);
+
+*/
+
+//Дана строка '12345'. С помощью метода split запишите каждый символ этой строки в отдельный элемент массива.
+/*
+let str = '12345';
+let arr = str.split('');
+console.log(arr);
+*/
+
+//С помощью метода join слейте его в строку '1-2-3-4-5'.
+/*
+let arr = [1, 2, 3, 4, 5];
+let str = arr.join('-');
+
+console.log(str);
+
+*/
+
+
+// 106 
+/*
+let arr = [1, 2, 3];
+arr.push(4);
+arr.push(5);
+arr.push(6);
+console.log(arr);
+arr.unshift(6);
+arr.unshift(5);
+arr.unshift(4);
+console.log(arr);
+*/
+
+//Выведите на экран первый элемент этого массива.
+/*
+let arr = [1, 2, 3];
+arr.pop();
+arr.pop();
+console.log(arr);
+*/
+
+//Выведите на экран последний элемент этого массива.
+
+/*
+let arr = [1, 2, 3];
+arr.shift();
+arr.shift();
+console.log(arr);
+*/
+
+
+/*
+let arr = [1, 2, 3, 4, 5];
+let sub = arr.slice(3, 5);
+
+console.log(sub);
+*/
+
+/*
+let arr = [1, 2, 3, 4, 5];
+arr.splice(1, 2);
+console.log(arr);
+*/
+
+
+//С помощью метода splice сделайте из него массив:[1, 2, 3, 'a', 'b', 'c', 4, 5]
+/*
+let arr = [1, 2, 3, 4, 5];
+arr.splice(3, 0, 'a', 'b', 'c');
+console.log(arr);
+*/
+
+//[1, 'a', 'b', 2, 3, 4, 'c', 5, 'e']
+/*
+let arr = [1, 2, 3, 4, 5];
+arr.splice(1, 0, 'a', 'b');
+arr.splice(6, 0,  'c');
+arr.splice(8, 0,  'e');
+console.log(arr);
+*/
+
+//
+
+/*
+let arr = [1, 2, 3, 4, 5];
+
+console.log(arr.indexOf(3));*/
+/*
+let arr = [1, 2, 3, 4, 5];
+let result = arr.includes(3);
+console.log(result);*/
+
+
+//Преобразуйте последнюю букву строки в верхний регистр.
+/*
+let str = 'london';
+let result = str.slice(0,5) + str.slice(5, 6).toUpperCase() ;
+console.log(result); 
+*/
+//Преобразуйте первые 2 буквы строки в верхний регистр.
+/*
+let str = 'london';
+let result = str.slice(0,2).toUpperCase() + str.slice(2) ;
+console.log(result); 
+
+*/
+
+//Пусть дана строка, у которой первая буква в верхнем регистре, например вот такая:
+/*
+let str = 'London';
+let result = str.slice(0, 1).toLowerCase() + str.slice(1);
+console.log(result);
+*/
+
+/*
+let str = 'word1 word2 word3';
+let words = str.split(' ');
+console.log(words);
+for(let i = 0; i<words.length; i++) {
+	words[i] = words[i].slice(0,1).toUpperCase() + words[i].slice(1);
+}
+let results = words.join(' ');
+console.log(results);
+*/
+
+//Преобразуйте строку 'var_test_text' в 'VarTestText'.
+/*
+let str = 'var_test_text';
+let words = str.split('_');
+console.log(words);
+for(let i = 0; i<words.length; i++) {
+	words[i] = words[i].slice(0,1).toUpperCase() + words[i].slice(1);
+}
+let results = words.join('');
+console.log(results);
+*/
+
+//Модифицируйте предыдущую задачу так, чтобы первая буква новой строки была в нижнем регистре.
+/*
+let str = 'var_test_text';
+let words = str.split('_');
+console.log(words);
+for(let i = 1; i<words.length; i++) {
+	words[i] = words[i].slice(0,1).toUpperCase() + words[i].slice(1);
+}
+let results = words.join('');
+console.log(results);*/
+
+//Дана строка со словами. Напишите скрипт, который переставит слова в строке в обратном порядке.
+
+/*
+let str = '112233 445566 778899';
+let result = str.split('').reverse().join('');
+console.log(str.split(''));
+console.log(str.split('').reverse());
+console.log(result);*/
