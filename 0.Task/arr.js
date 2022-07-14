@@ -3412,3 +3412,337 @@ let result = str.split('').reverse().join('');
 console.log(str.split(''));
 console.log(str.split('').reverse());
 console.log(result);*/
+
+
+//108
+/*
+let num = 12345;
+let arr = num.toString().split('');
+
+let sum = 0;
+for (let digit of arr) {
+	sum += Number(digit);
+}
+console.log(sum);*/
+
+/*
+let num = 12345;
+let arr = String(num).split('');
+
+let sum = 0;
+for (let digit of arr) {
+	sum += Number(digit);
+}
+
+console.log(sum);*/
+/*
+let num = 12345;
+let arr = String(num).split('');
+
+let sum = 0;
+for (let digit of arr) {
+	sum += Number(digit);
+}
+
+console.log(sum);*/
+/*
+let num = 12345;
+let arr = String(num).split('');
+
+let sum = 0;
+for (let digit of arr) {
+	sum += Number(digit);
+}
+
+console.log(sum);*/
+
+/*
+let num = 12345;
+let arr = String(num).split('');
+
+let prod = 1;
+for (let digit of arr) {
+	prod *= digit;
+}
+
+console.log(prod);
+*/
+
+//109
+
+/*
+function myName(){
+	alert('Sigaev Vitalik')
+}
+myName();*/
+
+/*
+function sum() {
+	let sum = 0;
+	for(let i = 1; i<=100;i++){
+		sum += i;
+	}
+	alert(sum);
+}
+sum();*/
+
+/*
+function func(num) {
+	alert(num * num * num);
+}
+
+func(562); 
+func(2066);
+*/
+
+/*
+function func(num) {
+	if(num> 0) {
+		alert("+");
+	} else {
+		alert("-");
+	}
+
+}
+
+func(562); 
+func(-2066);
+*/
+
+//Сделайте функцию, которая параметрами принимает 3 числа и выводит на экран сумму этих чисел.
+/*
+function summ (n1, n2, n3) {
+	console.log(n1 + n2 + n3);
+}
+summ(1, 2, 3);*/
+
+//Сделайте функцию func, которая параметром будет принимать 3 числа и выводить на экран их сумму. Пусть даны 3 переменные с числами:
+/*
+let param1 = 1;
+let param2 = 2;
+let param3 = 3;
+
+function func(a, b, c) {
+	alert(a + c + b);
+}
+
+func(param1, param2, param3);
+*/
+
+/*
+function func(num = 5) {
+	alert(num * num);
+}
+
+func(2);
+func(3);
+func();
+*/
+
+/*
+function func(num1 = 0, num2 = 0) {
+	alert(num1 + num2);
+}
+
+func(2, 3);
+func(3);
+func();*/
+
+// Сделайте функцию, которая параметром принимает число, а возвращает куб этого числа. С помощью этой функции найдите куб числа 3 и запишите его в переменную result.
+/*
+function func (num) {
+	return num*num*num;
+}
+let result = func(3);
+console.log(result);
+*/
+
+//Сделайте функцию, которая параметром принимает число, а возвращает квадратный корень из этого числа. С помощью этой функции найдите корень числа 3, затем найдите корень числа 4. Просуммируйте полученные результаты и выведите их на экран.
+/*
+function test(num) {
+	return Math.sqrt(num);
+}
+let rez = test(3) + test(4);
+console.log(rez);
+*/
+
+//С помощью этих функций найдите квадратный корень из числа 2 и округлите его до трех знаков в дробной части.
+/*
+function sqrt(num) {
+	return Math.sqrt(num);
+}
+
+function round(num) {
+	return num.toFixed(3);
+}
+
+console.log(round(sqrt(2)))*/
+
+//С помощью этих функций найдите сумму корней чисел 2, 3 и 4 и запишите ее в переменную result.
+/*
+function sqrt(num) {
+	return Math.sqrt(num);
+}
+
+function sum(num1, num2, num3) {
+	return num1 + num2 + num3;
+}
+console.log(sqrt(2));
+console.log(sqrt(3));
+console.log(sqrt(4));
+console.log(sum(sqrt(2),sqrt(3),sqrt(4)));*/
+
+//С помощью этой функции модифицируйте предыдущую задачу так, чтобы в переменную result записывалась дробь, округленная до 3-х знаков в дробной части.
+
+/*
+function round(num) {
+	return Number(num.toFixed(3));
+}
+
+console.log(round(5));
+
+function sqrt(num) {
+	return Math.sqrt(num);
+}
+
+function sum(num1, num2, num3) {
+	return num1 + num2 + num3;
+};
+
+console.log()
+console.log(round(sqrt(2)));
+console.log(round(sqrt(3)));
+console.log(round(sqrt(4)));
+console.log(sum(round(sqrt(2)),round(sqrt(3)),round(sqrt(4))));
+*/
+
+/*
+function func(num) {
+	if (num <= 0) {
+		return Math.abs(num);
+	}
+	
+	return num * num;
+}
+
+alert( func(10) );
+alert( func(-5) );
+
+*/
+
+/*
+function func(num) {
+	let sum = 0;
+	
+	for (let i = 1; i <= num; i++) {
+		sum += i;
+		return sum;
+	}
+}
+
+alert(func(5));*/
+
+/*
+function func(arr) {
+	let sum = 0;
+	
+	for (let i = 0; i < arr.length; i++) {
+		sum += arr[i];
+			if (sum >= 10) {
+			return i + 1; // выходим из цикла и из функции
+		}
+	}
+}
+
+let result = func([1, 2, 3, 4, 5]);
+alert(result);*/
+
+
+//Напишите функцию, которая параметром будет принимать число и делить его на 2 столько раз, пока результат не станет меньше 10. Пусть функция возвращает количество итераций, которое потребовалось для достижения результата.
+
+/*
+function func(num) {
+	let i = 1;
+	while (true) {
+		num = num /2 ;
+		console.log(num);
+		if (num < 10) {
+			return i; 
+		}
+		i++;
+	}
+}
+
+alert( func(100) );*/
+
+
+//Перепишите ее в сокращенной форме согласно изученной теории.
+/*
+function func(num1, num2) {
+	if (num1 > 0 && num2 > 0) {
+		return num1 * num2;
+	} else {
+		return  num1 - num2;
+	}
+}
+
+alert(func(3, 4));*/
+
+
+//112
+
+//Напишите функцию, которая будет находить сумму квадратов элементов массива.
+/*
+function sumArr (arr) {
+	let sum = 0;
+	for(let elem of arr) {
+		sum += elem**2;
+	}
+	return sum;
+}
+let arr1 = [1, 1, 1, 1];
+alert(sumArr(arr1));*/
+
+//Сделайте функцию getDigitsSum, которая параметром будет принимать целое число и возвращать сумму его цифр.
+/*
+function getDigitsSum(num) {
+	let arr = String(num).split('');
+	console.log(arr);
+	let sum = 0;
+	for(let elem of arr) {
+		sum += Number(elem);
+	}
+	return sum;
+}
+
+alert(getDigitsSum(155));*/
+
+
+//Реализуйте функцию getDivisors, которая параметром будет принимать число и возвращать массив его делителей, то есть чисел, на которое делится наше число. К примеру, если мы передадим число 24 - мы должны получить следующий массив:
+/*
+function getDivisors(num) {
+	let arr = [];
+	for( let i = 1; i<=num; i++) {
+		if (num%i == 0 ) {
+			arr.push(i);
+		}
+	}
+	return arr;
+}
+console.log(getDivisors(24))*/
+
+
+//Сделайте функцию reverseStr, которая параметром будет принимать строку и переворачивать ее символы в обратном порядке. Решите задачу без цикла, используя комбинацию стандартных функций JavaScript.
+/*
+function reverseStr(str) {
+	let str1 = str.split('').reverse().join('');
+	return str1;
+}
+console.log(reverseStr('abcde'))
+*/
+
+//Сделайте функцию delElem, которая параметрами будет принимать значение и массив и удалять из массива все элементы с таким значением.
+
+//Сделайте функцию, заполняющую массив целыми числами от 1 до заданного. Пример работы такой функции: console.log(func(5)); // выведет [1, 2, 3, 4, 5]
+
+//Сделайте функцию, заполняющую массив целыми числами от начального до конечного заданных чисел. Пример работы такой функции: console.log(func(3, 7)); // выведет [3, 4, 5, 6, 7]
