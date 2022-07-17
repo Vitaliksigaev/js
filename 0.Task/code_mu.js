@@ -3742,7 +3742,117 @@ console.log(reverseStr('abcde'))
 */
 
 //Сделайте функцию delElem, которая параметрами будет принимать значение и массив и удалять из массива все элементы с таким значением.
+/*
+let arr = [ 1 , 2 , 3, 2, 1]
+
+function delElem (arr, num) {
+	for(let i=0;i<arr.length; i++) {
+		if(arr[i] == num) {
+			arr.splice(i,1);
+		}
+	}
+	console.log(arr);
+}
+delElem (arr, 3);
+*/
 
 //Сделайте функцию, заполняющую массив целыми числами от 1 до заданного. Пример работы такой функции: console.log(func(5)); // выведет [1, 2, 3, 4, 5]
+/*
+function func(n) {
+	let arr = [];
+	for(let i = 0; i<n; i++) {
+		arr[i] = i+1;
+	}
+	return arr;
+	
+}
+console.log(func(5));
+*/
 
 //Сделайте функцию, заполняющую массив целыми числами от начального до конечного заданных чисел. Пример работы такой функции: console.log(func(3, 7)); // выведет [3, 4, 5, 6, 7]
+
+/*
+function func(n1, n2) {
+	let arr = [];
+	let n3 = n2 - n1;
+	for(let i = 0; i <= n3; i++) {
+		arr[i] = n1;
+		n1 = n1 + 1;
+	}
+	return arr;
+}
+console.log(func(3, 7));
+*/
+
+
+//113
+
+/*
+function isPrime(num) {
+	let flag = true;
+	for (let i = 2; i < num; i++) {
+		if (num % i == 0) {
+			flag = false;
+			break;
+		}
+	}
+	
+	return flag;
+}
+
+console.log( isPrime(10) );
+console.log( isPrime(31) );*/
+
+
+//Сделайте функцию, которая параметром будет принимать массив с числами, и проверять, что все элементы в этом массиве являются четными числами.
+/*
+let arr = [ 4 , 2 , 6, 2, 10]
+
+function is2 (arr) {
+	for (let elem of arr) {
+		if(elem%2 !== 0) {
+			console.log(false);
+			return false;
+		}
+	}
+	console.log(true);
+	return true;
+
+}
+is2(arr);
+*/
+
+//Сделайте функцию, которая параметром будет принимать число и проверять, что все цифры это числа являются нечетными.
+/*
+function func(num) {
+	let num1 = num.toString();
+	console.log(num1);
+	for (let elem of num1) {
+		if(Number(elem)%2 !== 0){
+			console.log(false);
+			return false;
+		}
+	}
+	console.log(true);
+	return true;
+}
+func(232);*/
+
+
+//Сделайте функцию, которая параметром будет принимать массив и проверять, есть ли в этом массиве два одинаковых элемента подряд.
+
+
+let arr = [ 4 , 2 , 62, 2,2, 10]
+
+function is10 (arr) {
+	for (let i=0; i<arr.length; i++) {
+		if(arr[i] == arr[i+1]) {
+			console.log(true);
+			return true;
+		}
+	}
+	console.log(false);
+	return false;
+
+}
+is10(arr);

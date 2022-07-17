@@ -145,3 +145,14 @@ alert(b);
 */
 
 
+
+
+function wave(str){
+    // Code here
+  }
+
+  wave("hello");
+  wave("codewars");
+  wave("");
+  wave("two words");
+  wave(" gap ");
