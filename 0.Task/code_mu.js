@@ -3841,7 +3841,7 @@ func(232);*/
 
 //Сделайте функцию, которая параметром будет принимать массив и проверять, есть ли в этом массиве два одинаковых элемента подряд.
 
-
+/*
 let arr = [ 4 , 2 , 62, 2,2, 10]
 
 function is10 (arr) {
@@ -3855,4 +3855,676 @@ function is10 (arr) {
 	return false;
 
 }
-is10(arr);
+is10(arr);*/
+
+
+
+//114 Логические операторы без if в функциях JavaScript
+
+/*
+function func(a, b) {
+	return a==b;
+
+	if (a == b) {
+		return true;
+	} else {
+		return false;
+	}
+}
+*/
+
+/*
+function func(a, b) {
+	return a!=b;
+	if (a != b) {
+		return true;
+	} else {
+		return false;
+	}
+}
+*/
+/*
+function func(a, b) {
+	return (a+b)>= 10;
+	if (a + b >= 10) {
+		return true;
+	} else {
+		return false;
+	}
+}
+func(5, 25)
+*/
+/*
+function func(num) {
+	return num >= 0;
+	if (num >= 0) {
+		return true;
+	} else {
+		return false;
+	}
+}
+*/
+
+//115
+/*
+function func1() {
+	return(3);
+}
+function func2() {
+	return(5);
+}
+
+console.log( func1() + func2() );*/
+/*
+function sum(arr) {
+	let res = 0;
+	
+	for (let elem of arr) {
+		res += elem;
+
+	}
+	return res;
+}
+
+alert(sum([1, 2, 3, 4, 5]));*/
+
+/*
+let arr = [1, 2, 3, 4, 5];
+function func(arr) {
+	let res = 0;
+	
+	for (let elem of arr) {
+		res += elem;
+	}
+	
+	alert(res);
+}
+func(arr)*/
+
+/*
+function func1() {
+	return 3;
+}
+function func2() {
+	return 5;
+}
+
+console.log( func1() + func2() );*/
+
+/*
+let arr = [1, 2, 3, 4, 5];
+alert(arr);
+
+function sum(arr) {
+	let sum = 0;
+	
+	for (let elem of arr) {
+		sum += elem;
+	}
+		console.log(sum);
+}
+
+sum(arr)*/
+
+/*
+let arr = [1, 2, 3, 4, 5];
+function sum(arr) {
+	let sum = 0;
+		for (let elem of arr) {
+		sum += elem;
+	}
+	return sum;
+}
+let res = sum(arr);
+alert(res);
+*/
+
+/*
+function add(num) {
+	if (num <= 9) {
+		console.log('0' + num)
+		return '0' + num;
+	}
+	console.log(num)
+	return '0' + num;
+}
+
+add(15);*/
+
+/*
+let arr = [1, 2, 3, 4, 5];
+function sum(arr) {
+	let res = 0;
+	
+	for (let elem of arr) {
+		res += elem;
+	}
+	
+	return res;
+}
+let sum1 = sum(arr);
+console.log(sum1);*/
+
+
+/*
+let num = 12345;
+
+function getDigitsSum(num) {
+	let arr = String(num).split('');
+	console.log(arr)
+	let sum = 0;
+	
+	for (let elem of arr) {
+		sum += Number(elem);
+	}
+	
+	return sum;
+}
+let res = getDigitsSum(num);
+console.log(res);*/
+
+
+//116
+
+/*
+function isPrime(num) {
+	for (let i = 2; i < num; i++) {
+		if (num % i == 0) {
+			return false;
+		}
+	}
+	console.log(num)
+	return true;
+}
+
+function checkNum(num) {
+	for (let j = 1; j<=100; j++) {
+		isPrime(j);
+	}
+}
+checkNum(); 
+
+*/
+
+
+/*
+function getDigitsSum(num) {
+	let sum = 0;
+	let digits = String(num).split('');
+	
+	for (let digit of digits) {
+		sum += Number(digit);
+	}
+	if (sum == 13) {
+		console.log(num);
+	}
+	return sum;
+}
+
+function yaerSum () {
+	for (let j = 1; j<=2030; j++) {
+		getDigitsSum(j);
+	}
+}
+
+yaerSum ()
+*/
+/*
+let nums = [123, 456, 789];
+let result = [];
+*/
+
+/*
+for (let num of nums) {
+	result.push(String(num).split('').reverse().join(''));
+}*/
+/*
+function reverseNum(num) {
+	result.push(String(num).split('').reverse().join(''));
+}
+for (let num of nums) {
+	reverseNum(num)
+}
+
+console.log(result);
+*/
+
+/*
+function reverseNum (nums) {
+	for (let num of nums) {
+		result.push(String(num).split('').reverse().join(''));
+	}
+	console.log(result);
+}*/
+
+
+
+
+
+
+
+/*
+let digits1 = String(num1).split('');
+let digitsSum1 = 0;
+for (let digit1 of digits1) {
+	digitsSum1 += Number(digit1);
+}
+
+let digits2 = String(num1).split('');
+let digitsSum2 = 0;
+for (let digit2 of digits2) {
+	digitsSum2 += Number(digit2);
+}
+
+if (digitsSum1 == digitsSum2) {
+	alert('суммы цифр совпадают');
+} else {
+	alert('суммы цифр не совпадают');
+}*/
+
+
+/*
+let num1 = 234;
+let num2 = 531;
+function numSum(num1) {
+	let digits1 = String(num1).split('');
+	let digitsSum1 = 0;
+	for (let digit1 of digits1) {
+		digitsSum1 += Number(digit1);
+	}
+}
+function numCompare(num1,num2) {
+	if (numSum(num1) == numSum(num2)) {
+		alert('суммы цифр совпадают');
+	} else {
+		alert('суммы цифр не совпадают');
+	}
+}
+numCompare(num1,num2)*/
+
+/*
+
+let nums = [12, 24, 35, 14];
+let result = [];
+function numNet() {
+	for (let num of nums) {
+		getDivisors(num)
+	}
+	console.log(result);
+	arrCheck(result);
+
+	return result;
+}
+
+function getDivisors(num) {
+	for (let i = 2; i < num; i++) {
+		if (num % i == 0) {
+			result.push(i);
+		}
+	}
+}
+
+function arrCheck(arr) {
+	let newArr = Array.from(new Set(arr));
+	console.log(newArr);
+}
+
+numNet(nums);
+*/
+
+//117
+
+
+
+/*
+let num = 12345;
+
+function getSum(arr) {
+	let sum = 0;
+	
+	for (let elem of arr) {
+		sum += Number(elem);
+	}
+	console.log(sum)
+	return sum;
+}
+
+function getDigits(num) {
+	return String(num).split('');
+}
+
+getSum(getDigits(num));*/
+
+
+/*
+// Нахождение среднего арифметического:
+function getAvg(arr) {
+	let sum = 0;
+	
+	for (let elem of arr) {
+		sum += elem;
+	}
+	let sum1 = sum / arr.length;
+	console.log(sum);
+	console.log(arr.length);
+	return (sum1)
+}
+
+// Нахождение массива делителей числа:
+function getDivisors(num) {
+	let result = [];
+	
+	for (let i = 2; i < num; i++) {
+		if (num % i == 0) {
+			result.push(i);
+		}
+	}
+	console.log(result);
+	return result;
+}
+
+getDivisors(24);
+
+console.log(getAvg(getDivisors(24)));*/
+
+//117  ДАННОГО МОМЕНТА БЫЛ ГЛЮК ИЛИ ОБНОВЛЕНИЕ САЙТА И учебник одновился и потерялся актуальный номер страницы.
+
+
+
+// на 162 странице нашел новые задачи. Начну с них. Легкие буду пропускать.
+//https://code.mu/ru/javascript/book/prime/functions/sequential-calling/
+
+/*
+function sqrt(num) {
+	return Math.sqrt(num);
+}
+
+function round(num) {
+	return num.toFixed(3);
+}
+let res = round(sqrt(2))
+console.log(res);*/
+/*
+let arr1 = [1,2]
+let arr2 = [2,3]*/
+
+/*
+function func(arr1, arr2) {
+	let res1 = 0;
+	
+	for (let elem of arr1) {
+		res1 += elem;
+	}
+	
+	let res2 = 0;
+	
+	for (let elem of arr2) {
+		res2 += elem;
+	}
+	console.log(res1 / res2)
+	return (res1 / res2);
+}
+func(arr1, arr2)*/
+/*
+function sumArr(arr){
+	let res1 = 0;
+	
+	for (let elem of arr1) {
+		res1 += elem;
+	}
+	return res1
+}
+
+function divisSumArr(arr1, arr2) {	
+	console.log(sumArr(arr1) / sumArr(arr2))
+}
+divisSumArr(arr1, arr2) */
+
+// На странице 171  появились интересные задачки - буду их пелить.
+
+//Сделайте функцию, которая параметром будет принимать массив и возвращать сумму его элементов.
+/*
+let arr=[1,1,1,1];
+function sumArr(arr) {
+	let sum =0;
+	for(let elem of arr){
+		sum+=elem;
+	}
+	console.log(sum);
+	return sum;
+}
+sumArr(arr);
+*/
+
+
+//Сделайте функцию, которая параметром будет принимать число и возвращать массив его делителей.
+/*
+function numDivi(num) {
+	let arr=[];
+	for(let i =2; i<num; i++){
+		if(num%i == 0) {
+			arr.push(i);
+		}
+	}
+	console.log(arr)
+}
+numDivi(24);*/
+
+//Сделайте функцию, которая параметром будет принимать строку и возвращать массив ее символов.
+
+/*
+function strInArr(str) {
+	let arr = str.split('')
+	console.log(arr);
+}
+
+strInArr ('Mother')*/
+
+//Сделайте функцию, которая параметром будет принимать строку и переворачивать ее символы в обратном порядке.
+
+/*
+function strInArr(str) {
+	let arr = str.split('').reverse().join('');
+
+	console.log(arr);
+}
+
+strInArr ('Mother')*/
+
+//Сделайте функцию, которая параметром будет принимать строку и делать заглавной первую букву этой строки.
+
+/*
+function strInArr(str) {
+	let arr = str.split('');
+	arr[0] = arr[0].toUpperCase();
+
+	console.log(arr.join(''));
+}
+
+strInArr ('mother')
+*/
+
+//Сделайте функцию, которая параметром будет принимать строку и делать заглавной первую букву каждого слова этой строки
+/*
+function strUpFirst(str) {
+	let arr = str.split('');
+	arr[0] = arr[0].toUpperCase();
+	str = arr.join('')
+	console.log(str = arr.join(''));
+	return str
+}
+
+function str(str) {
+	let arr = str.split(' ');
+	let arr1 = [];
+	console.log(arr);
+	for (let elem of arr) {
+		arr1.push(strUpFirst(elem));
+	}
+	console.log(arr1);
+}
+
+str ('mother mother')*/
+
+//Сделайте функцию, заполняющую массив целыми числами от 1 до заданного.
+
+/*
+function num(num1) {
+	let arr=[];
+	for (let i=1; i<num1;i++) {
+		arr.push(i);
+	}
+	console.log(arr)
+}
+num(100);*/
+
+
+//Сделайте функцию, которая будет возвращать случайный элемент из массива.
+/*
+let arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+
+function arrM(arr) {
+	let randomN = Math.floor(Math.random()*arr.length);
+	console.log(arr[randomN])
+}
+arrM(arr)
+*/
+
+
+
+//Сделайте функцию, которая параметром будет принимать число и проверять, простое оно или нет.
+
+/*
+function num1(num) {
+	for(let i=2; i<num; i++) {
+		if(num%i == 0) {
+			console.log('Не простое число')
+			return i;
+		} else{
+			console.log('Простое число')
+			return i;
+		}
+	}
+}
+num1(11)*/
+
+
+//Сделайте функцию, которая будет проверять пару чисел на дружественность. Дружественные числа - два числа, для которых сумма всех собственных делителей первого числа равна второму числу и наоборот, сумма всех собственных делителей второго числа равна первому числу.
+/*
+function numCheck(num, num1) {
+	if(numDel(num) == num1 && numDel(num1) == num) {
+		console.log( num + ' ' + num1);
+	}
+
+}
+
+function numDel (num) {
+	let sum = 0;
+	for( let i = 1; i<num;i++) {
+		if(num%i==0) {
+			sum +=i;
+		}
+	}
+	console.log(sum)
+	return sum
+}
+
+numDel (220) 
+numDel (284) 
+
+numCheck(220, 284)*/
+
+//Используя созданную вами функцию из предыдущей задачи найдите все пары дружественных чисел в промежутке от 1 до 1000.
+
+/*
+function numCheck(num, num1) {
+	if(numDel(num) == num1 && numDel(num1) == num) {
+		console.log( num + ' ' + num1);
+	}
+
+}
+
+function numDel (num) {
+	let sum = 0;
+	for( let i = 1; i<num;i++) {
+		if(num%i==0) {
+			sum +=i;
+		}
+	}
+	//console.log(sum)
+	return sum
+}
+/*
+numDel (220) 
+numDel (284) 
+numCheck(220, 284)
+*/
+/*
+for(let i = 1; i<=1000;i++) {
+	for ( let j=1;j<=1000;j++) {
+		numCheck(i, j)
+	}
+}*/
+
+//Сделайте функцию, которая будет проверять число на совершенность. Совершенное число - это число, сумма собственных делителей которого равна этому числу.
+
+/*
+function numCheck (num) {
+	let sum = 0;
+	for( let i = 1; i<num;i++) {
+		if(num%i==0) {
+			sum +=i;
+		}
+	}
+	if (num == sum) {
+	console.log('Совершенное число ' + num)
+	}
+}
+
+
+numCheck (6)*/
+
+//Найдите все счастливые билеты. Счастливый билет - это билет, в котором сумма первых трех цифр его номера равна сумме вторых трех цифр его номера.
+
+/*
+function checkLoto (num) {
+	let arr = String(num).split('');
+	let sum1 = Number(arr[0]) + Number(arr[1]) + Number(arr[2])
+	let sum2 = Number(arr[3]) + Number(arr[4]) + Number(arr[5])
+	console.log(sum1==sum2)
+}
+checkLoto (123321)*/
+
+// Сделайте функцию, которая параметром будет принимать два числа и возвращать массив их общих делителей.
+/*
+function numCheck (num1, num2) {
+	let arr = [];
+	let num3= Math.max(num1, num2)
+	for (let i = 2; i< num3;i++) {
+		if(num3%i == 0) {
+			arr.push(i);
+		}
+	}
+	console.log(arr);
+}
+numCheck (24, 24) 
+*/
+
+
+//177
+/* 
+function func() {
+	let num = 2;
+}
+
+let num = 1;
+func();
+console.log(num);*/
+
+//178 https://code.mu/ru/javascript/book/prime/functions/parameters-objects/
+
+function func() {
+	return '!';
+}
+
+console.log(func);

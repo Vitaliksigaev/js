@@ -162,19 +162,81 @@ deepCount([1, 2, 3]) //, 3, "Expected 3")
 
 /*
 function getParticipants(handshakes){
-    let i = 0;
-    let result = 0;
-    while (i < handshakes){
-        i++;
-        result = result + 1;
+    if (handshakes == 0) {
+        return 0;
+      }
+    let k0 = handshakes*2;
 
+
+    function kk0(k0) {
+        console.log('Стартовое значение в функции под --------    '+ k0);
+        let k = 0; 
+        let k1 = 0;
+        for ( let i = 1; i<k0; i++) {
+            k+=1;
+            console.log('Функция @1 '+ ' счетчик ' + k);
+            }
+        for( let j = k0; j>1;j--) {
+            k1+=1;
+            console.log('Функция @2 '+  ' счетчик ' + k1);  
+        }
+        let sum = k + k1;
+        console.log('Сумма рукопожатий ' + sum );
+        if (sum > handshakes) {
+            kk0(k0 - 1);
+        } else if (sum == handshakes){
+            alert(k0+1);
+        } else if ( sum < handshakes) {
+            alert(k0+1);
+        }
     }
-    console.log(result);
-  }
+    kk0(k0);
+}*/
 
-  getParticipants(0) //0
-  getParticipants(1)//2
-  getParticipants(3)//3
-  getParticipants(6)//4
-  getParticipants(7)//5
+
+/*
+function getParticipants(handshakes){
+    if (handshakes == 0){
+        console.log(0);
+        return 0;
+    }
+
+
+
+    let num = handshakes
+    let result = 0;
+    let i = 0;
+    while (result < num){
+        i = i + 1;
+        result = result + i;
+        console.log(result +' значение и = ' + i );
+    }
+    console.log(i + 1);
+    return (i+1);
+    //https://www.codewars.com/kata/5574835e3e404a0bed00001b/solutions/javascript
+
+
+}
+
+getParticipants(0)//0
+getParticipants(1)//2
+getParticipants(2)//3
+getParticipants(3)//3
+getParticipants(4)
+getParticipants(5)
+getParticipants(6)//4
+getParticipants(7)//5
 */
+
+
+/*
+function getParticipants(handshakes){
+  let farmers = 0
+  while(handshakes > farmers * (farmers - 1) / 2){
+    farmers++
+  }
+  return farmers
+}*/
+
+
+//const getParticipants = handshakes => handshakes > 0 ? Math.ceil( ( 1 + (1 + 8 * handshakes)**0.5) / 2 ) : 1
