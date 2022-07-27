@@ -240,3 +240,227 @@ function getParticipants(handshakes){
 
 
 //const getParticipants = handshakes => handshakes > 0 ? Math.ceil( ( 1 + (1 + 8 * handshakes)**0.5) / 2 ) : 1
+
+
+
+//https://www.codewars.com/kata/58f5c63f1e26ecda7e000029/train/javascript
+/*
+let result = ["Hello", "hEllo", "heLlo", "helLo", "hellO"];
+let str = 'Hello';
+let str2w = "Two words";
+let str3w = " Gap ";
+function wave(str){
+    let result1 = [];
+    let strL = str.length;
+    console.log(strL);
+
+    for(i = 0; i < strL; i++) {
+
+        str = str.toLowerCase();
+        let str1 = str.split('');
+        if(str1[i] !== ' ') {
+        //console.log(str1);
+        str1[i] = str1[i].toUpperCase();
+        str1 = str1.join('');
+        result1.push(str1);
+        //console.log(str1);
+        //console.log(result1);
+        //result1 = result1.join('');
+        } else {
+
+        }
+
+    }
+    console.log(result1)
+    return result1
+    // Code here
+  }
+
+wave(str);
+wave(str2w);
+wave(str3w);*/
+
+/*
+function wave(str){
+  let newArr = [];
+  for (let i = 0; i < str.length; i++) {
+    let copy = str.split('');
+    if(copy[i] !== ' ') {
+    copy[i] = copy[i].toUpperCase()
+    newArr.push(copy.join(''))
+    }
+  }
+  return newArr
+}
+*/
+
+//https://www.codewars.com/kata/5a2b703dc5e2845c0900005a/solutions/javascript
+/*
+function isDivideBy(number, a, b) {
+
+    if(number%a==0 && number%b==0) {
+        console.log(true)
+        return true
+    } else {
+        console.log(false)
+        return false
+    }
+  // good luck
+}
+
+
+isDivideBy(-12, 2, -6)//, true);
+isDivideBy(-12, 2, -5)//, false);
+isDivideBy(45, 1, 6)//, false);
+isDivideBy(45, 5, 15)//, true);
+isDivideBy(4, 1, 4)//, true);
+isDivideBy(15, -5, 3)//, true);*/
+
+/*
+function capitalizeWord(word) {    
+    word = word[0].toUpperCase()+ word.slice(1);
+    console.log(word)
+    return word;
+  }
+
+  capitalizeWord('word')*/
+
+/*
+  function century(year) {
+    // Finish this :)
+
+    return console.log(Math.ceil(year));
+  }
+
+  century(2000)*/
+
+/*
+
+  function fakeBin(x){
+    let x1=[];
+    for(let i=0; i<x.length;i++){
+        let j=0;
+        if(x[i]>=5) {
+            j = '1';
+        } else {
+            j = '0';
+        }
+        x1.push(j)
+    }
+    console.log(x1.join(''));
+ }
+fakeBin('45385593107843568') // 01011110001100111
+//https://www.codewars.com/kata/57eae65a4321032ce000002d/solutions/javascript
+
+*/
+
+/*
+function digits(n) {
+    let num1 = Number(String(n).length)
+    console.log(num1)
+    return num1
+// code goes here
+}
+digits(5)
+*/
+
+
+/*
+function removeChar(str){
+
+//You got this!
+    return console.log(str.slice(1, str.length - 1))
+
+};
+
+
+removeChar('eloquent')*/
+/*
+function noSpace(x){
+    console.log(x.replace(/\s/g,''));
+  }
+
+  noSpace('8 j 8   mBliB8g  imjB8B8  jl  B')*/
+
+/*
+  function solution(str, ending){
+    let x = ending.length;
+    console.log(str.slice( -x));
+    console.log(str.slice( -ending.length))
+
+    if(str.slice( -ending.length) == ending || ending =='') {
+        console.log(true)
+      return true
+    } else {
+        console.log(false)
+      return false
+      console.log(true)
+    }
+    
+    // TODO: complete
+  }
+
+  //solution('abcde', 'cde')
+  //solution('abcde', 'abc')
+  solution('abcde', '') //false
+  */
+/*
+  function finalGrade (exam, projects) {
+    if(exam>90||projects>10) {
+        console.log(90)
+      return 100
+    }
+      if(exam>75&&projects>=5) {
+        console.log(90)
+      return 90
+    }
+      if(exam>50&&projects>=1) {
+        console.log(75)
+      return 75
+    }
+        if(exam<50||projects<1) {
+            console.log(0)
+      return 0
+    }
+  }
+
+finalGrade (0, 2)
+finalGrade (75 , 1)
+*/
+//https://www.codewars.com/kata/5ad0d8356165e63c140014d4/solutions/javascript
+/*
+
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+  
+    if(mpg*fuelLeft >= distanceToPump) {
+        console.log(true)
+      return true
+    } else {
+        console.log(false)
+      return false
+    }
+    // TODO
+  };
+
+
+zeroFuel(50, 25, 2)//, true);
+zeroFuel(100, 50, 1)//, false);*/
+/*
+function toBinary(n){
+    console.log(n);
+    let binary = (n % 2).toString();
+    console.log(binary);
+    for (; n > 1; ) {
+        n = parseInt(n / 2);
+        console.log(n)
+        //binary =  (n % 2) + (binary);
+        //console.log(binary)
+    }
+    console.log(binary);
+  return Number(binary);
+}
+
+//toBinary(1)
+////toBinary(2)
+//toBinary(3)
+toBinary(50)*/

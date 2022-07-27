@@ -4522,9 +4522,713 @@ func();
 console.log(num);*/
 
 //178 https://code.mu/ru/javascript/book/prime/functions/parameters-objects/
+// 180 https://code.mu/ru/javascript/book/prime/functions/function-as-variable/
 
+/*
 function func() {
-	return '!';
+	return 'string';
+}
+func = '1234';
+alert(console.log(func))
+*/
+//console.log(func());
+
+/*
+function func1() {
+	console.log(3)
+	return (3);
+}
+func1();
+
+let func2 = func1;
+func2();
+
+console.log(func1() + func2());
+*/
+
+//Сделайте безымянную функцию, которая будет возвращать через return число 1. Запишите эту функцию в переменную func1. 
+
+/*
+let func1 = function () {
+	return 1;
 }
 
-console.log(func);
+let func2 = function () {
+	return 1;
+}
+let sum = func1() + func2();
+
+alert(console.log(sum));
+
+*/
+
+//181
+
+
+//Создайте функцию как Function Declaration. Проверьте то, что она будет доступна выше места своего объявления.
+/*
+let func = function () {
+	console.log(1)
+}
+func()
+*/
+//func()
+
+/*
+-1-
+function func() {
+	console.log('!');
+}
+func()*/
+/*
+func()
+function func() {
+	console.log('!');
+} + console.log('!');
+func()*/
+
+//183 https://code.mu/ru/javascript/book/prime/functions/functions-array/
+/*
+let arr = [
+	function() {console.log('1')},
+	function() {console.log('2')},
+	function() {console.log('3')},
+];
+
+for (let func of arr) {
+	func(); // вызываем наши функции в цикле
+}*/
+
+/*
+let arr = [
+	function() {return 1},
+	function() {return 2},
+	function() {return 3},
+];
+console.log(arr[0]() + arr[1]() + arr[2]());
+
+for(let ccc of arr){
+	console.log(ccc());
+}
+*/
+//184
+
+/*
+let obj = {
+	func1: function() {return 1},
+	func2: function() {return 2},
+	func3: function() {return 13},
+};
+let sum = 0;
+for (let key in obj){
+	sum += obj[key]();
+}
+console.log(sum)*/
+
+/*
+let arr = [ 1,2,2,3,4,5,6]
+let math = {
+	square: function(arr) {
+		let sum =0;
+		for (let elem of arr) {
+			sum += elem;
+		}
+		return sum
+	},
+	cube: function(arr) {
+		let sum =0;
+		for (let elem of arr) {
+			sum += elem**2;
+		}
+		return sum
+	},
+	cubeX: function(arr) {
+		let sum =0;
+		for (let elem of arr) {
+			sum += elem**3;
+		}
+		return sum
+	}
+};
+
+console.log( math.square(arr) ); 
+console.log( math.cube(arr) ); *
+console.log( math.cubeX(arr) ); */
+
+/*
+test(
+	function() {return 1;},
+	function() {return 2;},
+	function() {return 3;}
+);
+
+function test(func1, func2, func3) {
+	console.log( func1() + func2() + func3());
+}
+*/
+/*
+function get1() {
+	return 1;
+}
+function get2() {
+	return 2;
+}
+
+test(get1, get2); // выведет 3
+
+function test(func1, func2) {
+	console.log( func1() + func2() );
+}*/
+
+
+/*
+let  func1 = function () {
+	return 1
+}
+function func2 () {
+	return 1
+}
+function func3 () {
+	return 1
+}
+
+function test(n1, n2, n3) {
+	console.log(n1() + n2() + n3())
+}
+test(func1,func1,func1)*/
+
+/*
+function test(func, func1) {
+	console.log(func(3) + func1(3));
+}
+
+let func =  function (num) {
+	return num * num * num;
+}
+let func1 = func;
+test(func, func1);*/
+
+/*
+function test(num, func1, func2) {
+	console.log(func1(num) + func2(num))
+	return func1(num) + func2(num);
+}
+function square(num) {
+	return num = num**2;;
+}
+function cube(num) {
+	return num = num**3;
+}
+test(3, square, cube);*/
+
+/*
+let arr = [1,2,3]
+
+function test(arr, func) {
+	for (let i=0; i<arr.length; i++) {
+		arr[i] =  func(arr[i])
+	}
+	console.log(arr);
+	return arr;
+}
+
+function func1 (num) {
+	num = num**3;
+	return num;
+}
+test (arr,func1)*/
+
+//187
+/*
+function func (num1, num2) {
+	function funcX2 (num) {
+		return num**2;
+	}
+	function funcX3(num) {
+		return num**3;
+	}
+	return funcX2(num1) + funcX3(num2);
+}
+console.log(func(5,5))*/
+/*
+function test(num) {
+	function func(num) {
+		console.log(num);
+	}
+	
+	func(num);
+	num = 2;
+}
+
+test(1);
+*/
+
+//189 - Вложенные функции
+
+/*
+function finc1() {
+	return function(){
+		return 5
+	}
+}
+function finc2() {
+	return function(){
+		return 5
+	}
+}
+
+console.log(finc1()()+finc2()())*/
+
+/*
+function funki(){
+	return function(){
+		return function(){
+			return function(){
+				return function(){
+					console.log(69)
+				}
+			}
+		}
+	}
+}
+funki()()()()()*/
+/*
+function funki(num1){
+	console.log(num1)
+	return function(num1){
+		console.log(num1)
+		return function(num1){
+			console.log(num1)
+			console.log(num1+num1+num1)
+			
+		}
+	}
+}
+funki(2)(3)(4)*/
+
+/*
+function funki(num1){
+	let arr= [];
+	arr.push(num1)
+	return function(num2){
+		arr.push(num2)
+		return function(num3){
+			arr.push(num3)
+			return function(num4){
+				arr.push(num4)
+				return function(num5){
+					arr.push(num5)
+					console.log(arr)
+
+				}
+			}
+		}
+	}
+}
+funki(2)(3)(4)(5)()
+*/
+
+//190
+/*
+function test() {
+	let num = 1;
+	
+	return function() {
+		return num;
+	}
+}
+
+let num = 2;
+let func = test();
+console.log(func());*/
+
+
+//191 Замыкания в JavaScript
+
+//Самостоятельно, не подсматривая в мой код, реализуйте счетчик вызова функции, работающий на замыканиях.
+/*
+function func1 () {
+
+	let num = 3;
+	return function(){
+		if(num==0) {
+			return console.log('finish')
+		}
+		console.log(num)
+		num--;
+	}
+}
+let fun2 = func1()
+fun2()
+fun2()
+fun2()
+fun2()
+fun2()
+fun2()
+*/
+
+/*
+function func() {
+	let num = 0;
+	
+	return function() {
+		console.log(num);
+		num++;
+	};
+};
+
+let test = func;
+
+test()();
+test()();
+test()();*/
+/*
+function test() {
+	let counter = 0;
+	
+	return function() {
+		return function() {
+			console.log(counter);
+			counter++;
+		};
+	};
+};
+
+let func = test();
+
+let func1 = func();
+let func2 = func();
+func1();
+func2();
+func1();
+func2();
+func2();*/
+
+
+/*
+function() {
+	console.log('!');
+}();
+*/
+
+/*
+let str = (function() {
+	return function() {
+		return function() {
+			console.log('!');
+		};
+	};})()()();*/
+
+	/*
+let str = (function(num1) {
+	return function(num2) {
+		return console.log(num1+num2);
+		};
+	})(1)(2);
+	*/
+
+	//193
+/*
+
+	let func = (function() {
+		let num = 1;
+		
+		return function() {
+			console.log(num);
+			if(num>=5) {
+				num = 0
+			}
+			num++;
+		}
+	})();
+	
+	func(); 
+	func(); 
+	func(); 
+	func();
+	func();
+	func(); 
+	func(); 
+	func(); 
+	func();
+	func();*/
+	//194
+
+/*
+	let arr = [ 1, 2,3,3,3,3,]
+	function each(arr, callback) {
+		let result = [];
+		for (let elem of arr) {
+			result.push(callback(elem)); 
+		}
+		return result;
+	}
+	let result = each(arr, function(num) {
+		return num * 2;
+	});
+	
+	console.log(result);*/
+
+/*
+let arr = [ '1-123456789','2-123456789','3-123456789','4-123456789', ]
+function each(arr, callback) {
+	let result = [];
+	for (let elem of arr) {
+		result.push(callback(elem)); 
+	}
+	return result;
+}
+let result = each(arr, function(num) {
+	return num.split('').reverse().join('');
+});
+
+console.log(result);
+*/
+
+//Дан массив со строками. С помощью созданной нами функции each сделайте заглавным первый символ каждой строки.
+
+/*
+let arr = [ 'aaaaaaa','bbbbbbbb','ccccccc','ddddddddd', ]
+function each(arr, callback) {
+	let result = [];
+	for (let elem of arr) {
+		result.push(callback(elem)); 
+	}
+	return result;
+}
+let result = each(arr, function(num) {
+	return num.charAt(0).toUpperCase() + num.slice(1)
+});
+
+console.log(result);*/
+
+/*
+let arr = [1,5,25,225]
+
+function arrChange (arr, callback) {
+	let result=[];
+	for( let elem of arr) {
+		result.push(callback(elem))
+	}
+	return result
+}
+
+function cube(num) {
+	return num ** 3;
+}
+let result = arrChange(arr,cube);
+console.log(result)
+*/
+
+//195
+
+
+
+/*
+function each(arr, callback) {
+	let result = [];
+	for (let elem of arr) {
+		result.push(callback(elem)); 
+	}
+	return result;
+}
+let result = each([1, 2, 3, 4, 5], elem => elem > 0 ); 
+console.log(result)*/
+
+//Упростите коллбэк через стрелочную функцию.
+/*
+function every(arr, callback) {
+	let result = [];
+	for (let elem of arr) {
+		let num1 = elem,index;
+		console.log(num1)
+		result.push(callback(elem, num1)); 
+	}
+	return result;
+}
+let index = 40;
+let result = every([1, 2, 3, 4, 5], (elem, index) => (elem * index > 10));
+	console.log(result)
+	*/
+
+//Упростите коллбэк через стрелочную функцию.
+
+/*
+let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+
+function each(arr, callback) {
+	let result = [];
+	for (let elem of arr) {
+		for(let elem1 of elem) {
+			let num1 = elem1,index;
+			console.log(num1)
+			result.push(callback(elem1, num1)); 
+		}
+	}
+	return result;
+}
+
+let result = each(arr, (elem, index) => (elem * index > 10));
+console.log(result)
+
+*/
+
+//196
+
+/*
+let arr = [1, 2, 3, 4, 5];
+function arrPlus(arr){
+	console.log(arr.shift());
+	if (arr.length !=0) {
+		arrPlus(arr)
+	}
+}
+arrPlus(arr)*/
+
+//let arr = [1, 2, 3, 4, 5];
+/*
+function sumCube (arr) {
+	let sum = arr.shift()
+	if(arr.length !==0) {
+		sum+=sumCube(arr)
+	}
+	return sum
+}*/
+
+//С помощью рекурсии найдите сумму квадратов элементов этого массива.
+
+/*
+function sumCube(arr) {
+	let sum = arr.shift()**2
+	if(arr.length !== 0) {
+		sum += sumCube(arr)
+	}
+	return sum
+}
+console.log(sumCube(arr))
+*/
+
+//197
+
+/*
+let obj1 = {
+	a: 1, 
+	b: {c: 2, d: 3, e: 4}, 
+	f: {g: 5, j: 6, k: 
+		{l: 7, m: 
+			{n: 8, o: 9}
+		}}}
+console.log(typeof obj1)
+function func(obj) {
+	for (let key in obj) {
+		//console.log(key)
+		//console.log(obj[key])
+		if (typeof obj[key] == 'object') {
+		func(obj[key])
+		} else {
+			console.log(obj[key])
+		}
+	}
+}
+
+func(obj1);
+*/
+
+/*
+let arr = [1, [2, 7, 8], [3, 4, [5, [6, 7]]]]
+let arr1=[]
+function func(arr) {
+
+	for (let elem of arr) {
+		if (typeof elem == 'object') {
+			func(elem);
+		} else {
+			//console.log(elem);
+			arr1.push(elem)
+		}
+	}
+	console.log(arr1)
+}
+
+func(arr); */
+/*
+function func(arr) {
+	let sum = 0;
+	
+	for (let elem of arr) {
+		if (typeof elem == 'object') {
+			sum += func(elem);
+		} else {
+			sum += elem;
+		}
+	}
+	
+	return sum;
+}
+
+console.log(func([1, [2, 7, 8], 
+	[3, 4, [5, [6, 7]]]])); 
+*/
+
+//С помощью рекурсии найдите сумму элементов этого объекта.
+
+
+/*
+
+let obj1 = {a: 1, b: {c: 2, d: 3, e: 4}, f: {g: 5, j: 6, k: {l: 7, m: {n: 8, o: 9}}}}
+function func(obj) {
+	let sum = 0;
+	for (let key in obj) {		
+		if (typeof obj[key] == 'object') {
+		sum += func(obj[key])
+		} else {
+			sum += obj[key]
+		}
+	}
+	console.log(sum)
+	return sum
+}
+
+func(obj1);
+*/
+
+
+//Дан многомерный массив произвольного уровня вложенности, содержащий внутри себя строки, например, такой:С помощью рекурсии слейте элементы этого массива в одну строку:
+
+/*
+let arr = ['a', ['b', 'c', 'd'], ['e', 'f', ['g', ['j', 'k']]]] 
+function func(arr) {
+	let string1 = '';
+	
+	for (let elem of arr) {
+		if (typeof elem == 'object') {
+			string1 += func(elem);
+		} else {
+			string1 += elem;
+		}
+	}
+	
+	return string1;
+}
+
+console.log(func(arr)); 
+
+*/
+let arr = [1, [2, 7, 8], [3, 4], [5, [6, 7]]];
+
+function func(arr) {
+	for (let i = 0; i < arr.length; 
+		i++) { 
+		if (typeof arr[i] == 'object') {
+			arr[i] = func(arr[i]);
+		} else {
+			arr[i] = arr[i]**2;
+			console.log(arr[i])
+		}
+	}
+	
+	return arr;
+}
+
+console.log(func(arr)); 
+
