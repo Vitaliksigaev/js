@@ -464,3 +464,18 @@ function toBinary(n){
 ////toBinary(2)
 //toBinary(3)
 toBinary(50)*/
+/*
+let data = [1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0]
+function dataReverse(data) {
+  let data1=[]
+  data1.push(data.slice(8).join(''))
+  data1.push(data.slice(8).join(''))
+  data1.push(data.slice(8).join(''))
+  data1.push(data.slice(8).join(''))
+  return data1
+}
+*/
+// console.log(dataReverse(data))
+
+
+
