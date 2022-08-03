@@ -5774,3 +5774,382 @@ console.log(max)*/
 // console.log(checkDate(2025, 0, 32)); // выведет 	false 
 
 
+// let now  = new Date(); //
+// let date = new Date(now.getFullYear(), 11, 31); 
+// console.log(date.getDay());
+
+// let now  = new Date();
+// let date = new Date(now.getFullYear(), now.getMonth(), 	1); 
+// console.log(date.getDay());
+
+// let now  = new Date();
+// let date = new Date(now.getFullYear()+1, 11, 31); 
+// console.log(date.getDay());
+
+// let now  = new Date();
+// let date = new Date(now.getFullYear()+1, now.getMonth(), now.getDay()); 
+// console.log(date.getDay());
+
+// let now  = new Date();
+// let date = new Date(now.getFullYear()-1, now.getMonth(), now.getDay()); 
+// console.log(date.getDay());
+
+
+// let now = new Date();
+// let date = new Date(now.getFullYear(), 0 - 1, 1); 
+// console.log(date);
+// console.log(date.getDay());
+
+
+// let now  = new Date();
+// let date = new Date(now.getFullYear(), now.getMonth()-1, now.getDate()); 
+// console.log(date)
+// console.log(date.getDay());
+
+
+// let days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб']; 
+// console.log(days[date.getDay()]);
+
+
+//Определите, сколько дней между 1 января и 10 сентября текущего года.
+
+
+
+// let now = new Date();
+// let date1 = new Date(now.getFullYear(), 0, 1); 
+// let date2 = new Date(now.getFullYear(), 8, 10); 
+
+// console.log((date2 - date1)/1000/60/60/24);
+
+//Определите, сколько дней между 20 числом текущего месяца и 10 числом следующего.
+// let now = new Date();
+// let date1 = new Date(now.getFullYear(), now.getMonth(), 20); 
+// let date2 = new Date(now.getFullYear(), now.getMonth()+1, 10); 
+
+// console.log((date2 - date1)/1000/60/60/24);
+
+//Момент времени дня
+
+//Определите, сколько часов прошло между вчерашним полднем и текущим моментом времени.
+
+// let now  = new Date();
+// let date = new Date(now.getFullYear(), now.getMonth(), 
+// 	now.getDate() - 1, 12); 
+
+// 	console.log((now - date)/1000/60/60);
+
+
+
+//Определите, сколько часов прошло между началом дня и текущим моментом времени.Определите, сколько часов прошло между началом дня и текущим моментом времени.
+
+// let now  = new Date();
+// let date = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+// console.log(now)
+// console.log(date)
+// console.log((now-date)/1000/60/60)
+
+
+//Определите, сколько часов осталось до конца дня.
+
+// let now  = new Date();
+// let date = new Date(now.getFullYear(), now.getMonth(), now.getDate(),24);
+// console.log(now)
+// console.log(date)
+// console.log((24- now.getHours()))
+
+// усложню для себя задачу чтобы  получить ровное значение
+
+
+//Рассмотрите промежуток от 2000 года до текущего года. Определите, сколько раз 1 января в этом промежутке попадало на выходной день, то есть на субботу или на воскресенье.
+
+// let now  = new Date();
+// let year = now.getFullYear();
+// for (let year1 = 2000;year1<=year;year1++) {
+// 	let date = new Date(year1,0,1)
+// 	//console.log(date)
+// 	if(date.getDay() ==0||date.getDay() ==6 ) {
+// 		console.log(year1 + '-' + ' 1 января был выходной ' +  date.getDay() )
+// 	}
+// }
+
+//Практика на получение моментов времени в JavaScript
+
+//Определите, сколько секунд прошло с начала дня до настоящего момента времени.
+
+// let now  = new Date();
+// let date = new Date(now.getFullYear(),now.getMonth(), now.getDay())
+// console.log((now-date)/1000)
+
+// Определите, сколько секунд осталось до конца дня.
+
+// let now  = new Date();
+// let date = new Date(now.getFullYear(),now.getMonth(), now.getDay(),24)
+// console.log(date)
+// console.log((date-now)/1000/60/60)
+
+
+//Определите, сколько дней осталось до нового года.
+
+// let now  = new Date();
+// let date = new Date(2022,11, 31,24)
+// console.log(date)
+// console.log((date-now)/1000/60/60/24)
+
+//Определите, сколько пятниц 13-е в текущем году.
+
+
+//let now  = new Date();
+
+// let date = new Date(2022,11, 31,24)
+// console.log(date)
+// for( let days=0; days<=365; days++) {
+// 	let data = new Date(now.getFullYear(),0,days)
+// 	if(data.getDay() == 5 && data.getDate()==13 ) {
+// 		console.log( 'Пятница тринадцатого = ' + data  )
+// 	}
+// }
+
+
+//Определите, какой год был 3 месяца назад.
+
+// let now  = new Date();
+// let newNow = new Date(now.getFullYear(),now.getMonth() - 3);
+// console.log(newNow.getFullYear())
+
+//Определите, какой день недели будет в последнем дне текущего месяца.
+
+// let now  = new Date();
+// let newNow = new Date(now.getFullYear(),now.getMonth() +1, 0);
+// console.log(newNow.getDay())
+
+//Напишите код, который будет определять, високосный ли текущий год.
+// let now  = new Date();
+// let newNow = new Date(2020,1, 29);
+// if(newNow.getDate() == 29) {
+// 	console.log('Vesa')
+// }
+//console.log(newNow.getDay())
+
+
+//Напишите код, который будет находить предыдущий високосный 
+// let now = new Date();
+// let year1 = now.getFullYear()
+
+// for (let i = year1; i>=2000; i--) {
+// 	let data = new Date(i,1,29);
+// 	if (data.getDate() == 29) {
+// 		console.log("Весакосный" + i)
+// 	} 
+
+// }
+
+//Напишите код, который будет находить следующий високосный год.
+// let now = new Date();
+// let year1 = now.getFullYear()
+
+// for (let i = year1; ; i++) {
+// 	let data = new Date(i,1,29);
+// 	if (data.getDate() == 29) {
+// 		console.log("Весакосный" + i);
+// 		break;
+// 	} 
+// }
+
+//
+
+
+//Необязательно сравнивать года. Дата может состоять просто из месяца и дня:
+
+// let date1 = '2020-11-31';
+// let date2 = '2020-12-01';
+// if(date1>date2) {
+// 	console.log(date1)
+// } else {
+// 	console.log(date2)
+// }
+
+//Напишите код, который сравнит две приведенные ниже даты и выведет сообщение о том, какая из них больше:
+// let date1 = '09-21';
+// let date2 = '09-23';
+// if(date1>date2) {
+// 	console.log(date1)
+// } else {
+// 	console.log(date2)
+// }
+
+
+//Дана дата, содержащая месяц и день. Определите знак Зодиака, на которую приходится эта дата.
+// let date = '02-20';
+
+// if (date >= '01-01' && date <= 
+// 	'02-01') { 
+// 	console.log('1 знак');
+// }
+
+// if (date >= '02-02' && date <= 
+// 	'03-01') { 
+// 	console.log('2  знак');
+// }
+
+// if (date >= '03-02' && date <= 
+// 	'04-01') { 
+// 	console.log('3 знак');
+// }
+
+//Получите объект с датой, содержащий текущий момент времени. Получите объект с датой, содержащий полдень текущего дня. Сравните два этих объекта и определите, был ли уже полдень или нет.
+// let now  = new Date();
+// let pold  = new Date(now.getFullYear(), now.getMonth(), now.getDate(),12);
+// console.log(now > pold); 
+
+// Получите объект с датой, содержащий текущий момент времени. Получите объект с датой, содержащий 15 число текущего месяца. Сравните два этих объекта и определите, прошла ли уже половина месяца или нет.
+
+// let now  = new Date();
+// let pold  = new Date(now.getFullYear(), now.getMonth(), 15);
+// console.log(now > pold); 
+
+//239 Основы работы с DOM в JavaScript
+
+//241 Получение DOM элемента в JavaScript
+
+// let elem1 = document.querySelector('#elem1');
+// let elem2 = document.querySelector('#elem2');
+// let elem3 = document.querySelector('#elem3');
+// console.log(elem1);
+// console.log(elem2);
+// console.log(elem3);
+
+// let elem1 = document.querySelector('#block p');
+// console.log(elem1);
+
+// let elem1 = document.querySelector('.block p');
+// console.log(elem1);
+
+// let elem1 = document.querySelector('.www');
+// console.log(elem1);
+
+
+// let button = document.querySelector('#button');
+// let num = 1;
+// button.addEventListener('click', function() {
+// 	num +=1;
+// 	console.log(num)
+// })
+
+// let button1 = document.querySelector('#button1');
+// let button2 = document.querySelector('#button2');
+// button1.addEventListener('click', func1);
+// button2.addEventListener('click', func2);
+
+// function func1() {
+// 	console.log(1);
+// }
+
+// function func2() {
+// 	console.log(2);
+// }
+
+// let button1 = document.querySelector('#elem1');
+// let button2 = document.querySelector('#elem2');
+// let button3 = document.querySelector('#elem3');
+// let button4 = document.querySelector('#elem4');
+// let button5 = document.querySelector('#elem5');
+
+// function func() {
+// 	console.log('message');
+// }
+
+// button1.addEventListener('click', func);
+// button2.addEventListener('click', func);
+// button3.addEventListener('click', func);
+// button4.addEventListener('click', func);
+// button5.addEventListener('click', func);
+
+// function func1() {
+// 	console.log('1');
+// }
+
+// function func2() {
+// 	console.log('2');
+// }
+
+// function func3() {
+// 	console.log('3');
+// }
+// let button0 = document.querySelector('#elem');
+
+// button0.addEventListener('click', func1);
+// button0.addEventListener('click', func2);
+// button0.addEventListener('click', func3);
+
+
+// let button = document.querySelector('#button');
+
+// button.addEventListener('mouseover', function() {
+// 	console.log('1');
+// });
+// button.addEventListener('mouseout', function() {
+// 	console.log('2');
+// });
+// button.addEventListener('dblclick', function() {
+// 	console.log('3');
+// });
+// button.addEventListener('click', function() {
+// 	console.log('4');
+// });
+
+//247
+// let elem = document.querySelector('#elem');
+// console.log(elem.textContent);
+// elem.textContent = '!!!';
+// console.log(elem.textContent);
+
+//Дан абзац и кнопка. По клику на кнопку прочитайте текст абзаца и выведите его в консоль.
+// let elem = document.querySelector('#elem');
+// let button = document.querySelector('#button');
+
+// button.addEventListener('click', function() {
+// 	console.log(elem.textContent)
+// })
+
+// button.addEventListener('click', function() {
+// 	elem.textContent = '!!!';
+// 	console.log(elem.textContent);
+// })
+
+//Даны два абзаца, содержащие своим текстом какие-то числа, и кнопка. По нажатию на кнопку выведите на экран сумму хранящихся чисел.
+// let elem1 = document.querySelector('#elem1');
+// let elem2 = document.querySelector('#elem2');
+// let button = document.querySelector('#button');
+// button.addEventListener('click', function() {
+// 	console.log(Number(elem1.textContent) + Number(elem2.textContent));
+// })
+
+//Даны три абзаца с числами, див, и кнопка. По нажатию на кнопку запишите в текст дива сумму чисел.
+
+// let elem1 = document.querySelector('#elem1');
+// let elem2 = document.querySelector('#elem2');
+// let elem3 = document.querySelector('#elem3');
+// let elem4 = document.querySelector('.block p');
+// let button = document.querySelector('#button');
+// button.addEventListener('click', function() {
+// 	elem4.textContent = Number(elem1.textContent) + Number(elem2.textContent)+ Number(elem3.textContent);
+// })
+
+//Дан абзац с числом и кнопка. По нажатию на кнопку прибавьте к значению абзаца единицу и запишите полученное число обратно.
+// let elem1 = document.querySelector('#elem1');
+// button.addEventListener('click', function() {
+// 		elem1.textContent = Number(elem1.textContent) + 1;
+// 	});
+
+//Дан абзац с текстом и кнопка. По нажатию на кнопку запишите в конец текста абзаца восклицательный знак.
+
+// let elem1 = document.querySelector('#elem1');
+// button.addEventListener('click', function() {
+// 		elem1.textContent += "!";
+// 	});
+
+//Дан абзац и кнопка. По клику на кнопку прочитайте HTML код абзаца и выведите его в консоль.
+let elem1 = document.querySelector('#elem1');
+button.addEventListener('click', function() {
+		elem1.innerHTML = "<b>"+ elem1.innerHTML +"</b>";
+	});
