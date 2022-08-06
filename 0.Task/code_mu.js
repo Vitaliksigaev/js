@@ -6149,7 +6149,164 @@ console.log(max)*/
 // 	});
 
 //Дан абзац и кнопка. По клику на кнопку прочитайте HTML код абзаца и выведите его в консоль.
+// let elem1 = document.querySelector('#elem1');
+// button.addEventListener('click', function() {
+// 		elem1.innerHTML = "<b>"+ elem1.innerHTML +"</b>";
+// 	});
+
+
+// let elem = document.querySelector('#elem');
+// let button = document.querySelector('#button');
+
+// button.addEventListener('click', function() {
+// 	elem.type = 'submit';
+// 	console.log(elem.type);
+// });
+
+
+
+// let elem = document.querySelector('#elem');
+// let elemA = document.querySelector('#elemA');
+// let button = document.querySelector('#button');
+
+// button.addEventListener('click', function() {
+// 	elem.textContent = elemA.href;
+// 	console.log(elemA.href);
+// });
+
+// let elemA = document.querySelector('#elemA');
+// let button = document.querySelector('#button');
+
+// button.addEventListener('click', function() {
+// 	elemA.textContent = elemA.textContent +"(" + elemA.href + ')';
+// 	console.log(elemA.href);
+// });
+
+//Пусть у вас есть картинка. Разместите ее на странице в помощью тега img. Пусть даны также кнопка и абзац. Сделайте так, чтобы по клику на кнопку в абзац записался путь к картинки из ее атрибута src.
+
+// let img1 = document.querySelector('img');
+// let elem = document.querySelector('#elem');
+// let button = document.querySelector('#button');
+
+// button.addEventListener('click', function() {
+// 	elem.textContent = img1.src;
+// });
+
+//Дана картинка в теге img и кнопка. По нажатию на кнопку в атрибут width запишите значение 300.
+
+// let img1 = document.querySelector('img');
+// let button = document.querySelector('#button');
+
+// button.addEventListener('click', function() {
+// 	console.log(img1.width)
+// 	img1.width = "350";
+// 	console.log(img1.width)
+// });
+
+//Дана картинка в теге img и кнопка. Пусть в атрибуте width задана некоторая ширина. Сделайте кнопку, по нажатию на которую ширина картинки будет увеличиваться в 2 раза.
+
+// let img1 = document.querySelector('img');
+// let button = document.querySelector('#button');
+
+// button.addEventListener('click', function() {
+// 	img1.width = img1.width*2;
+// 	console.log(img1.width)
+// });
+
+//Пусть у вас есть две картинки. Сделайте на странице тег img и две кнопки. По нажатию на первую кнопку запишите в атрибут src путь к первой картинке, а по нажатию на вторую - путь ко второй картинке.
+
+
+// let img1 = document.querySelector('#img1');
+// let img2 = document.querySelector('#img2');
+// let button1 = document.querySelector('#button1');
+// let button2 = document.querySelector('#button2');
+
+// button1.addEventListener('click', function() {
+// 	img1.src = "/porsche-cayenne_3000x2000_4k4ws.jpeg";
+// });
+// button2.addEventListener('click', function() {
+// 	img2.src = "/porsche-cayenne_3000x2000_4k4ws.jpeg";
+// });
+
+//250
+//Работа с текстовыми полями в JavaScript
+
+// let elem = document.querySelector('#elem');
+// let button1 = document.querySelector('#button1');
+
+// button1.addEventListener('click', function() {
+// 		console.log(elem.value)
+// 	});
+
+//Дан инпут и кнопка. По нажатию на кнопку запишите в инпут какой-нибудь текст.
+
+// let elem = document.querySelector('#elem');
+// let button1 = document.querySelector('#button1');
+
+// button1.addEventListener('click', function() {
+// 		elem.value= "EBYSHKI"
+// 	});
+
+//Дан инпут, абзац и кнопка. По нажатию на кнопку запишите в абзац текст из инпута.
+
+// let elem = document.querySelector('#elem');
+// let elemP = document.querySelector('#elemP');
+// let button1 = document.querySelector('#button1');
+
+// button1.addEventListener('click', function() {
+// 	elemP.textContent = elem.value;
+// 	});
+
+// Даны два инпута и кнопка. В первый инпут пользователем вводится число. По нажатию на кнопку запишите во второй инпут квадрат введенного числа.
+
+// let elem1 = document.querySelector('#elem1');
+// let elem2 = document.querySelector('#elem2');
+// let button1 = document.querySelector('#button1');
+// let button2 = document.querySelector('#button2');
+
+// button1.addEventListener('click', function() {
+// 	elem2.value = elem1.value*2 ;
+// 	});
+
+//Даны два инпута и кнопка. По нажатию на кнопку запишите в первый инпут значение второго инпута, а во второй инпут - значение первого. Ваш код должен работать универсально, для любых значений инпутов.
+
+// let elem1 = document.querySelector('#elem1');
+// let elem2 = document.querySelector('#elem2');
+// let button1 = document.querySelector('#button1');
+// let button2 = document.querySelector('#button2');
+
+// button1.addEventListener('click', function() {
+// 	let n1 = elem1.value;
+// 	let n2 = elem2.value
+// 	elem1.value = n2;
+// 	elem2.value = n1;
+// 	});
+
+//Даны 5 инпутов, абзац и кнопка. В инпут вводятся числа. По нажатию на кнопку запишите среднее арифметическое введенных чисел в абзац.
+
+// let elem1 = document.querySelector('#elem1');
+// let elem2 = document.querySelector('#elem2');
+// let elem3 = document.querySelector('#elem3');
+// let elem4 = document.querySelector('#elem4');
+// let elem5 = document.querySelector('#elem5');
+// let elemP = document.querySelector('#elemP');
+
+// let button1 = document.querySelector('#button1');
+// let button2 = document.querySelector('#button2');
+
+// button1.addEventListener('click', function() {
+// 	console.log(elem1.value)
+// 	elemP.textContent = Number(Number(elem1.value) + Number(elem2.value) + Number(elem3.value) + Number(elem4.value) + Number(elem5.value))/5;
+// 	});
+
+//Дан инпут. По получению фокуса запишите в него число 1, а по потери фокуса - число 2.
+
 let elem1 = document.querySelector('#elem1');
-button.addEventListener('click', function() {
-		elem1.innerHTML = "<b>"+ elem1.innerHTML +"</b>";
-	});
+
+
+elem1.addEventListener('focus', function() {
+	elem1.value = 1;
+});
+elem1.addEventListener('blur', function() {
+	elem1.value = 2;
+});
