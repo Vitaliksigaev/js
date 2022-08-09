@@ -6301,12 +6301,372 @@ console.log(max)*/
 
 //Дан инпут. По получению фокуса запишите в него число 1, а по потери фокуса - число 2.
 
-let elem1 = document.querySelector('#elem1');
+// let elem1 = document.querySelector('#elem1');
+// elem1.addEventListener('focus', function() {
+// 	elem1.value = 1;
+// });
+// elem1.addEventListener('blur', function() {
+// 	elem1.value = 2;
+// });
+
+//Дан инпут. Пусть в него вводится число. По потери фокуса выведите на экран квадрат этого числа.
+
+// let elem1 = document.querySelector('#elem1');
+// elem1.addEventListener('blur', function() {
+// 	alert(elem1.value);
+// });
 
 
-elem1.addEventListener('focus', function() {
-	elem1.value = 1;
-});
-elem1.addEventListener('blur', function() {
-	elem1.value = 2;
-});
+
+// Дан инпут, в котором изначально есть какой-то текст. По получению фокуса инпутом очистите содержимое этого инпута.
+
+// let elem1 = document.querySelector('#elem1');
+// elem1.addEventListener('focus', function() {
+// 	elem1.value = '';
+// });
+
+// Дана также кнопка. По нажатию на кнопку прочитайте и выведите на экран значение атрибута class нашего дива.
+
+// let button1 = document.querySelector('#button1');
+// let button2 = document.querySelector('#button2');
+// let elemDiv = document.querySelector('#elemDiv');
+// button1.addEventListener('click', function() {
+// 		console.log(elemDiv.className)
+// 	});
+
+//Дана также кнопка. По нажатию на кнопку запишите в атрибут class нашего дива какой-нибудь класс.
+// button2.addEventListener('click', function() {
+// 	let arr = [];
+// 	arr = elemDiv.className.split(' ')
+// 	console.log(arr)
+// });
+
+//Дана также кнопка. По нажатию на кнопку получите массив CSS классов нашего дива.
+
+
+//Переделайте приведенный выше код так, чтобы вместо введения переменной image использовалась цепочка.
+
+// let image = document.querySelector('#image');
+// console.log(image.src);
+// console.log(document.querySelector('#image').src);
+// let image = document.querySelector('#image');
+
+// console.log(document.querySelector('#image').src);
+// console.log(document.querySelector('#image').width);
+// console.log(document.querySelector('#image').height);
+
+
+// console.log(image.src);
+// console.log(image.width);
+// console.log(image.height);
+
+
+//254
+//Дан инпут. По получению фокуса этим инпутом запишите в него число 1, а по потери фокуса - число 2. Для обращения у инпуту внутри функции-обработчика используйте объект this.
+// let elem1 = document.querySelector('#elem1');
+
+// elem1.addEventListener('focus', function() {
+// 	this.value = 2;
+// 	});
+// elem1.addEventListener('blur', function() {
+// 	this.value = 1;
+// 	});
+
+
+// Дана кнопка, значением которой служит число 1. Сделайте так, чтобы по клику на эту кнопку ее значение каждый раз увеличивалось на единицу.
+
+// let button3 = document.querySelector('#button3');
+// button3.addEventListener('click', function() {
+// 	this.value = Number(this.value) + 1;
+// });
+
+// Даны 5 абзацев с какими-то текстами. По клику на любой абзац запишите в конец его текста восклицательный знак.
+
+// let elemP1 = document.querySelector('#elemP1');
+// let elemP2 = document.querySelector('#elemP2');
+// let elemP3 = document.querySelector('#elemP3');
+// let elemP4 = document.querySelector('#elemP4');
+// let elemP5 = document.querySelector('#elemP5');
+
+
+// elemP1.addEventListener('click', func);
+// elemP2.addEventListener('click', func);
+// elemP3.addEventListener('click', func);
+// elemP4.addEventListener('click', func);
+// elemP5.addEventListener('click', func);
+
+// function func() {
+// 	this.textContent += "!";
+// }
+
+// Даны 3 инпута, в которых записаны какие-то числа. По потери фокуса в любом из инпутов возведите стоящее в нем число в квадрат.
+
+// let elem1 = document.querySelector('#elem1');
+// let elem2 = document.querySelector('#elem2');
+// let elem3 = document.querySelector('#elem3');
+
+// elem1.addEventListener('blur', func);
+// elem2.addEventListener('blur', func);
+// elem3.addEventListener('blur', func);
+
+// function func() {
+// 	this.value = Number(this.value)**2;
+// }
+
+//Получение группы элементов в JavaScript
+
+//Даны абзацы и кнопка. По нажатию на кнопку найдите все абзацы, переберите из циклом и установите текст каждого абзаца в значение 'text'.
+
+// let elems = document.querySelectorAll('.www');
+
+// let button1 = document.querySelector('#button1');
+// button1.addEventListener('click', function() {
+// 	for (let elem of elems) {
+// 		elem.textContent = 'text';
+// 	}
+// });
+
+//Даны абзацы с текстом и кнопка. По нажатию на кнопку запишите в конец текста каждого абзаца его порядковый номер.
+
+// let elems = document.querySelectorAll('.www');
+
+// let button1 = document.querySelector('#button1');
+// button1.addEventListener('click', function() {
+
+// 	for( let i=0; i<= elems.length; i++) {
+// 		elems[i].textContent = elems[i].textContent +' '+ i;
+// 	}
+// });
+
+//Даны инпуты с числами, абзац и кнопка. По нажатию на кнопку найдите сумму чисел из инпутов и запишите эту сумму в текст абзаца.
+
+// let elems = document.querySelectorAll('.in')
+// let elemP = document.querySelector('#elemP');
+
+// let button1 = document.querySelector('#button1');
+// button1.addEventListener('click', function () {
+// 	let sum =0;
+// 	for (let elem of elems) {
+// 		sum +=  Number(elem.value);
+// 	}
+// 	elemP.textContent= sum;
+// })
+
+//Добавление обработчиков в цикле в JavaScript
+
+//Даны также инпуты. Сделайте так, чтобы по потери фокуса в любом из наших инпутов выполнялась приведенная выше функция.
+
+// function func() {
+// 	this.value = Number(this.value) + 1;
+// }
+
+// let elems = document.querySelectorAll('.in')
+// for (let elem of elems) {
+// 	elem.addEventListener('blur', func);
+// }
+
+//Даны абзацы с числами. Сделайте так, чтобы по клику на любой абзац его число в нем возводилось в квадрат.
+
+// let elemP = document.querySelectorAll('.www');
+// for (let elem of elemP) {
+// 	elem.addEventListener('click', func);
+// }
+
+// function func() {
+// 	this.textContent = Number(this.textContent)**2;
+// }
+
+// let elemP = document.querySelectorAll('.www');
+// for (let elem of elemP) {
+// 	elem.addEventListener('click', function() {
+// 		console.log(this.textContent);
+// 	});
+// }
+
+// let divs = document.querySelectorAll('div');
+
+// for (let div of divs) {
+// 	div.addEventListener('click', function () {
+// 		this.textContent++;
+// 	});
+// }
+
+// function func() {
+// 	this.textContent++;
+// }
+
+
+//259
+// let elemA = document.querySelector('#elemA')
+// elemA.addEventListener('click', func);
+
+
+// function func(event) {
+// 	event.preventDefault();
+// 	this.textContent = this.textContent +'('+ this.href +')';
+// 	this.removeEventListener('click', func);
+// }
+
+// Дана кнопка, значением которой служит число 1. Сделайте так, чтобы по клику на эту кнопку ее значение каждый раз увеличивалось на единицу. После того, как значение кнопки достигнет 10 - отвяжите обработчик события, чтобы кнопка больше не реагировала на нажатие.
+
+// let button = document.querySelector('#button');
+// button.addEventListener('click', func)
+
+// function func() {
+// 	console.log(button.value)
+// 	if(button.value < 10) {
+// 		button.value = Number(button.value) + 1;
+// 	} else{
+// 		alert(10);
+// 		this.removeEventListener('click', func);
+// 	}
+// }
+
+//Даны абзацы. По нажатию на любой из абзацев добавьте ему в конец восклицательный знак. Сделайте так, чтобы это добавление происходило лишь по первому нажатию.
+
+// let elems = document.querySelectorAll('p');
+
+// for (let elem of elems) {
+// 	elem.addEventListener('click', func);
+// }
+
+// function func() {
+// 	this.textContent =  this.textContent + '!'; 
+// 	this.removeEventListener('click', func); // отвязываем обработчик
+// }
+
+// let elems = document.querySelectorAll('li');
+// for( let elem of elems) {
+// 	elem.addEventListener('click', function func(){
+// 		if(this.textContent<10) {
+// 			this.textContent++
+// 			//this.removeEventListener('click', func);
+// 		}
+
+// 	})
+	
+// }
+
+
+//262
+//Работа с атрибутами через методы в JavaScript
+
+// let elem = document.querySelector("#elem")
+// let value = elem.getAttribute('value')
+// let class1 = elem.getAttribute('class')
+// console.log(class1)
+// elem.setAttribute('value','taxt valu')
+// console.log(elem.value)
+// elem.setAttribute('class','xxx aaa')
+// console.log(elem.classList)
+// elem.removeAttribute('value')
+// console.log(elem.value)
+// elem.setAttribute('value','taxt')
+// console.log(elem.value)
+// console.log(elem.hasAttribute('value','taxt'))
+
+//Манипулирование CSS классами в JavaScript
+//263
+
+// let elem = document.querySelector('#elem');
+// let classLen = elem.classList.length;
+// console.log(classLen)
+// let classList = elem.classList;
+// for( let classes of classList) {
+// 	console.log(classes)
+// }
+// classList.add('xxxx')
+// console.log(classList)
+// classList.remove('www')
+// console.log(classList)
+// let chek = elem.classList.contains('ggg')
+// console.log(chek)
+
+// elem.classList.toggle('ggg')
+// console.log(classList)
+// elem.classList.toggle('ggg')
+// console.log(classList)
+
+// function func() {
+// 	// elem.style.width = '300';
+// 	// elem.style.height = '300';
+// 	// elem.style.border = '2px dotted';	
+// 	// elem.style.fontSize = '20px';
+// 	// elem.style.marginTop = '20px';
+// 	for(let elema of elems) {
+// 		elema.style.cssFloat = 'left';
+// 	}
+// }
+
+// let elem = document.querySelector('div');
+// let button1 = document.querySelector('#button1')
+// let button2 = document.querySelector('#button2')
+// let button3 = document.querySelector('#button3')
+// //let elems = document.querySelectorAll('li');
+
+// button1.addEventListener('click', function(){
+// 	elem.classList.toggle('button1')
+// })
+// button2.addEventListener('click', function(){
+// 	elem.classList.toggle('button2')
+// })
+// button3.addEventListener('click', function(){
+// 	elem.classList.toggle('button3')
+// })
+
+
+
+// let parent = document.querySelector('#parent');
+// let elems = parent.children;
+
+// for (let elem of elems) {
+// 	console.log(elem.innerHTML);
+// }
+
+// let nodes = parent.childNodes;
+
+// for (let node of nodes) {
+// 	console.log(node.textContent);
+// }
+
+
+// let elem = document.querySelector('#elem')
+// let f = elem.firstElementChild;
+// f.style.color = 'red';
+// console.log(f)
+
+// let f2 = elem.lastElementChild;
+// f2.style.color = 'red';
+// let elems = elem.children;
+// console.log(elems)
+
+// for( let el of elems) {
+// 	el.innerHTML += '!';
+// }
+
+// let elem = document.querySelector('#elem')
+// let parent1 = elem.parentElement.parentElement;
+// parent1.style.border=' solid red';
+// console.log(parent1)
+
+// let elem = document.querySelector('#elem')
+// let parent = elem.closest('.www');
+// console.log(parent)
+
+// let elem = document.querySelector('#elem')
+// let text = elem.previousElementSibling.innerHTML;
+// elem.previousElementSibling.innerHTML = text +'!';
+
+// let text2 = elem.nextElementSibling.innerHTML;
+// elem.nextElementSibling.innerHTML = text2 +'!';
+
+// elem.nextElementSibling.nextElementSibling.innerHTML = elem.nextElementSibling.nextElementSibling.innerHTML +'!';
+// let elemPre = elem.previousElementSibling.innerHTML;
+// let elemNext = elem.nextElementSibling.innerHTML;
+// elem.previousElementSibling.innerHTML = elemNext;
+// elem.nextElementSibling.innerHTML = elemPre;
+let elem = document.querySelector('#elem');
+let text = elem.nextElementSibling.innerHTML;
+
+console.log(text);
+
