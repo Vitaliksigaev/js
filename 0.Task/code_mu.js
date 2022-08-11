@@ -6665,8 +6665,342 @@ console.log(max)*/
 // let elemNext = elem.nextElementSibling.innerHTML;
 // elem.previousElementSibling.innerHTML = elemNext;
 // elem.nextElementSibling.innerHTML = elemPre;
-let elem = document.querySelector('#elem');
-let text = elem.nextElementSibling.innerHTML;
+// let elem = document.querySelector('#elem');
+// let text = elem.nextElementSibling.innerHTML;
 
-console.log(text);
+// console.log(text);
+
+
+//267
+// let elem = document.getElementById('elem')
+// elem.innerHTML = 'elem change'
+
+// let elems = document.getElementsByTagName('li')
+// for(let elem of elems) {
+// 	elem.style.color  = 'red';
+// }
+
+// let elems = document.getElementsByClassName('www')
+// for(let elem of elems) {
+// 	elem.style.color  = 'red';
+// }
+
+// let parent = document.querySelector('#parent');
+// let elems1 = parent.querySelectorAll('.www');
+// console.log(elems1)
+// for(let elem of elems1) {
+// 	console.log(elem.innerHTML)
+// }
+// let elems2 = parent.querySelectorAll('.ggg');
+// console.log(elems2)
+// for(let elem of elems2) {
+// 	console.log(elem)
+// }
+
+
+//Сделайте так, чтобы по клику на див в конец его текста добавилось содержимое его атрибута data-text.
+
+// let elems = document.querySelectorAll('div');
+// for ( let elem of elems) {
+// 	elem.addEventListener('click', func)
+// }
+
+// function func(){
+// 	this.innerText = this.innerText + this.dataset.num;
+// }
+
+//Дана кнопка. Сделайте так, чтобы эта кнопка считала количество кликов по ней, записывая их в какой-нибудь пользовательский атрибут. Пусть по двойному клику на эту кнопку на экран выводится, сколько кликов по этой кнопке было сделано.
+
+// let btn = document.querySelector('#button1');
+// btn.addEventListener('click', function(){
+// 	btn.dataset.num++
+// 	console.log(btn.dataset.num)
+// })
+
+// btn.addEventListener('dblclick', function(){
+// 	alert(btn.dataset.num)
+// })
+
+//В этом инпуте в атрибуте data-length содержится количество символов, которое нужно ввести в инпут. Сделайте так, чтобы по потери фокуса, если количество введенных символов не совпадает с заданным, выводилось сообщение об этом.
+
+// let elem = document.querySelector('#elem')
+
+// elem.addEventListener('blur', function(){
+// 	console.log(elem.dataset.length)
+// 	console.log(elem.value.length)
+// 	if(Number(elem.dataset.length) != elem.value.length ) {
+// 		console.log('Необходимо ввести ' + elem.dataset.length + ' символов' )
+// 	}
+// })
+
+//В этом инпуте атрибуты data-min и data-max содержат диапазон. Сделайте так, чтобы по потери фокуса, если количество введенных символов не попадает в этот диапазон, выводилось сообщение об этом.
+
+// let elem = document.querySelector('#elem')
+
+// elem.addEventListener('blur', function(){
+// 	console.log(elem.dataset.min)
+// 	console.log(elem.dataset.max)
+// 	console.log(elem.value.length)
+
+// 	let min1 = Number(elem.dataset.min);
+// 	let max1 = Number(elem.dataset.max);
+// 	let val = elem.value.length;
+
+// 	if(val<min1 || val> max1) {
+// 		console.log('Необходимо ввести символы от 5 до 10 символов' )
+// 	}
+// })
+
+// Даны абзацы. Переберите их циклом и каждому абзацу в атрибут data-num запишите порядковый номер этого абзаца. Используйте метод setAttribute.
+
+// let elems = document.querySelectorAll('div')
+// console.log(elems);
+
+// for(let i = 0; i<=elems.length; i++) {
+	
+// 	elems[i].setAttribute('data-num', i+1)
+// }
+// let elem = document.querySelector('#elem');
+// let elem1 = document.querySelector('#elem1');
+// console.log(elem.firstElementChild);
+// console.log(elem.lastElementChild);
+
+// console.log(elem.firstChild);
+// console.log(elem.lastChild);
+
+// console.log(elem1.nextElementSibling);
+// console.log(elem1.nextSibling);
+
+// console.log(elem.childNodes[0]);
+// console.log(elem.childNodes[1]);
+// console.log(elem.childNodes[2]);
+
+
+// let elem = document.querySelector('#elem');
+// for (let node of elem.childNodes) {
+// 	if(node.nodeType<8) {
+// 		console.log(node);
+// 	}
+// }
+
+// let elem = document.querySelector('#elem');
+// for (let node of elem.childNodes) {
+// 	if(node.nodeType<8) {
+// 		console.log(node.textContent);
+// 	} else {
+// 		console.log(node.data);
+// 	}
+// }
+
+// let elem = document.querySelector('#elem');
+// for (let node of elem.childNodes) {
+// 	console.log(node.textContent = node.textContent + ' ' + node.nodeType)
+// }
+
+//271
+
+//Получите года, сумма цифр которых равна 6. Найдите сумму полученных годов.
+
+
+// let elems = document.querySelectorAll('li');
+// let sum = 0;
+
+// for (let elem of elems) {
+// 	let text = +elem.textContent;
+// 	let array = (""+text).split("").map(Number)
+// 	console.log(array);
+// 	let sum1=0;
+// 	for(let i=0; i< array.length; i++) {
+// 		sum1 += array[i]
+// 	}
+// 	if (sum1 == 6) {
+// 		sum += text;
+// 	}
+// }
+
+// console.log(sum);
+
+// let elems = document.querySelectorAll('p');
+// for( let elem of elems) {
+// 	elem.textContent += '!';
+// }
+
+//По клику на абзац его значение должно увеличиться на единицу:
+
+// let elems = document.querySelectorAll('p');
+
+// for (let elem of elems) {
+// 	elem.addEventListener('click', function() {
+// 		this.textContent = Number(1) + Number(this.textContent);
+// 	});
+// }
+
+// let button = document.querySelector('button');
+// let elem   = document.querySelector('p');
+
+// button.addEventListener('click', function() {
+// 	elem.innerHTML = '<b>'+ elem.innerHTML + '</b>';
+// });
+
+//По клику на кнопку должна вывестись сумма чисел из абзацев:
+
+// let button = document.querySelector('button');
+// let elems  = document.querySelectorAll('p');
+
+// button.addEventListener('click', function() {
+// 	let sum = 0;
+	
+// 	for (let elem of elems) {
+// 		sum += Number(elem.textContent);
+// 	}
+	
+// 	console.log(sum);
+// });
+
+//По клику на абзац ему в конец должен добавиться заданный текст:
+// let elems = document.querySelectorAll('p');
+// for (let elem of elems) {
+// 	elem.addEventListener('click', function() {
+// 		this.innerHTML += '!';
+// 	});
+// }
+
+//По клику на кнопку текст каждого абзаца должен стать жирным:
+
+
+// let button = document.querySelector('button');
+// let elems  = document.querySelectorAll('p');
+
+// button.addEventListener('click', function() {
+// 	for (let elem of elems) {
+// 		elem.innerHTML = '<b>'+elem.innerHTML+'</b>';
+// 	}
+// });
+
+
+//По клику на кнопку в консоль должна вывестись сумма чисел из абзацев:
+
+
+// let button = document.querySelector('button');
+// let elems  = document.querySelectorAll('p');
+// let sum = 0;
+// button.addEventListener('click', function() {
+// 	console.log(sum);
+// });
+
+// for (let elem of elems) {
+// 	sum += Number(elem.textContent);
+// }
+
+//В инпуты вводятся числа. По клику на кнопку в консоль должна вывестись сумма чисел из инпутов:
+
+// let button = document.querySelector('button');
+// let elems  = document.querySelectorAll('input');
+// let sum = 0;
+
+// button.addEventListener('click', function() {
+// 	for (let elem of elems) {
+// 		sum += Number(elem.value);
+// 	}
+// 	console.log(sum);
+// });
+
+//В первые два инпута вводятся числа. По клику на кнопку в третий инпут должна вывестись сумма этих чисел:
+
+// let btn  = document.querySelector('#btn');
+// let inp1 = document.querySelector('#inp1');
+// let inp2 = document.querySelector('#inp2');
+// let inp3 = document.querySelector('#inp3');
+
+// btn.addEventListener('click', function() {
+// 	inp3.value = Number(inp1.value) + Number(inp2.value);
+// });
+
+//В первые два инпута вводятся числа. По клику на кнопку в абзац должна вывестись сумма этих чисел:
+
+// let btn  = document.querySelector('#btn');
+// let res  = document.querySelector('#res');
+// let inp1 = document.querySelector('#inp1');
+// let inp2 = document.querySelector('#inp2');
+
+// btn.addEventListener('click', function() {
+// 	res.innerHTML = Number(inp1.value) + Number(inp2.value);
+// });
+
+//По клику на кнопку нужно проверить, что текст в каждом инпуте совпадает с текстом его data атрибута:
+
+
+//По клику на кнопку нужно проверить, что текст в каждом инпуте совпадает с текстом соответствующего элемента массива:
+
+// let inputs = document.querySelectorAll('input')
+// let button = document.querySelector('#btn')
+
+// let texts = [
+// 	'text1',
+// 	'text2',
+// 	'text3',
+// ];
+
+// button.addEventListener('click',function() {
+// 	let i =0;
+// 	for (let input of inputs) {
+// 		if (input.value === texts[i]) {
+// 			input.classList.add('right')
+// 		} else {
+// 			input.classList.add('wrong')
+// 		}
+// 		i++;
+
+
+// 	}
+// });
+
+//В инпуты вводятся числа. По клику на кнопку в консоль должна вывестись сумма введенных чисел:
+
+// let inputs = document.querySelectorAll('input');
+// let btn = document.querySelector('#btn');
+
+
+// btn.addEventListener('click', function() {
+// 	let sum = 0;
+// 	for (let input of inputs) {
+// 		sum += Number(input.value);
+// 	}
+	
+// 	console.log(sum);
+// });
+
+// В первые два инпута вводятся числа. По клику на кнопку в третий инпут должна вывестись сумма этих чисел:
+
+// let btn  = document.querySelector('#btn');
+// let inp1 = document.querySelector('#inp1');
+// let inp2 = document.querySelector('#inp2');
+// let inp3 = document.querySelector('#inp3');
+
+
+
+// btn.addEventListener('click', function() {
+// 	let sum  = Number(inp1.value) + Number(inp2.value);
+// 	inp3.value = sum;
+// });
+
+
+//В инпут вводится число. По потери фокуса в консоль должна вывестись сумма цифр этого числа:
+
+let inp = document.querySelector('#inp');
+
+inp.addEventListener('blur', function() {
+	let digits = inp.value.split('');
+	console.log(digits)
+	let sum = 0;
+	
+	for (let digit of digits) {
+		sum += +digit;
+	}
+	console.log(sum);
+});
+
+//Отработка изученного материала на работу с DOM 273 
+
+
 
