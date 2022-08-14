@@ -6987,20 +6987,553 @@ console.log(max)*/
 
 //В инпут вводится число. По потери фокуса в консоль должна вывестись сумма цифр этого числа:
 
-let inp = document.querySelector('#inp');
+// let inp = document.querySelector('#inp');
 
-inp.addEventListener('blur', function() {
-	let digits = inp.value.split('');
-	console.log(digits)
-	let sum = 0;
+// inp.addEventListener('blur', function() {
+// 	let digits = inp.value.split('');
+// 	console.log(digits)
+// 	let sum = 0;
 	
-	for (let digit of digits) {
-		sum += +digit;
-	}
-	console.log(sum);
-});
+// 	for (let digit of digits) {
+// 		sum += +digit;
+// 	}
+// 	console.log(sum);
+// });
 
 //Отработка изученного материала на работу с DOM 273 
 
+//Дан инпут и абзац. По потери фокуса в инпуте запишите значение инпута в конец текста абзаца.
+// let elem = document.querySelector('#elem')
+// let div = document.querySelector('div')
+
+// elem.addEventListener('blur',()=>{
+// 	div.textContent += elem.value;
+// })
+
+//Дано несколько инпутов, абзац и кнопка. По нажатию на кнопку получите числа, стоящие в этих инпутах и запишите их сумму в абзац.
+// let elem1 = document.querySelector('#elem1')
+// let elem2 = document.querySelector('#elem2')
+// let elem3 = document.querySelector('#elem3')
+// let div = document.querySelector('div')
+// let btn  = document.querySelector('#btn');
+
+// btn.addEventListener('click',()=>{
+// 	div.textContent = Number(elem1.value) +Number(elem2.value) +Number(elem3.value) ;
+// })
+
+//Дан инпут. В него вводится число. По потери фокуса найдите сумму цифр этого числа.
+
+// let elem1 = document.querySelector('#elem1')
+// let elem2 = document.querySelector('#elem2')
+// let elem3 = document.querySelector('#elem3')
+// let div = document.querySelector('div')
+// let btn  = document.querySelector('#btn');
+
+// elem1.addEventListener('blur',()=>{
+// 	let sum = 0;
+// 	let arr = elem1.value.split('');
+// 	console.log(arr)
+// 	for (let i=0; i < arr.length; i++) {
+// 	sum = sum + Number(arr[i]);
+// 	}
+// 	console.log ('Сумма элементов массива:' + sum);
+// 	div.textContent = sum;
+// })
+
+//Дан инпут. В него вводятся числа через запятую. По потери фокуса найдите среднее арифметическое этих чисел (сумма делить на количество).
+
+// let elem1 = document.querySelector('#elem1')
+// let div = document.querySelector('div')
+
+// elem1.addEventListener('blur',()=>{
+// 	let sum = 0;
+// 	let arr = elem1.value.split(',');
+// 	console.log(arr)
+// 	for (let i=0; i < arr.length; i++) {
+// 	sum = sum + Number(arr[i]);
+// 	}
+// 	console.log ('Сумма элементов массива:' + sum);
+// 	div.textContent = sum / arr.length;
+// })
+
+//Даны 4 инпута. В первый инпут вводится ФИО через пробел. По потери фокуса запишите фамилию, имя и отчество в остальные 3 инпута.
+
+// let elem1 = document.querySelector('#elem1')
+// let elem2 = document.querySelector('#elem2')
+// let elem3 = document.querySelector('#elem3')
+// let elem4 = document.querySelector('#elem4')
+// let div = document.querySelector('div')
+// let btn  = document.querySelector('#btn');
+
+// elem1.addEventListener('blur',()=>{
+// 	let arr = elem1.value.split(' ');
+// 	console.log(arr)
+// 	elem2.value = arr[0]
+// 	elem3.value = arr[1]
+// 	elem4.value = arr[2]
+// })
+
+//Дан инпут. В него вводится ФИО через пробел. ФИО вводится с маленькой буквы. Сделайте так, чтобы по потери фокуса инпутом, введенные фамилия, имя и отчество автоматически стали записанными с большой буквы (в этом же инпуте).
+
+// let elem1 = document.querySelector('#elem1')
+// let elem2 = document.querySelector('#elem2')
+// let elem3 = document.querySelector('#elem3')
+// let elem4 = document.querySelector('#elem4')
+// let div = document.querySelector('div')
+// let btn  = document.querySelector('#btn');
+
+// elem1.addEventListener('blur',()=>{
+// 	let arr = elem1.value.split('.');
+// 	console.log(arr.reverse())
+// 	elem2.value = arr[0][0].toUpperCase() + arr[0].slice(1);
+// 	elem3.value = arr[1][0].toUpperCase() + arr[1].slice(1);
+// 	elem4.value = arr[2][0].toUpperCase() + arr[2].slice(1);
+// })
+
+//Дан инпут. В него вводится дата в формате 31.12.2016. По потери фокуса в этом же инпуте поставьте эту дату в формате 2016-12-31.
+
+// let elem1 = document.querySelector('#elem1')
+// let elem2 = document.querySelector('#elem2')
+// let elem3 = document.querySelector('#elem3')
+// let elem4 = document.querySelector('#elem4')
+// let div = document.querySelector('div')
+// let btn  = document.querySelector('#btn');
+
+// elem1.addEventListener('blur',()=>{
+// 	let arr = elem1.value.split('.');
+// 	elem1.value = arr.reverse().join('-');
+// })
+
+//Дан инпут. В него вводится слово. По нажатию на кнопку проверьте то, что это слово читается с начала и с конца одинаково (например, мадам).
+// let elem1 = document.querySelector('#elem1')
+// let btn  = document.querySelector('#btn');
+
+// btn.addEventListener('click',()=>{
+// 	let arr = elem1.value.split('');
+// 	let arr2 = arr.reverse().join('');
+// 	if(elem1.value == arr2) {
+// 		console.log(true)
+// 	}
+// })
+
+//Дан инпут. В него вводится число. Проверьте по потери фокуса, что это число содержит внутри себя цифру 3.
+
+// let elem1 = document.querySelector('#elem1')
+
+// elem1.addEventListener('blur',()=>{
+// 	let arr = elem1.value.split('');
+// 	console.log(arr)
+// 	if(arr.includes('3')) {
+// 		console.log(true)
+// 	}
+// })
+
+//Даны несколько абзацев и кнопка. По нажатию на кнопку запишите в конец каждого абзаца его порядковый номер.
+
+// let elems = document.querySelectorAll('input')
+// console.log(elems)
+// let btn  = document.querySelector('#btn');
+
+// btn.addEventListener('click',()=>{
+// 	for(let i = 0; i<elems.length; i++) {
+
+// 		elems[i].value += i+ 1;
+// 	}
+// })
+
+//Даны ссылки. Добавьте в конец каждой ссылки ее href в круглых скобках.
+
+// let elems = document.querySelectorAll('a')
+// console.log(elems)
+
+// for(let elem of elems) {
+// 	elem.textContent += '(' + elem.href + ')';
+// }
+
+//Даны ссылки. Если ссылка начинается с http://, то добавьте ей в конец стрелку → (делается так: &rarr;).
+
+// let elems = document.querySelectorAll('a')
+
+// for(let elem of elems) {
+// 	let str = elem.textContent.slice(0,5);
+
+// 	if(str == 'http:'){
+// 	elem.textContent += '\u2192';
+// 	}
+// }
+
+//Даны несколько абзацев с числами. По нажатию на любой абзац запишите в него квадрат числа, которое в нем находится.
+
+// let elems = document.querySelectorAll('p');
+
+// for ( let elem of elems) {
+// 	elem.addEventListener('click', ()=>{
+// 		elem.textContent = Number(elem.textContent)**2;
+// 	})
+// }
 
 
+//Дан инпут. В него вводится дата в формате 31.12.2016. По потери фокуса узнайте день недели (словом), который приходится на эту дату.
+// let days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четвег", "Пятница", "Суббота"];
+// let elem1 = document.querySelector('#elem1');
+// let da = elem1.value.split('.').reverse().join(',');
+// console.log(da)
+// let myData = new Date(da);
+// console.log(myData)
+// elem1.addEventListener('blur', ()=>{
+// 	console.log(days[myData.getDay()])
+// })
+
+//Дан инпут. Реализуйте кнопочки +1, -1, которые будут увеличивать или уменьшать на 1 значение инпута. Сделайте так, чтобы это значение не могло стать меньше нуля.
+// let elem1 = document.querySelector('#elem1');
+// let btnM = document.querySelector('#btnM');
+// let btnP = document.querySelector('#btnP');
+// btnM.addEventListener('click', ()=> {
+// 	if(elem1.value>0) {
+// 		elem1.value -= 1;
+// 	}
+
+// })
+// btnP.addEventListener('click', ()=> {
+// 		elem1.value = +elem1.value +1;
+// })
+
+//Дан инпут. Даны абзацы. Пусть в этот инпут записывается суммарное количество нажатий по этим абзацам.
+
+// let elems = document.querySelectorAll('p');
+// let elem1 = document.querySelector('#elem1')
+
+// for(let el of elems) {
+// 	el.addEventListener('click', ()=>{
+// 		elem1.value = +elem1.value +1;
+// 	})
+// }
+
+//На странице есть дивы. В них есть текст. Обойдите все дивы и обрежьте тот текст, который в них стоит так, чтобы он стал длиной 10 символов. И добавьте троеточие в конец обрезанного текста
+// let elems = document.querySelectorAll('div');
+// for(let el of elems) {
+// 	el.textContent = el.textContent.slice(0,10) + '...'
+// }
+
+//Дан инпут. В него вводится число. По потери фокуса проверьте, что в нем лежит число от 1 до 100. Если это так - покрасьте инпут в зеленый цвет, а если не так - в красный.
+// let elem1 = document.querySelector('#elem1');
+// elem1.addEventListener('blur', ()=>{
+// 	let num = Number(elem1.value);
+// 	if (num>1 && num<100) {
+// 		elem1.setAttribute('style','background:green;')
+// 	} else {
+// 		elem1.setAttribute('style','background:red;')
+// 	}
+// })
+
+
+//Дан инпут и кнопка. По нажатию на кнопку сгенерируйте случайную строку из 8-ми символов и запишите в инпут.
+
+// let elem1 = document.querySelector('#elem1');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', ()=>{
+// 	elem1.value = Math.random().toString(36).substring(2,10)
+// })
+
+//Дан инпут и кнопка. Пользователь вводит в инпут какую-то строку. По нажатию на кнопку перемешайте введенные символы случайным образом и запишите ее обратно в инпут.
+
+// let elem1 = document.querySelector('#elem1');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', ()=>{
+// 	elem1.value = elem1.value.split('').sort(() => Math.random() - 0.5).join('');
+// })
+
+//Дан инпут, кнопка и абзац. В инпут вводится температура в градусах Фаренгейта. По клику на кнопку выведите в абзац температуру в градусах Цельсия.
+
+// let elem1 = document.querySelector('#elem1');
+// let btn = document.querySelector('#btn');
+// let p = document.querySelector('p')
+
+
+// btn.addEventListener('click', ()=>{
+// 	let celsia = (Number(elem1.value)-32)*5/9;
+// 	p.textContent = celsia;
+// })
+
+//Дан инпут, кнопка и абзац. В инпут вводится число. По нажатию на кнопку выведите в абзац факториал этого числа.
+
+// let elem1 = document.querySelector('#elem1');
+// let btn = document.querySelector('#btn');
+// let p = document.querySelector('p')
+
+//Дан инпут, кнопка и абзац. В инпут вводится число. По нажатию на кнопку выведите в абзац факториал этого числа.
+// let elem1 = document.querySelector('#elem1');
+// let btn = document.querySelector('#btn');
+// let p = document.querySelector('p')
+
+// btn.addEventListener('click', ()=>{
+// 	let fac = Number(elem1.value);
+// 	let sum = fac;
+// 	for( let i=fac; i> 1; i--) {
+// 		sum = sum*(i-1);
+// 		console.log(i + ' _ '+sum)
+// 	}
+// 	p.textContent = sum;
+// })
+
+// 1! = 1
+// 2! = 2 * 1 = 2
+// 3! = 3 * 2 * 1 = 6
+// 4! = 4 * 3 * 2 * 1 = 24
+// 5! = 5 * 4 * 3 * 2 * 1 = 120
+
+// Даны 3 инпута, кнопка и абзац. В инпуты вводятся коэффициенты квадратного уравнения. По нажатию на кнопку найдите корни этого уравнения и выведите их в абзац.
+
+// let elem1 = document.querySelector('#elem1');
+// let elem2 = document.querySelector('#elem2');
+// let elem3 = document.querySelector('#elem3');
+// let btn = document.querySelector('#btn');
+// let p = document.querySelector('p')
+
+// let elem1a = Number(elem1.value);
+// let elem2b = Number(elem2.value);
+// let elem3c = Number(elem3.value);
+
+// let d = elem2b**2 - 4*elem1a*elem3c;
+// console.log(d)
+
+// let x1 = (-elem2b + Math.sqrt(d))/(2*elem1a);
+// let x2 = (-elem2b - Math.sqrt(d))/(2*elem1a);
+// let x3 = Math.floor((((-elem2b + Math.sqrt(d))/(2*elem1a))*100)/100);
+// let x4 = Math.floor((-elem2b - Math.sqrt(d))/(2*elem1a)*100)/100;
+
+// console.log(x1)
+// console.log(x2)
+// console.log(x3)
+// console.log(x4)
+
+// btn.addEventListener('click', ()=>{
+// 	p.textContent = x1 + ' ___ '+x2;
+
+// })
+
+//Дан текстареа и абзац. По потери фокуса в текстареа запишите его текст в абзац.
+
+// let elem = document.querySelector('#elem');
+// let p = document.querySelector('p')
+// p.innerHTML = elem.value;
+
+
+// let elem = document.querySelector('#elem');
+// let btn1 = document.querySelector('#btn1');
+// let btn2 = document.querySelector('#btn2');
+
+// btn1.addEventListener('click',()=>{
+// 	elem.disabled = false;
+// 	console.log(elem.disabled);
+// })
+// btn2.addEventListener('click',()=>{
+// 	elem.disabled = true;
+// 	console.log(elem.disabled);
+// })
+
+
+
+// elem.disabled = false;
+// console.log(elem.disabled);
+
+//276
+// let elem = document.querySelector('#elem');
+// console.log(elem.checked);
+
+
+// let btn1 = document.querySelector('#btn1');
+// let btn2 = document.querySelector('#btn2');
+
+// btn1.addEventListener('click', ()=>{
+// 	elem.checked = true;
+// })
+// btn2.addEventListener('click', ()=>{
+// 	elem.checked = false;})
+
+	
+//Дан чекбокс, кнопка и абзац. По нажатию на кнопку, если чекбокс отмечен, выведите в абзац слово 'привет', а если чекбокс не отмечен, то слово 'пока'.
+
+// let elem = document.querySelector('#elem');
+// console.log(elem.checked);
+// let btn1 = document.querySelector('#btn1');
+// let p = document.querySelector('p')
+
+// btn1.addEventListener('click', ()=>{
+// 	if(elem.checked) {
+// 		p.innerHTML = 'Вы подписали соглашение'
+// 	} else {
+// 		p.innerHTML = 'Вы НЕ подписали соглашение'
+// 	}
+// })
+
+
+//277
+// let elem = document.querySelector('#elem');
+// console.log(elem.checked);
+// let btn1 = document.querySelector('#btn1');
+
+
+// btn1.addEventListener('click', ()=>{
+// 	elem.checked = !elem.checked;
+
+// })
+
+//Даны 3 радиокнопки, абзац и кнопка. По клику на кнопку выведите в абзац value отмеченной радиокнопки.
+
+// let radios = document.querySelectorAll('input[type="radio"]');
+// let button = document.querySelector('#btn1');
+// let p = document.querySelector('p')
+
+
+// button.addEventListener('click', function() {
+// 	for (let radio of radios) {
+// 		if (radio.checked) {
+// 			p.textContent = radio.value;
+// 		}
+// 	}
+// });
+
+//Дан инпут и абзац. По изменению инпута выведите его текст в абзац.
+
+// let elem = document.querySelector('#elem');
+// let p = document.querySelector('p');
+// elem.addEventListener('change', function() {
+// 	p.textContent = (this.value);
+// });
+
+//Дан чекбокс. По изменению чебокса выведите на экран его новое состояние.
+
+// let elem = document.querySelector('#elem');
+// let p = document.querySelector('p');
+// elem.addEventListener('change', function() {
+// 	console.log(this.checked);
+// });
+
+//Дан инпут. По его изменению проверьте, количество символов в нем меньше 5-ти или нет. Если меньше - покрасьте границу инпута в зеленый цвет, а если больше - в красный.
+
+// let elem = document.querySelector('#elem');
+
+// elem.addEventListener('change', function() {
+// 	if(this.value.length >5) {
+// 		elem.setAttribute('style','border-color: red')
+// 	} else {
+// 		elem.setAttribute('style','border-color: green')
+// 	}
+// });
+
+// let elem = document.querySelector('#elem');
+
+// elem.addEventListener('input', function() {
+// 	if(this.value.length>5) {
+// 		alert(5)
+// 	}
+// 	console.log(this.value);
+// });
+
+//Дан инпут. Пусть в него разрешено ввести 5 символов. Дан также абзац. По мере ввода символов в инпут пишите, сколько еще символов можно ввести. Когда количество символов превысит 5-ти, то в абзац выводите то, на сколько символов превышена длина текста.
+
+// let elem = document.querySelector('#elem');
+// let p = document.querySelector('p');
+
+
+// elem.addEventListener('input', function() {
+// 	if(this.value.length<=5) {
+		
+// 		p.textContent = 'Осталось ввести ' + (5 - Number(this.value.length));
+// 	} else {
+// 		p.textContent = 'Перебор символов ' + (Number(this.value.length) - 5);
+// 	}
+// 	console.log(this.value);
+
+// });
+
+//281 Методы focus и blur в JavaScript
+
+//Даны два инпута. Сделайте так, чтобы после ввода двух символов фокус ввода переходил ко второму инпуту, а после ввода двух символов в этот инпут - фокус из него убирался.
+// let elem1   = document.querySelector('#elem1');
+// let elem2   = document.querySelector('#elem2');
+// let button = document.querySelector('#button');
+
+// elem1.addEventListener('input', function() {
+// 	if(elem1.value>=2) {
+// 		elem2.focus();
+// 	}
+// });
+
+// elem2.addEventListener('input', function() {
+// 	if(elem2.value>=2) {
+// 		elem2.blur();
+// 	}
+// });
+
+
+// События мыши:
+
+// click – происходит, когда кликнули на элемент левой кнопкой мыши (на устройствах с сенсорными экранами оно происходит при касании).
+// contextmenu – происходит, когда кликнули на элемент правой кнопкой мыши.
+// mouseover / mouseout – когда мышь наводится на / покидает элемент.
+// mousedown / mouseup – когда нажали / отжали кнопку мыши на элементе.
+// mousemove – при движении мыши.
+// События на элементах управления:
+
+// submit – пользователь отправил форму <form>.
+// focus – пользователь фокусируется на элементе, например нажимает на <input>.
+// Клавиатурные события:
+
+// keydown и keyup – когда пользователь нажимает / отпускает клавишу.
+// События документа:
+
+// DOMContentLoaded – когда HTML загружен и обработан, DOM документа полностью построен и доступен.
+// CSS events:
+
+// transitionend – когда CSS-анимация завершена.
+
+
+//282
+
+//Дан селект, абзац и кнопка. По клику на кнопку выведите текст выбранного пункта списка в абзац.
+
+// let select = document.querySelector('#select');
+// let button = document.querySelector('#button');
+// let p = document.querySelector('p');
+// let num = 0;
+// button.addEventListener('click',()=>{
+// 	p.textContent = num;
+// })
+
+// select.addEventListener('change', function(){
+// 	num = this.value;
+// });
+
+
+//Сделайте выпадающий список годов от 2020 до 2030. При выборе какого-нибудь пункта списка выведите сообщение о том, високосный этот год или нет.
+
+// let select = document.querySelector('#select');
+// let button = document.querySelector('#button');
+
+// select.addEventListener('change', function(){
+// 	console.log(this.value);
+// 	let date =  new Date(this.value, 1, 29);
+// 	if(Number(date.getDate()) == 29) {
+// 		console.log('Весокосный')
+// 	}
+// });
+
+//Сделайте выпадающий список с названиями дней недели. В качестве атрибутов value пунктов списка добавьте номера дней недели от 1 до 7. По изменению списка выведите на экран сообщение о том, выбран выходной день или рабочий.
+
+// let select = document.querySelector('#select');
+// select.addEventListener('change', function(){
+// 	//console.log(this.value);
+// 	if( this.value<6) {
+// 		console.log('будни')
+// 	} else {
+// 		console.log('вызодной')
+// 	}
+// });
+
+//Сделайте выпадающий список с названиями месяцев. Сделайте так, чтобы JavaScript по умолчанию выбирал в этом списке текущий месяц.
+let select = document.querySelector('#select');
+let today = new Date();
+select.value =today.getMonth();
+console.log(today.getMonth())
