@@ -1,0 +1,68 @@
+/* git status
+git add .
+git commit -m "Add: next 1 "
+git push -u origin master */
+
+/* 
+.button1{
+    text-decoration: line-through;
+}
+.button2{
+    font-weight: bold;
+}
+.button3{
+    color: green;
+} */
+
+/* ul {
+	padding: 30px;
+	border: 1px solid red;
+}
+li {
+	list-style-type: none;
+	margin-bottom: 20px;
+	border: 1px dashed black;
+} */
+
+/* div {
+	padding: 20px;
+}
+#elem1 {
+	background-color: #97FF97;
+}
+#elem2 {
+	background-color: #7777FF;;
+}
+#elem3 {
+	background-color: #FF7D7D;
+} */
+
+
+/* div {
+	padding: 20px;
+	border: 1px solid red;
+}
+
+p {
+	width: 200px;
+	height: 200px;
+	border: 1px solid green;
+} */
+
+/* div, ul, li {
+	padding: 20px;
+}
+
+div {
+	border: 1px solid red;
+}
+ul {
+	border: 1px solid orange;
+}
+li {
+	border: 1px solid green;
+} */
+
+#block:not(.active) {
+	display: none;
+}

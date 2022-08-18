@@ -7533,7 +7533,291 @@ console.log(max)*/
 // });
 
 //Сделайте выпадающий список с названиями месяцев. Сделайте так, чтобы JavaScript по умолчанию выбирал в этом списке текущий месяц.
-let select = document.querySelector('#select');
-let today = new Date();
-select.value =today.getMonth();
-console.log(today.getMonth())
+// let select = document.querySelector('#select');
+// let today = new Date();
+// select.value =today.getMonth();
+// console.log(today.getMonth())
+
+// let select = document.querySelector('#select');
+// console.log(select.selectedIndex);
+// select.selectedIndex = 2;
+// console.log(select.selectedIndex);
+
+//Дан инпут и селект. В инпут вводится какое-то число. По потери фокуса сделайте выделенным пункт списка, номер которого равен значению из инпута.
+
+// let elem1   = document.querySelector('#elem1');
+// let select = document.querySelector('#select');
+// let now = new Date();
+// let dayToday = now.getDay();
+// console.log(dayToday)
+// select.selectedIndex = dayToday;
+
+// elem1.addEventListener('blur', ()=>{
+// 	select.selectedIndex = elem1.value;
+// 	console.log(select.selectedIndex);
+// })
+
+//Переберите все пункты списка циклом и в конец текста каждого пункта добавьте значение его атрибута value.
+
+// let select = document.querySelector('#select');
+// for (let option of select) {
+// 	console.log(option);
+// 	option.textContent += option.value;
+// }
+
+//Переберите пункты списка циклом и для выбранного пункта в конец текста добавьте восклицательный знак, а для невыбранных пунктов - вопросительный.
+
+// let select = document.querySelector('#select');
+// for (let option of select) {
+// 	console.log(option);
+// 	if(option.selected) {
+// 		option.textContent += '!';
+// 	} else {
+// 		option.textContent += '?';
+// 	}
+// }
+
+//Дан выпадающий список и кнопка. По клику на кнопку сделайте отмеченным последний пункт списка.
+
+// let select = document.querySelector('#select');
+// let bnt = document.querySelector('#button')
+
+// bnt.addEventListener('click', ()=>{
+// 	select[select.length - 1 ].selected = true;
+// })
+
+//Дан селект и кнопка. По нажатию на кнопку выведите на экран текст отмеченного пункта списка.
+
+// let select = document.querySelector('#select');
+// let bnt = document.querySelector('#button')
+// bnt.addEventListener('click', ()=>{
+// 	console.log(select[select.selectedIndex].textContent);
+// })
+
+//Дан селект и кнопка. По нажатию на кнопку добавьте в конец текста выбранного пункта восклицательный знак.
+
+// let select = document.querySelector('#select');
+// let bnt = document.querySelector('#button')
+// bnt.addEventListener('click', ()=>{
+// 	select[select.selectedIndex].textContent += '!';
+// })
+
+
+//286
+//Дан выпадающий список и кнопка. По клику на кнопку сделайте отмеченным последний пункт списка.
+//Дан селект и кнопка. По нажатию на кнопку выведите на экран текст отмеченного пункта списка.
+
+// let select = document.querySelector('#select');
+// console.log(select.length-1)
+// let btn = document.querySelector('#button');
+// btn.addEventListener('click', ()=>{
+// 	select[select.length-1].selected = true;
+// 	console.log(select[select.selectedIndex].textContent);
+// 	//Дан селект и кнопка. По нажатию на кнопку добавьте в конец текста выбранного пункта восклицательный знак.
+// 	select[select.selectedIndex].textContent += '!';
+// 	// let option = select[2];
+// 	// option.selected = true;
+// })
+
+
+//287
+// let textarea = document.querySelector('textarea');
+// let div = document.querySelector('div');
+
+// textarea.addEventListener('blur', function() {
+// 	div.textContent = textarea.value;
+// });
+
+
+//По клику на кнопку в див должно записаться или одно, или другое значение:
+
+
+// let checkbox = document.querySelector('input');
+// let button = document.querySelector('button');
+// let div = document.querySelector('div');
+
+// button.addEventListener('click', function(){
+// 	console.log('1')
+// })
+
+// button.addEventListener('click', function() {
+// 	if (checkbox.checked) {
+// 		div.textContent = '111';
+// 	} else {
+// 		div.textContent = '222';
+// 	}
+// });
+
+
+//По клику на кнопку, если чекбокс отмечен, то должно вывестись одно значение, а если не отмечен - другое:
+
+// let checkbox = document.querySelector('[type="checkbox"]');
+// let button = document.querySelector('button');
+
+// button.addEventListener('click', function() {
+// 	if (checkbox.checked == true) {
+// 		console.log('+++');
+// 	} else {
+// 		console.log('---');
+// 	}
+// });
+
+//288
+
+
+// let elem = document.querySelector('#elem');
+
+// elem.addEventListener('click', function(event1) {
+// 	console.log(event1);
+// });
+
+
+//289
+//Сделайте так, чтобы при движении мышки по странице, отображались координаты курсора, подобно тому, как это сделано в следующем образце:
+
+// let elem = document.querySelector('#elem');
+			
+// window.addEventListener('mousemove', function(event) {
+// 	elem.innerHTML = event.pageX + ':' + event.pageY;
+// });
+
+// let elem1 = document.querySelector('#elem1');
+			
+// window.addEventListener('mousemove', function(event) {
+// 	elem1.innerHTML = event.clientX + ':' + event.clientY;
+// });
+
+
+//290
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('click', function(event) {
+// 	console.log(event.type); // выведет 'click'
+// });
+
+// let elem = document.querySelector('#elem');
+
+// elem.addEventListener('click', func);
+// elem.addEventListener('dblclick', func);
+
+// function func(event) {
+// 	if(event.type == 'click' ) {
+// 		elem.style.backgroundColor = 'azure';
+// 		console.log(event.type);
+// 	} else if(event.type == 'dblclick' ) {
+// 		elem.style.backgroundColor = 'red';
+// 		console.log(event.type);
+// 	}
+// }
+
+//291
+// let elem = document.querySelector('#elem');
+
+// elem.addEventListener('click', function(event) {
+// 	console.log(event.target); 
+// 	console.log(this);         
+// });
+
+// let elem = document.querySelector('#elem');
+
+// elem.addEventListener('click', function(event) {
+// 	console.log(event.target); 
+// 	//console.log(this);         
+// 	//console.log(elem.tagName.toLowerCase());
+// 	//console.log(event.target.tagName.toLowerCase()); 	
+
+// 	let chek = event.target.tagName.toLowerCase();
+// 	if(chek == 'li') {
+// 		event.target.textContent += '!';
+// 	} else  if (chek == 'ul') {
+// 		let p = document.createElement('p');
+// 		p.innerHTML = '<li> text</li>';
+// 		elem.appendChild(p)
+// 	}
+// });
+
+
+//292
+// let elem = document.querySelector('input');
+// elem.addEventListener('input', function(event) {
+// 	console.log('+');
+// 	console.log(event.key);
+// 	console.log(event.code);
+// });
+
+
+// let elem = document.querySelector('#elem');
+
+// elem.addEventListener('click', function(event) {
+// 	if (event.ctrlKey) {
+// 		console.log('нажат Ctrl');
+// 	}
+	
+// 	if (event.altKey) {
+// 		console.log('нажат Alt');
+// 		//elem.style.backgroundColor = 'red';
+// 		event.target.textContent += '1';
+
+// 	}
+	
+// 	if (event.shiftKey) {
+// 		console.log('нажат Shift');
+// 		event.target.textContent += '2';
+// 	}
+// });
+
+// let elem1 = document.querySelector('#elem1');
+// let elem2 = document.querySelector('#elem2');
+// let elem3 = document.querySelector('#elem3');
+
+// elem1.addEventListener('click', function() {
+// 	console.log('зеленый');
+// });
+// elem2.addEventListener('click', function() {
+// 	console.log('голубой');
+// });
+// elem3.addEventListener('click', function() {
+// 	console.log('красный');
+// });
+
+// elem1.addEventListener('mousemove', function() {
+// 	console.log('зеленый');
+// });
+// elem2.addEventListener('mousemove', function() {
+// 	console.log('голубой');
+// });
+// elem3.addEventListener('mousemove', function() {
+// 	console.log('красный');
+// });
+
+// let div = document.querySelector('div');
+// let ul = document.querySelector('ul')
+
+// div.addEventListener('click', function(event) {
+// 	if (event.target.matches('div')) {
+// 		console.log('клик именно по диву');
+// 	}
+// 	if (event.target.matches('ul')) {
+// 		console.log('ul');
+// 		let p = document.createElement('li');
+// 		p.innerHTML = 'text';
+// 		ul.appendChild(p)
+// 	}
+// 	if (event.target.matches('li')) {
+// 		console.log('li');
+// 		event.target.textContent += '1';
+// 	}
+
+// });
+
+let parent = document.querySelector('#parent');
+let button = document.querySelector('button');
+let block  = document.querySelector('#block');
+
+button.addEventListener('click', function(event) {
+	block.classList.add('active');
+	event.stopImmediatePropagation();
+});
+
+parent.addEventListener('click', function() {
+	block.classList.remove('active');
+});

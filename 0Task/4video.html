@@ -1,0 +1,206 @@
+// Работа с выпадающими списками в JavaScript
+
+// Используем тег select, и следующую конструкцию , чтобы сформировать выпадающий список
+
+
+{/* <select id="select">
+	<option>one</option>
+	<option>two</option>
+	<option>three</option>
+</select>
+
+
+С помощью атрибута multiple в теге select - пользователь можем выбрать несколько пунктов выпадающего списка. 
+
+ <select multiple name="city[]">
+	<option>Минск</option>
+	<option>Киев</option>
+	<option>Лондон</option>
+</select>
+<br></br> */}
+
+// <!-- Атрибут size в теге select  позволяет установить, сколько элементов будут отображаться одномоментно в списке. Значение size="1" отображает только один элемент списка, а сам список становится выпадающим. Если установить у элемента select атрибут multiple, то в списке можно выбрать сразу несколько значений. -->
+
+
+// <!-- <select size="3">
+//     <option value="volvo">Volvo</option>
+//     <option value="saab">Saab</option>
+//     <option value="opel">Opel</option>
+//     <option value="audi">Audi</option>
+//   </select>
+
+// <select id="select" size="1">
+//     <option value="volvo">Volvo</option>
+//     <option value="saab">Saab</option>
+//     <option value="opel">Opel</option>
+//     <option value="audi">Audi</option>
+//   </select>  -->
+
+//Элемент select поддерживает три события: blur (потеря фокуса), focus (получение фокуса) и change (изменение выделенного элемента в списке). 
+
+{/* <select id="select">
+	<option value="volvo">one</option>
+	<option selected>two</option>
+	<option>three</option>
+</select>
+<br></br> */}
+
+// let select = document.querySelector('#select');
+// select.addEventListener('blur', ()=>{
+// 	console.log('blur');
+// })
+// select.addEventListener('focus', ()=>{
+// 	console.log('focus');
+// })
+// select.addEventListener('change', ()=>{
+// 	console.log('change');
+// })
+
+
+//В каждый объект HtmlOptionElement имеет свойства: index (индекс в коллекции options), text (отображаемый текст) и value (значение элемента). , а в свойстве selected - значение true или false в зависимости от того, выбранный пункт списка или нет:
+
+// let select = document.querySelector('#select');
+// let option = select[0];
+// console.log(option.index);
+// console.log(option.text);
+// console.log(option.value);
+// console.log(option.selected);
+
+
+//Атрибут selected в теге option,  позволяет задать выбранный пункт по умолчанию, если мы используем атрибут multiple в теге select можем выбрать несколько пунктов option,
+
+//Любому тегу option можно установить свойство selected в значении true.
+// let select = document.querySelector('#select');
+// let option = select[2];
+// option.selected = true;
+// console.log(select.selectedIndex);
+
+//свойство selectedIndex, хранящее в себе номер того пункта списка, который сейчас выбран. Нумерация при этом начинается с нуля.
+
+//можно получить выбранный тег option следующим образом:
+// let select = document.querySelector('#select');
+// console.log(select[select.selectedIndex]);
+
+
+{/* <select id="select">
+	<option>one</option>
+
+	<option selected>two</option>
+	<option>three</option>
+</select> */}
+
+
+{/* <select multiple name="city[]">
+	<option>Москва - столица России</option>
+	<option selected>Минск</option>
+	<option>Киев</option>
+	<option selected>Лондон</option>
+</select> */}
+
+// Тег optgroup группирует пункты option выпадающего списка select.
+// Тег label Задает текст, который будет заголовком для группы пунктов списка.
+
+
+// <!-- <select>
+// 	<optgroup label="Города Украины">
+// 		<option>Киев</option>
+// 		<option>Харьков</option>
+// 	</optgroup>
+// 	<optgroup label="Города Беларуси">
+// 		<option>Минск</option>
+// 		<option>Витебск</option>
+// 	</optgroup>
+// </select> -->
+
+// как нам получить все пункты этого списка? 
+
+// let select = document.querySelector('#select');
+// console.log(document.querySelectorAll('#select option'));
+// // или конкретно в нашем селекте
+// console.log(select.querySelectorAll('option'));
+// //переменную можно перебрать циклом:
+// for (let option of select) {
+// 	console.log(option);
+// }
+// // Ну или просто обратится к пункту с нужным номером:
+// console.log(select[0]);
+
+Работа с выпадающими списками в JavaScript
+//Тег datalist
+//С данным элементом можно использовать все глобальные атрибуты.
+
+
+{/* <input type="text" list="country" autocomplete="on" id="select2">
+<datalist id="country">
+	<option>Беларусь</option>
+	<option>Бельгия</option>
+	<option>Болгария</option>
+</datalist> */}
+
+//Данная конструкция Создает список вариантов, которые можно выбирать при наборе в текстовом поле тега input. Изначально этот список скрыт и становится доступным при получении полем фокуса или наборе текста.
+
+
+//Чтобы привязать список вариантов к элементу input, добавьте атрибут list для input и атрибут id с таким же значением для <datalist>. Вот пример:
+
+{/* <input list="ice-cream-flavors"/>
+<datalist id="ice-cream-flavors"></datalist>
+
+Во всех браузерах есть механизм запоминания введенного пользователем текста, который затем используется для автодополнения.
+
+С помощью атрибута autocomplete в теге input контролировать то, как браузер автоматически заполняет пользовательские данные. В следующем примере представлены его возможные значения:
+<input type="text" name="address" autocomplete="on">
+<!--
+  Состояние «on» значит, что браузер может запоминать значения для дальнейшего 
+  использования, а также предлагать пользователю сохранённые значения.
+  -->
+
+  <input type="text" name="secret" autocomplete="off"></input>
+  <!--
+  Состояние «off» приказывает браузеру не сохранять введённые значения для этого 
+  input и не предлагать ранее сохранённые значения. 
+  -->
+
+
+В чем же основны отличия <select> и  <datalist>
+<select>
+<datalist>
+Пользователь может выбрать только один вариант из данного списка.	
+Пользователь может выбрать любой вариант из данного списка, но также может использовать свой собственный ввод.
+
+
+Этот тег является типом ввода формы.	
+Этот тег не является типом ввода формы.
+
+
+Пользователь должен просмотреть длинный список, чтобы выбрать вариант. 	
+Пользователь может легко ввести параметр и получить подсказки, а затем может быть выбран пользователем.
+
+Пользователь может быть ограничен списком опций.	
+Пользователь не ограничен списком опций.
+
+Он не предоставляет функцию автозаполнения.	
+Он обеспечивает функцию автозаполнения. */} */}
+
+
+
+
+// let sel1 = document.querySelector('#select1')
+// let sel2 = document.querySelector('#select2')
+
+// sel1.addEventListener('change',()=>{
+// 	console.log('sel1')
+// })
+
+// sel2.addEventListener('change',()=>{
+// 	console.log('sel2')
+// })
+
+//<label for="donation">Размер пожертвования (USD):</label>
+{/* <input type="range" name="donation" id="donation" list="donation_list"
+  step="5" min="5" max="200">
+<datalist id="donation_list">
+  <option>25</option>
+  <option>50</option>
+  <option>100</option>
+  <option>200</option>
+</datalist> */}
