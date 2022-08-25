@@ -7809,15 +7809,399 @@ console.log(max)*/
 
 // });
 
-let parent = document.querySelector('#parent');
-let button = document.querySelector('button');
-let block  = document.querySelector('#block');
+// let parent = document.querySelector('#parent');
+// let button = document.querySelector('button');
+// let block  = document.querySelector('#block');
 
-button.addEventListener('click', function(event) {
-	block.classList.add('active');
-	event.stopImmediatePropagation();
-});
+// button.addEventListener('click', function(event) {
+// 	block.classList.add('active');
+// 	event.stopImmediatePropagation();
+// });
 
-parent.addEventListener('click', function() {
-	block.classList.remove('active');
-});
+// parent.addEventListener('click', function() {
+// 	block.classList.remove('active');
+// });
+
+//300
+
+// let list = document.querySelector('ul')
+// let button = document.querySelector('button');
+// list.addEventListener('click', function(event) {
+// 	// console.log(this);         
+// 	// console.log(event.target);
+// 	event.target.innerHTML = event.target.innerHTML + '!';
+// });
+// button.addEventListener('click',()=>{
+// 	let item = document.createElement('li');
+// 	item.innerHTML = 'item';
+// 	list.appendChild(item);
+// })
+
+
+// let list = document.querySelector('ul')
+
+// list.addEventListener('click', function(event) {
+// 	let li = event.target.closest('li');
+// 	if (li) {
+// 		li.innerHTML = li.innerHTML + '!';
+// 	}
+// });
+
+//303
+
+"use strict";
+
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('blur', parent);
+
+// function parent() {
+// 	console.log(this); 
+
+	
+// 	function child() {
+// 		console.log(this); 
+// 	}
+// 	child();
+// }
+
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('blur', parent);
+
+// function parent() {
+// 	console.log(this.value); // что выведет?
+	
+// 	function child() {
+// 		console.log(this.value); // что выведет?
+// 	}
+// 	child();
+// }
+
+"use strict";
+
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('blur', func);
+
+// function func() {
+
+// 	let self = this.value;
+// 	alert(square());
+// 	function square() {
+// 		return self**2;
+// 	}
+// }
+
+
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('blur', func);
+
+// function func() {
+
+// 	alert(square(this));
+// 	function square(param) {
+// 		return param.value*param.value;
+// 	}
+// }
+
+
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('blur', func);
+
+// function func() {
+// 	let square = () =>  {
+// 		return alert(this.value*this.value);
+// 	}
+// 	square();
+// }
+
+//305
+// let elem1 = document.querySelector('#elem1');
+// let elem2 = document.querySelector('#elem2');
+// let elem3 = document.querySelector('#elem3');
+// function func() {
+// 	console.log(this.value); // выведет value инпута
+// }
+// func.call(elem1);
+// func.call(elem2);
+// func.call(elem3);
+
+//Добавьте в последнюю строчку метод call так, чтобы на экран вывелось 'hello, John Smit'. Слово 'hello' должно взяться из value инпута, а 'John' и 'Smit' должны быть параметрами функциями.
+
+// let elem = document.querySelector('#elem');
+
+// function func(surname, name) {
+// 	console.log(this.value + ', ' + name + ' ' + 
+// 		surname); 
+// }
+
+// func.call(elem,'John', 'Smit');
+// func.apply(elem,['John', 'Smit']);
+
+// let elem = document.getElementById('elem');
+
+// function func(name, surname) {
+// 	console.log(this.value + ', ' + name + ' ' + 
+// 		surname); 
+// }
+// func = func.bind(elem);
+// func('John', 'Smit'); 
+// func('Eric', 'Luis');
+
+//308
+
+// let num = 0;
+// setInterval(function() {
+// 	console.log(num +=1);
+// }, 3000);
+
+// setInterval(() => console.log(++num), 1000);
+
+// let timerId1 = setInterval(function() {
+// 	console.log('!')
+// }, 1000);
+// let timerId2 = setInterval(function() {
+// 	console.log('5455')
+// }, 1000);
+
+// alert(timerId1); // выведет номер таймера
+// alert(timerId2); // выведет номер таймера
+
+// let i = 0;
+
+// let timerId = setInterval(function() {
+// 	console.log(++i);
+	
+// 	if (i >= 10) {
+// 		clearInterval(timerId);
+// 	}
+// }, 1000);
+
+// let i = 10;
+
+// let timerId = setInterval(function() {
+// 	console.log(--i);
+	
+
+// }, 1000);
+
+// let start = document.querySelector('#start');
+
+// start.addEventListener('click', function() {
+// 	let i = 0;
+// 	setInterval(function() {
+// 		console.log(++i);
+// 	}, 1000);
+// });
+
+// let start = document.querySelector('#start');
+
+// start.addEventListener('click', function() {
+// 	let i = 100;
+// 	let timerId = setInterval(function() {
+// 		console.log(--i);
+// 	if (i <= 0) {
+// 		clearInterval(timerId);
+// 	}
+
+// 	}, 100);
+// });
+
+// let start = document.querySelector('#start');
+
+// start.addEventListener('click', function func() {
+// 	let i = 0;
+	
+// 	setInterval(function() {
+// 		console.log(++i);
+// 	}, 1000);
+	
+// 	this.removeEventListener('click', func); // отвязываем обработчик
+// });
+
+
+//312
+// let timerId;
+// let start = document.querySelector('#start');
+// let stop = document.querySelector('#stop');
+
+// start.addEventListener('click', function() {
+// 	let i = 0;
+	
+// 	timerId = setInterval(function() {
+// 		console.log('!')
+// 	}, 1000);
+// });
+
+// stop.addEventListener('click', function() {
+// 	clearInterval(timerId);
+// });
+
+// let timerId;
+// let i = 10;
+// let start = document.querySelector('#start');
+// let stop = document.querySelector('#stop');
+
+// start.addEventListener('click', function() {
+
+// 	timerId = setInterval(function() {
+// 		console.log(--i)
+// 		if (i <= 0) {
+// 			clearInterval(timerId);
+// 		}
+// 	}, 100);
+// });
+
+// stop.addEventListener('click', function() {
+// 	clearInterval(timerId);
+// 	console.log(i)
+// });
+
+// Некоторый программист написал код, который по нажатию на кнопку запускает таймер, выводящий в консоль текущий момент времени:
+// let timerId;
+// let start = document.querySelector('#start');
+// let stop  = document.querySelector('#stop');
+
+// start.addEventListener('click', function() {
+// 	timerId = setInterval(function() {
+// 		let date = new Date;
+// 		console.log(date.getMinutes() + ' ' + 
+// 			date.getSeconds()); 
+// 	}, 1000);
+// });
+
+// stop.addEventListener('click', function() {
+// 	clearInterval(timerId);
+// });
+
+
+// let start = document.querySelector('#start');
+// let stop  = document.querySelector('#stop');
+
+// let timerId;
+
+// start.addEventListener('click', function() {
+// 	timerId = setInterval(function() {
+// 		let date = new Date;
+// 		console.log(date.getMinutes() + ' ' + 
+// 			date.getSeconds()); 
+// 	}, 1000);
+// });
+
+// stop.addEventListener('click', function() {
+// 	clearInterval(timerId);
+// });
+
+// let start = document.querySelector('#start');
+// let stop  = document.querySelector('#stop');
+
+// let timerId;
+
+// start.addEventListener('click', function() {
+// 	timerId = setInterval(function() {
+// 		let date = new Date;
+// 		console.log(date.getMinutes() + ' ' + 
+// 			date.getSeconds()); 
+// 	}, 1000);
+// });
+
+// stop.addEventListener('click', function() {
+// 	clearInterval(timerId);
+// });
+
+//Приведенный мною в теоретической части код не учитывает то, что на кнопку старт можно сделать несколько нажатий. Для исправления этой проблемы можно по нажатию на кнопку старт отвязывать событие от этой кнопки, а по нажатию на кнопку стоп - привязывать обратно. Исправьте проблему.
+
+// let start = document.querySelector('#start');
+// let stop  = document.querySelector('#stop');
+
+// let timerId;
+
+// function func (){
+// 	timerId = setInterval(function() { 
+// 		let date = new Date;
+// 		console.log(date.getMinutes() + ' ' + 
+// 			date.getSeconds()); 
+// 	}, 1000);
+// 	this.removeEventListener('click', func); 
+// }
+
+// start.addEventListener('click', func);
+
+// stop.addEventListener('click', function() {
+// 	clearInterval(timerId);
+// 	start.addEventListener('click', func);
+// });
+
+//313
+
+// let elem = document.querySelector('#elem');
+
+// setInterval(function() {
+// 	elem.value = Number(elem.value) + 1;
+// }, 1000);
+
+// let timerId = setInterval(function() {
+// 	elem.value = Number(elem.value) - 1;
+// 	if(elem.value <= 0 ) {
+// 		clearInterval(timerId);
+// 	}
+// }, 1000);
+
+//
+// let elem = document.querySelector('#elem');
+
+// elem.addEventListener('click', function() {
+// 	setInterval(function() {
+// 		elem.value = Number(elem.value) + 1;
+// 	}, 1000);
+// });
+
+// elem.addEventListener('click', function() {
+// 	setInterval(() => console.log(++this.value), 1000);
+// });
+
+// elem.addEventListener('click', function() {
+// 	setInterval(()=>elem.value = Number(elem.value) + 1, 1000);
+// });
+
+
+// let name = "John";
+
+// function sayHi() {
+//   alert("Hi, " + name);
+// }
+
+// name = "Pete";
+
+// sayHi();
+
+// function makeWorker() {
+// 	let name = "Pete";
+  
+// 	return function() {
+// 	  alert(name);
+// 	};
+//   }
+  
+//   let name = "John";
+  
+//   // create a function
+//   let work = makeWorker();
+  
+//   // call it
+//   work();
+
+// function bind(){
+// 	return 
+// }
+
+
+// let person1 = {name: 'V1', age: 11, job:'front1'}
+// function logPerson() {
+// 	console.log(`Person: ${this.name}, ${this.age}, ${this.job} `)
+// }
+// function bind (context, fn) {
+// 	return function () {
+// 		//fn.apply(context, args1)
+// 		fn.apply(context)
+// 	}
+// }
+// bind(person1, logPerson)()
