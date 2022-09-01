@@ -340,16 +340,6 @@ function mul(a, b) {
 
 
 
-замыкание
-
-Это функция внутри другой функции
-
-Функция которая будет возвращать функцию;
-
-
-Плюсы
-позволяет аккуратно писать код
-не замарачиваться с переменными
 
 
 
@@ -357,4 +347,291 @@ function mul(a, b) {
 
 
 
+Замыкание
+ОЧень интересная и полезная тема, чтобы ее изучить и повторить.
 
+Замыкание — это комбинация функции и лексического окружения (функицональная область видимости), в котором эта функция была определена. 
+
+ТЕм самым создаются изолированные области 
+где можно  выполнять один и тот же код с разными переменными
+
+
+Это окружение состоит из произвольного количества локальных переменных, которые были в области действия функции во время создания замыкания. 
+
+Когда JavaScript создает функцию он запоминает ее окружение
+
+При вызове вложенной функции происходит замыкание данных даной функции
+
+
+замыкание может запоминать и получать доступ к переменным, и аргументам своей внешней функции, даже после того, как та прекратит выполнение.
+
+переменные замкнуты на саму функцию.
+
+
+function makeAdder(x) {
+	return function(y) {
+	  return x + y;
+	};
+  };
+
+
+var add5 = makeAdder(5);
+var add10 = makeAdder(10);
+
+console.log(add5(2));  // 7
+console.log(add10(2)); // 12
+
+add5 и add10 — это примеры замыканий. Эти функции делят одно определение тела функции, но при этом они сохраняют различные окружения. В окружении функции add5 x — это 5, в то время как в окружении add10 x — это 10.
+
+Использование этой техники увеличивает требования к производительности как в части скорости, так и в части потребления памяти.
+
+Дополнительные примеры 
+
+самый простой пример замыкания - это счетчик.
+var counter = (function () {
+  var current = 0;
+  return function () {
+    current++;
+    return current;
+  }
+})();
+
+console.log(counter()); // 1
+console.log(counter()); // 2
+В данном случае мы не имеем доступ к переменной current и функция гарантированно возвращает каждый раз уникальное значение.
+
+
+Кнопки, которые будут менять размер текста с использованием относительных единиц em
+
+<a href="#" id="size-12">12</a>
+<a href="#" id="size-14">14</a>
+<a href="#" id="size-16">16</a>
+
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 12px;
+  }
+  
+  h1 {
+	font-size: 1.5em;
+  }
+  
+  h2 {
+	font-size: 1.2em;
+  }
+
+
+function makeSizer(size) {
+	return function() {
+		document.body.style.fontSize = size + 'px';
+	};
+};
+
+var size12 = makeSizer(12);
+var size14 = makeSizer(14);
+var size16 = makeSizer(16);
+
+document.getElementById('size-12').onclick = size12;
+document.getElementById('size-14').onclick = size14;
+document.getElementById('size-16').onclick = size16;
+
+
+Пример 2
+
+три подсказки для трёх полей ввода
+
+<p id="help">Helpful notes will appear here</p>
+<p>E-mail: <input type="text" id="email" name="email"></p>
+<p>Name: <input type="text" id="name" name="name"></p>
+<p>Age: <input type="text" id="age" name="age"></p>
+
+function showHelp(help) { // генерирует вывод текста в поле подсказка
+	document.getElementById('help').innerHTML = help;
+  }
+  
+  function makeHelpCallback(help) { // функция makeHelpCallback создаёт каждому из замыканий своё собственное, в котором переменная item указывает на правильный элемент массива helpText.
+	return function() {
+	  showHelp(help);
+	};
+  }
+  
+  function setupHelp() {// обрабатывает входные данные + в цикле вор вешает событие на каждый импут с запуском функции. 
+
+	var helpText = [
+		{'id': 'email', 'help': 'Ваш адрес e-mail'},
+		{'id': 'name', 'help': 'Ваше полное имя'},
+		{'id': 'age', 'help': 'Ваш возраст (Вам должно быть больше 16)'}
+	  ];
+  
+	for (var i = 0; i < helpText.length; i++) {
+	  var item = helpText[i];
+	  document.getElementById(item.id).onfocus = makeHelpCallback(item.help);
+	}
+  }
+  
+  setupHelp();
+
+
+
+
+  Практика на таймеры и работу с DOM в JavaScript
+
+  https://code.mu/ru/javascript/book/prime/timers/practicum/
+  https://learn.javascript.ru/settimeout-setinterval
+  https://learn.javascript.ru/settimeout-setinterval
+
+
+<!-- 1 -->
+<!-- <button id="start">start</button>
+<p>10</p> -->
+//1 Дана кнопка. Дан абзац, текстом которого является число. По нажатию на кнопку запустите таймер, который каждую секунду будет увеличивать текст абзаца на 1.
+// let btn = document.querySelector('#start');
+// let p = document.querySelector('p');
+// btn.addEventListener('click', function() {
+// 	setInterval(function(self) { 
+// })
+
+
+
+<!-- 2 -->
+<!-- <button id="start">start</button>
+<p>10</p> -->
+//2 Дана кнопка. Дан абзац, текстом которого является число, например, 10. По нажатию на кнопку запустите таймер, который каждую секунду будет уменьшать текст абзаца на 1. Как только значение абзаца станет равно нулю - остановите таймер.
+// let btn = document.querySelector('#start');
+// let p = document.querySelector('p');
+// btn.addEventListener('click', function() {
+// 	setInterval(function(self) { 
+
+// })
+
+
+//3 Дан инпут с числом. Сделайте так, чтобы каждую секунду в нем появлялся квадрат того числа, которое в нем записано.
+<!-- 3 -->
+<!-- <input type="button" id="elem" value="2"> -->
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('click', function() {
+// 	setInterval(function(self) { 
+// });
+
+
+
+<!-- 4 -->
+<!-- <input type="text" id="elem" value="10">
+<p></p> -->
+//4 Дан инпут. В него вводится число. По потери фокуса сделайте так, чтобы в абзаце ниже начал тикать обратный отсчет, начиная с введенного числа. Когда отсчет дойдет до нуля - он должен закончится.
+
+// let elem = document.querySelector('#elem');
+// let p = document.querySelector('p');
+// elem.addEventListener('blur', function() {
+// });
+
+<!-- 5 -->
+
+<!-- <input type="text" id="elem" value="5">
+<button id="start">start</button>
+<p>0</p> -->
+
+//5 Дан инпут, кнопка и абзац. В инпут вводится какое-то число. По нажатию на кнопку запишите введенное число в текст абзаца и запустите обратный отсчет в абзаце: пусть каждую секунду число в абзаце уменьшается на единицу, пока не дойдет до нуля.
+
+// let elem = document.querySelector('#elem');
+// let p = document.querySelector('p');
+// let btn = document.querySelector('#start');
+
+// btn.addEventListener('click', function() {
+// })
+
+
+<!-- 6 -->
+<!-- <p>1</p>
+<button id="start1">start1</button>
+<button id="start2">stop2</button> -->
+//6 Дан абзац и две кнопки. Сделайте так, чтобы по нажатию на первую кнопку в абзаце начал тикать таймер от 1 до бесконечности, а по нажатию на вторую таймер останавливался.
+
+// let p = document.querySelector('p');
+// let btn1 = document.querySelector('#start1');
+// let btn2 = document.querySelector('#start2');
+
+// btn1.addEventListener('click', function() {
+// })
+
+
+<!-- 7 -->
+<!-- <p>123456789</p> -->
+// 7 Дан абзац. Сделайте так, чтобы каждую секунду он менял свой цвет с красного на зеленый и наоборот.
+
+// let p = document.querySelector('p');
+// setInterval(function() { 
+// }, 1000);
+
+
+<!-- 8 -->
+<!-- <p></p> -->
+//8 Если выводить на экран каждую секунду текущий момент времени, то можно сделать тикающие часы. Реализуйте такие же часики, как показано ниже в образце:
+
+// let p = document.querySelector('p');
+// setInterval(function() { 
+// }, 1000);
+
+
+
+
+
+
+
+setTimeout позволяет вызвать функцию один раз через определённый интервал времени.
+let timerId = setTimeout(func|code, [delay], [arg1], [arg2], ...)
+
+function sayHi() {
+	alert('Привет');
+  }
+  
+  setTimeout(sayHi, 1000);
+
+  Функция или строка кода для выполнения. Обычно это функция.
+  Задержка перед запуском в миллисекундах (1000 мс = 1 с). Значение по умолчанию – 0.
+  Аргументы, передаваемые в функцию (не поддерживается в IE9-)
+
+
+
+
+setInterval позволяет вызывать функцию регулярно, повторяя вызов через определённый интервал времени.
+
+
+setInterval()
+
+Метод setInterval() предложен для Window и Worker интерфейсов. Он циклически вызывает функцию или участок кода с фиксированной паузой между каждым вызовом.
+setInterval
+Метод setInterval имеет такой же синтаксис как setTimeout:
+
+let timerId = setInterval(func|code, [delay], [arg1], [arg2], ...)
+функция запускается не один раз, а периодически через указанный интервал времени.
+
+
+
+
+
+Уникальный идентификатор intervalID, возвращаемый методом, позволяет впоследствии удалить запущенный setInterval c помощью clearInterval()
+
+Вызов setTimeout возвращает «идентификатор таймера» timerId, который можно использовать для отмены дальнейшего выполнения.
+let timerId = setTimeout(...);
+clearTimeout(timerId);
+
+
+Вложенный setTimeout
+Метод setTimeout выше планирует следующий вызов прямо после окончания текущего (*).
+Вложенный setTimeout позволяет задать задержку между выполнениями более точно, чем setInterval.
+
+let delay = 5000;
+
+let timerId = setTimeout(function request() {
+  ...отправить запрос...
+
+  if (ошибка запроса из-за перегрузки сервера) {
+    // увеличить интервал для следующего запроса
+    delay *= 2;
+  }
+
+  timerId = setTimeout(request, delay);
+
+}, delay);

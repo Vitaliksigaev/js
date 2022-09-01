@@ -8205,3 +8205,182 @@ console.log(max)*/
 // 	}
 // }
 // bind(person1, logPerson)()
+
+// function showHelp(help) {
+// 	document.getElementById('help').innerHTML = help;
+// }
+
+// function makeHelpCallback(help) { 
+// 	return function() {
+// 		showHelp(help);
+// 	};
+// }
+
+// function setupHelp() {
+// 	var helpText = [
+// 		{'id': 'email', 'help': 'Ваш адрес e-mail'},
+// 		{'id': 'name', 'help': 'Ваше полное имя'},
+// 		{'id': 'age', 'help': 'Ваш возраст (Вам должно быть больше 16)'}
+// 		];
+
+// 	for (var i = 0; i < helpText.length; i++) {
+// 		var item = helpText[i];
+// 		// console.log(item)
+// 		// console.log(item.id)
+// 		// console.log(item.help)
+// 		document.getElementById(item.id).onfocus = showHelp(item.help);
+// 	}
+// }
+
+// setupHelp();
+
+//Автор кода хотел, чтобы по нажатию на кнопку, значение этой кнопки каждую секунду увеличивалось на 1. Однако, по нажатию на кнопку вообще ничего не происходит. Исправьте ошибку автора кода. Напишите текст, в котором вы дадите объяснение автору кода, почему возникла его ошибка.
+
+// let elem = document.querySelector('#elem');
+
+// elem.addEventListener('click', function() {
+// 	let elem2 = this;
+// 	setInterval(function() {
+// 		elem2.value = Number(elem2.value) + 1;
+// 	}, 1000);
+// });
+
+//1 первый вариант решения это сылка сразу да внешнее окружение. Если мы хотим это окружение сделать внутри фунции - это так же решает проблему с ЗИС
+
+// let elem = document.querySelector('#elem');
+
+// elem.addEventListener('click', function() {
+// 	let elem2 = this;
+// 	setInterval(()=> elem2.value = Number(elem2.value) + 1 , 1000);
+// });
+
+
+// let elem = document.querySelector('#elem');
+
+// elem.addEventListener('click', function() {
+// 	function func(self) {
+// 		return function() {
+// 			console.log(self.value);
+// 		}
+// 	}
+	
+// 	setInterval(func(this), 1000);
+// });
+
+// let elem = document.querySelector('#elem');
+
+// elem.addEventListener('click', function() { //Вешаем событие
+// 	setInterval((function(self) { //Вызываем функцию с вложением функции, которая возвращает функцию. ссылая на элемент повешаного события.
+// 		return function() {
+// 			console.log(self.value);
+// 		}
+// 	})(this), 1000);
+// });
+
+
+//315
+// let elem = document.querySelector('#elem');
+
+
+
+// elem.addEventListener('click', function() {//по клику у нас вызывается функция
+// 	setInterval(function(self) { //функция интервалов - функция с параметром селф, данный селф валюе -- , через 1000 мск, в функцию отправляется параметр зис
+// 		self.value--;
+// 	}, 1000, this);
+// });
+
+//316 Практика на таймеры и работу с DOM в JavaScript
+
+//1 Дана кнопка. Дан абзац, текстом которого является число. По нажатию на кнопку запустите таймер, который каждую секунду будет увеличивать текст абзаца на 1.
+
+// let btn = document.querySelector('#start');
+// let p = document.querySelector('p');
+// btn.addEventListener('click', function() {
+// 	setInterval(function(self) { 
+// 		self.textContent = + self.textContent +1;
+// 	}, 1000, p);
+// })
+
+//2 Дана кнопка. Дан абзац, текстом которого является число, например, 10. По нажатию на кнопку запустите таймер, который каждую секунду будет уменьшать текст абзаца на 1. Как только значение абзаца станет равно нулю - остановите таймер.
+
+// let btn = document.querySelector('#start');
+// let p = document.querySelector('p');
+// btn.addEventListener('click', function() {
+// 	setInterval(function(self) { 
+// 		if (self.textContent>0) {self.textContent = + self.textContent -1;}
+		
+// 	}, 1000, p);
+// })
+
+//3 Дан инпут с числом. Сделайте так, чтобы каждую секунду в нем появлялся квадрат того числа, которое в нем записано.
+
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('click', function() {
+// 	setInterval(function(self) { 
+// 		self.value = self.value**2;
+// 	}, 1000, this);
+// });
+
+//4 Дан инпут. В него вводится число. По потери фокуса сделайте так, чтобы в абзаце ниже начал тикать обратный отсчет, начиная с введенного числа. Когда отсчет дойдет до нуля - он должен закончится.
+
+// let elem = document.querySelector('#elem');
+// let p = document.querySelector('p');
+// console.log(p.textContent)
+// elem.addEventListener('blur', function() {
+// 	p.textContent = elem.value;
+// 	console.log(p.textContent);
+// 	setInterval(function(self) { 
+// 		if (p.textContent>0) {
+// 			p.textContent = p.textContent - 1;
+// 		}
+// 	}, 1000, elem.value);
+// });
+
+//5 Дан инпут, кнопка и абзац. В инпут вводится какое-то число. По нажатию на кнопку запишите введенное число в текст абзаца и запустите обратный отсчет в абзаце: пусть каждую секунду число в абзаце уменьшается на единицу, пока не дойдет до нуля.
+
+// let elem = document.querySelector('#elem');
+// let p = document.querySelector('p');
+// let btn = document.querySelector('#start');
+
+// btn.addEventListener('click', function() {
+// 	p.textContent = elem.value;
+// 	setInterval(function(self) { 
+// 		if (p.textContent>0) {
+// 			p.textContent = p.textContent - 1;
+// 		}
+// 	}, 1000, elem.value);
+// })
+
+//6 Дан абзац и две кнопки. Сделайте так, чтобы по нажатию на первую кнопку в абзаце начал тикать таймер от 1 до бесконечности, а по нажатию на вторую таймер останавливался.
+
+// let p = document.querySelector('p');
+// let btn1 = document.querySelector('#start1');
+// let btn2 = document.querySelector('#start2');
+
+// btn1.addEventListener('click', function() {
+// 	let timerId = setInterval(function() { 
+// 		if (p.textContent>0) {
+// 			p.textContent = +p.textContent + 1;
+// 		}
+// 	}, 1000, p.textContent);
+// 	btn2.addEventListener('click', function() {
+// 		clearInterval(timerId);
+// 	});
+// })
+
+
+// 7 Дан абзац. Сделайте так, чтобы каждую секунду он менял свой цвет с красного на зеленый и наоборот.
+
+// let p = document.querySelector('p');
+// setInterval(function() { 
+// 	p.classList.toggle("class")
+// }, 1000);
+
+//8 Если выводить на экран каждую секунду текущий момент времени, то можно сделать тикающие часы. Реализуйте такие же часики, как показано ниже в образце:
+
+// let p = document.querySelector('p');
+// setInterval(function() { 
+// 	let new1 = new Date();
+// 	console.log(new1)
+// 	p.textContent = new1.getHours() + ':'+ new1.getMinutes()+ ':' + new1.getSeconds() ;
+// }, 1000);
