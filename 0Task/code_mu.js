@@ -8384,3 +8384,180 @@ console.log(max)*/
 // 	console.log(new1)
 // 	p.textContent = new1.getHours() + ':'+ new1.getMinutes()+ ':' + new1.getSeconds() ;
 // }, 1000);
+
+//317
+//Дан абзац. Напишите код, который выведет сообщение в этот абзац через 10 секунд после загрузки страницы.
+
+// let p = document.querySelector('p');
+
+// setTimeout(function() {
+// 	p.textContent ='10 sec';
+// }, 3000);
+
+//Выведите в консоль число 0. Через секунду выведите число 1, через две секунды выведите число 2, через 3 секунды выведите число 3. И так далее до бесконечности.
+// let i = 0;
+
+// function timer(i) {
+// 	//console.log(i);
+// 	setTimeout(function() {
+// 		//console.log(i);
+// 		i = +i+1000;
+// 		console.log(i);
+// 		let j = 1000;
+// 		setInterval(function() {
+// 			//console.log(i);
+// 			if(j<i) {
+// 				console.log(j/1000 + ' сек');
+// 				j+=1000;
+// 			}
+// 		}, 1000);
+
+
+// 		timer(i);
+// 	}, i);
+// }
+// timer(i);
+
+//Напишите функцию printNumbers(from, to), которая выводит число каждую секунду, начиная от from и заканчивая to.Используя setInterval.Используя рекурсивный setTimeout.
+
+// function printNumbers(from, to){
+// 	let num1 = from;
+// 		setInterval(function() {
+// 		if(num1<=to) {
+// 			console.log(num1++);
+// 		}
+
+// 	}, 1000);
+// }
+// printNumbers(10, 20)
+
+// function printNumbers(from, to){
+// 	let num1 = from;
+// 		setTimeout(function run() {
+// 		if(num1<=to) {
+// 			console.log(num1++);
+// 			setTimeout(run, 1000);
+// 		}
+
+// 	}, 1000);
+// }
+// printNumbers(10, 29)
+
+//-------------318
+
+// let ol = document.querySelector('#elem');
+// let btn = document.querySelector('#button');
+// btn.addEventListener('click', function(){
+// 	let ol1 = document.createElement('li');
+// 	ol1.textContent = 'item';
+// 	ol1.addEventListener('click', function() {this.textContent = this.textContent + '!';
+// 	});
+// 	ol.appendChild(ol1);
+// })
+// for(let i=0; i<10; i++) {
+// 	let ol1 = document.createElement('li');
+// 	ol1.textContent = 'item';
+// 	ol.appendChild(ol1);
+// 	console.log(i);
+// }
+
+//Дан ol и кнопка. Сделайте так, чтобы по клику на кнопку в конец ol добавлялся тег li. Сделайте так, чтобы по клику на любой из добавленных li в конец его текста записывался восклицательный знак.
+
+
+// let ol = document.querySelector('#elem');
+// let btn = document.querySelector('#button');
+// btn.addEventListener('click', function(){
+// 	for(let i=1; i<=10; i++) {
+// 	let ol1 = document.createElement('li');
+// 	ol1.textContent = i;
+// 	ol.appendChild(ol1);
+// 	console.log(i);
+// 	}
+// })
+
+// let parent = document.querySelector('#parent');
+
+// for (let i = 1; i <= 9; i++) {
+// 	let p = document.createElement('p');
+// 	p.textContent = '!';
+	
+// 	// Навешиваем обработчик клика:
+// 	p.addEventListener('click', function() {
+// 		console.log(this.textContent);
+// 	});
+	
+// 	parent.appendChild(p);
+// }
+
+// let parent = document.querySelector('#parent');
+
+// for (let i = 1; i <= 5; i++) {
+// 	let input = document.createElement('input');
+// 	parent.appendChild(input);
+// 	console.log(i);
+// 	input.textContent = i;
+// 	input.addEventListener('blur', function() {
+// 		//console.log(this.value);
+// 		let z = document.createElement('p');
+// 		z.innerHTML = this.value; 
+// 		parent.appendChild(z);
+// 	});
+// }
+
+
+// let btn = document.querySelector('#button');
+
+// btn.addEventListener('click',function(){
+// 	let elems = document.querySelectorAll('li');
+// 	elems[elems.length-1].remove();
+// })
+// for (let elem of elems) {
+// 	elem.addEventListener('click', function() {
+// 		elem.remove();
+// 	});
+// }
+
+// let elem = document.querySelector('#elem');
+// let li1 = document.createElement('li');
+// li1.innerHTML = 'start';
+// let li2 = document.createElement('li');
+// li2.innerHTML = 'finish';
+// elem.prepend(li1);
+// elem.appendChild(li2);
+
+// let elem1 = document.querySelector('#elem1');
+// let li3 =document.createElement('li')
+// li3.innerHTML = '!';
+
+// elem.insertBefore(li3, elem1)
+// li3.addEventListener('click',function(){
+// 	li3.innerHTML = li3.innerHTML +'!';
+// })
+
+// let elem = document.querySelector('#elem');
+// let p1 = document.createElement('p');
+// p1.innerHTML = 'beforeBegin';
+
+// elem.insertAdjacentElement('beforeBegin', p1);
+
+// let p2 = document.createElement('p');
+// p2.innerHTML = 'afterEnd';
+// elem.insertAdjacentElement('afterEnd', p2);
+
+// let p3 = document.createElement('p');
+// p3.innerHTML = 'afterBegin';
+// elem.insertAdjacentElement('afterBegin', p3);
+
+// let p4 = document.createElement('p');
+// p4.innerHTML = 'beforeEnd';
+// elem.insertAdjacentElement('beforeEnd', p4);
+
+// let elem = document.querySelector('#elem');
+// elem.insertAdjacentHTML('beforeBegin', '<div class="www"><p>text</p><p>text</p><input></div> ');
+
+let parent = document.querySelector('#parent');
+let elem = parent.querySelector('.elem');
+
+let clone = elem.cloneNode(false);
+parent.appendChild(clone);
+console.log(clone)
