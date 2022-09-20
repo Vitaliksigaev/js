@@ -49,3 +49,5 @@ function allSum(){
     document.getElementById("result3").innerHTML = result3 + " шт";
 };
 allSum()
+
+TextDecoderStream
