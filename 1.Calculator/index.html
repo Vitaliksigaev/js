@@ -7,170 +7,62 @@
 
 </head>
 <body>
-	<!-- поле ввода первого числа -->
+
     <div id="calcSvp">
         <div id="calcSvpSum">
-            <div>
-                
-                <p>Кол-во, м2</p>
+            <div>                
+                <p>Количество, м2</p>
                 <div class="box_input">
-                    <button id="btn_1_0">-</button>
-                    <input id="num1" value="36">
-                    <button id="btn_1_1">+</button>
+                    <button class="btn num1">-</button>
+                    <input id="num1" value="10">
+                    <button class="btn num1">+</button>
                 </div>
-
             </div>
             
             <div>
                 <p>A: Длина плитки, см</p>
                 <div class="box_input">
-                    <button id="btn_2_0">-</button>
-                    <input id="num2" value="6" />
-                    <button id="btn_2_1">+</button>
+                    <button class="btn num2">-</button>
+                    <input id="num2" value="40" />
+                    <button class="btn num2">+</button>
                 </div>
-
             </div>
             <div>
                 <p>B: Ширина плитки, см</p>
                 <div class="box_input">
-                    <button id="btn_3_0">-</button>
-                    <input id="num3" value="6" />
-                    <button id="btn_3_1">+</button>
+                    <button class="btn num3">-</button>
+                    <input id="num3" value="40" />
+                    <button class="btn num3">+</button>
                 </div>
             </div>
             <div>
                 <p>C: Штук по длине</p>
                 <div class="box_input">
-                    <button id="btn_4_0">-</button>
+                    <button class="btn num4">-</button>
                     <input id="num4" value="2" />
-                    <button id="btn_4_1">+</button>
+                    <button class="btn num4">+</button>
                 </div>
             </div>
             <div>
                 <p>D: Штук по ширине</p>
                 <div class="box_input">
-                    <button id="btn_5_0">-</button>
-                    <input id="num5" value="2" />
-                    <button id="btn_5_1">+</button>
+                    <button class="btn num5">-</button>
+                    <input type=”number” id="num5" value="2"/>
+                    <button class="btn num5">+</button>
                 </div>
             </div>
-       
-            
-                <!-- 
-                    <button id= "buttonCalc" onclick="func()">Итого</button>
-                    
-                    здесь будет результат -->
-            <span class="results">Итого <span id="result"></span></span>
+                        
+            <span class="results">Итого <span id="result"></span><br>
+            <span>* При смещении на 50% расход =</span>
+            <span id="result2"></span><br>
+            <span>* Расход на м2 =</span>
+            <span id="result3"></span>
+            </span>
         </div>
-        <div  id="calcSvpFoto"> <p>Картинка</p></div>
     </div>
 
 
-	<!-- наш скрипт -->
-	<script>
-
-
-    function func() {
-        let result;
-        let num1 = Number(document.getElementById("num1").value);
-        let num2 = Number(document.getElementById("num2").value);
-        let num3 = Number(document.getElementById("num3").value);
-        let num4 = Number(document.getElementById("num4").value);
-        let num5 = Number(document.getElementById("num5").value);
-        let sumRows = ((Math.sqrt(num1))/(num3/10));
-        let sumColumn = ((Math.sqrt(num1))/(num2/10));
-        let m1 = num4*sumColumn*(sumRows-1);
-        let m2 = num5*sumRows*(sumColumn-1);
-        result = Math.round(m1 + m2);
-        document.getElementById("result").innerHTML = result + " шт";
-    }
-    func();
-
-
-    let btn_1_0 = document.getElementById("btn_1_0");
-    let btn_1_1 = document.getElementById("btn_1_1");
-
-    let num1 = Number(document.getElementById("num1").value);
-    btn_1_0.onclick = function() {   
-        num1 -= 1;
-        document.getElementById("num1").value = num1;
-        func();
-    }
-    btn_1_1.onclick = function() {
-        num1 += 1;
-        document.getElementById("num1").value = num1;
-        func();
-    }
-
-    let btn_2_0 = document.getElementById("btn_2_0");
-    let btn_2_1 = document.getElementById("btn_2_1");
-
-    let num2 = Number(document.getElementById("num2").value);
-    btn_2_0.onclick = function() {   
-        num2 -= 1;
-        document.getElementById("num2").value = num2;
-        func();
-    }
-    btn_2_1.onclick = function() {
-        num2 += 1;
-        document.getElementById("num2").value = num2;
-        func();
-    }
-
-    let btn_3_0 = document.getElementById("btn_3_0");
-    let btn_3_1 = document.getElementById("btn_3_1");
-
-    let num3 = Number(document.getElementById("num3").value);
-    btn_3_0.onclick = function() {   
-        num3 -= 1;
-        document.getElementById("num3").value = num3;
-        func();
-    }
-    btn_3_1.onclick = function() {
-        num3 += 1;
-        document.getElementById("num3").value = num3;
-        func();
-    }
-
-    let btn_4_0 = document.getElementById("btn_4_0");
-    let btn_4_1 = document.getElementById("btn_4_1");
-
-    let num4 = Number(document.getElementById("num4").value);
-    btn_4_0.onclick = function() {   
-        num4 -= 1;
-        document.getElementById("num4").value = num4;
-        func();
-    }
-    btn_4_1.onclick = function() {
-        num4 += 1;
-        document.getElementById("num4").value = num4;
-        func();
-    }
-
-    let btn_5_0 = document.getElementById("btn_5_0");
-    let btn_5_1 = document.getElementById("btn_5_1");
-
-    let num5 = Number(document.getElementById("num5").value);
-    btn_5_0.onclick = function() {   
-        num5 -= 1;
-        document.getElementById("num5").value = num5;
-        func();
-    }
-    btn_5_1.onclick = function() {
-        num5 += 1;
-        document.getElementById("num5").value = num5;
-        func();
-    }
-
-    
-
-
-
-
-    
-
-
-	</script>
+    <script src="/1.Calculator/js.js"></script>
 
 </body>
 </html>

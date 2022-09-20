@@ -1,7 +1,15 @@
-/* git status
+/* 
+git status
 git add .
 git commit -m "Add: next 1 "
 git push -u origin master */
+
+
+
+/* git checkout master   
+git branch main master -f    
+git checkout main  
+git push origin main -f  */
 
 /* 
 .button1{
