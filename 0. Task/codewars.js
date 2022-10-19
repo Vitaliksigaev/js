@@ -477,5 +477,260 @@ function dataReverse(data) {
 */
 // console.log(dataReverse(data))
 
+// РС
+// let matrix = [
+//   [0, 1, '^^'],
+//   [0, '^^', 2],
+//   ['^^', 1, 2]
+//   ];
 
+
+//   function countCats( matrix ) {
+//     let cats1 = [];
+//     let cats = matrix.forEach(elem =>cats1.push((elem.filter(elem1 => elem1 == '^^'))));
+//     // let stat = cats.length;
+//     console.log(cats1.flat().length);
+//     return cats1.length;
+//   }
+// countCats(matrix);
+
+
+// let maxNumber = Math.pow(10, 1000);
+// console.log(maxNumber == Infinity);
+
+// function dateSample(sampleActivity) {
+//   console.log(sampleActivity);
+//   let num = Number(sampleActivity);
+//   // console.log(num);
+//   if(isNaN(num)== true || (sampleActivity == Infinity) == true || num < 0 || num == 3) {
+//     console.log('infi');
+//     return false;
+//   } else {
+//     num = Math.ceil((Math.log(15/num))/(0.693/5730));
+//     console.log(num);
+//     if(num<0 || num == Infinity) {
+//       console.log('menshe 0');
+//       return false;
+//     } else {
+//       console.log(num);
+//       return num;
+//     }
+//   }
+// }
+
+// dateSample('3');
+
+
+
+
+
+
+// function countCats( matrix ) {
+//   let cats1 = [];
+//   let cats = matrix.forEach(elem =>cats1.push((elem.filter(elem1 => elem1 == '^^'))));
+//   // let stat = cats.length;
+//   console.log(cats1.flat().length);
+//   return cats1.flat().length;
+// }
+
+
+
+// function dateSample(sampleActivity) {
+//   console.log(sampleActivity);
+//   let num = Number(sampleActivity);
+//   // console.log(num);
+//   if(isNaN(num)== true || (sampleActivity == Infinity) == true || num < 0 || typeof sampleActivity !== 'string') {
+//     console.log('infi');
+//     return false;
+//   } else {
+//     num = Math.ceil((Math.log(15/num))/(0.693/HALF_LIFE_PERIOD));
+//     console.log(num);
+//     if(num<0 || num == Infinity) {
+//       console.log('menshe 0');
+//       return false;
+//     } else {
+//       console.log(num);
+//       return num;
+//     }
+//   }
+// }
+
+// function createDreamTeam(members) {
+//   console.log(members);
+//   if(!Array.isArray(members)) {
+//     console.log('NO Array');
+//     return false;
+//   } else {
+//     let sortTeam = members.filter(elem => typeof elem == 'string');
+//     // sortTeam.forEach(elem => elem.split(' ').join(''))
+//     console.log(sortTeam);
+//     let push1 =[];
+//     sortTeam.forEach(elem => push1.push(elem.split(' ').join('').substring(0, 1).toUpperCase()));
+//     let teamName = push1.join('').split('').sort().join('');
+//     console.log(teamName);
+//     return teamName;
+//   }
+// }
+
+
+// let team = ['Matt', 'Ann', 'Dmitry', 'Max']
+// createDreamTeam(team);
+// createDreamTeam('!');
+
+
+
+// const winter= new Date(2019, 11, 22, 23, 45, 11, 500);
+// const spring = new Date(2018, 4, 17, 11, 27, 4, 321);
+// const summer = new Date(2017, 6, 11, 23, 45, 11, 500);
+// const autumn= new Date(1994, 8, 26, 3, 0, 11, 500);
+
+// springDate = new Date(2019, 11, 22, 23, 45, 11, 500);
+
+
+// function getSeason(date) {
+//   let dat = date;
+//   console.log(dat);
+//   if(dat == undefined) {
+//     let str1 = 'Unable to determine the time of year!';
+//     console.log('Unable to determine the time of year!')
+//     return str1;
+//   }
+//   try {
+//     date.getTime()
+//   } catch (e) {
+//       throw new Error('Invalid date!')
+//   }
+  
+//   let m = dat.getMonth();
+//   console.log(m);
+
+//   if(m<2 || m>10) {
+//     console.log('winter');
+//     return('winter')
+//   }
+//   if(m>1 && m<5) {
+//     console.log('spring');
+//     return('spring');
+//   }
+//   if(m>4 && m<8) {
+//     console.log('summer');
+//     return('summer');
+//   }
+//   if(m>7 && m<11) {
+//     console.log('autumn');
+//     return('autumn');
+//   }
+// }
+
+
+// module.exports = {
+//   getSeason
+// };
+
+
+// function calculateHanoi(disksNumber, turnsSpeed) {
+//   let num1 = 2 ** disksNumber - 1
+//   let num2 = Math.floor(num1 / turnsSpeed * 3600)
+//   return {turns: num1, seconds: num2}
+// }
+
+// function transform(arr) {
+//   if (!Array.isArray(arr)) {
+//     throw new Error("'arr' parameter must be an instance of the Array!");
+//   }
+// let arrT = [...arr];
+
+// arrT.map((elem, index, array) => {console.log(index + " - " + elem + ' - ' + array);
+//   if( elem == '--discard-prev' ){
+//     if (array[index - 1]) {
+//       array[index] = "-";
+//       array[index - 1] = "-";
+//       // array.splice(index-1,2)
+//     } else {
+//       array.splice(index,1)
+//     }    
+//   }
+//   if( elem == '--discard-next'){
+//     array[index] = "-";
+//     array[index + 1] = "-";
+//     // array.splice(index,2)
+//     // console.log('check')
+//   }
+//   if( elem == '--double-next'){
+//     if (array[index + 1]) {
+//       array[index] = array[index + 1];
+//     } else {
+//       array.splice(index,1);
+//     }
+//     console.log('check')
+//   }
+//   if( elem == '--double-prev'){
+//     if (array[index - 1]) {
+//       array[index] = array[index - 1];
+//     } else {
+//       array.splice(index,1);
+//     }
+//   }
+// })
+// return arrT.filter((elem) => elem !== "-");;
+// }
+
+// transform([1, 2, 3, '--discard-next', 1337, '--double-prev', 4, 5]) 
+
+
+// const chainMaker = {
+//   chain: [],
+//   getLength() {
+//     return this.chain.length;
+//   },
+
+
+// addLink(value) {
+//   if (value === undefined) {
+//     this.chain.push("");
+//   } else {
+//     this.chain.push(value);
+//   }
+//   console.log(this);
+//   return this;
+// },
+
+
+// removeLink(position) {
+//   if (this.chain.length === 0 || position < 1 || position >= this.getLength() ||    typeof position !== "number" ||!Number.isInteger(position)) {
+//       this.chain = [];
+//       throw new Error("You can't remove incorrect link!");
+//   }
+//   this.chain.splice(position-1, 1);
+//   return this;
+// },
+
+
+
+
+//   reverseChain() {
+//     this.chain = this.chain.reverse();
+//     return this;
+//   },
+//   finishChain() {
+//     console.log(this.chain);
+//     let r = this.chain.map(elem => elem = '( ' + elem + ' )')
+//     console.log(r);
+//     this.chain = [];
+//     return r.join("~~");
+//   },
+// };
+
+
+// class DepthCalculator {
+//   calculateDepth(arr) {
+//     let count = 1;
+//     if (arr.some(elem => Array.isArray(elem))) { //проверяет, проходит ли хотя бы один элемент в массиве проверку
+//       arr = arr.flat() //  подмассивов были рекурсивно "подняты" 
+//       count += this.calculateDepth(arr);
+//       return count;
+//     }
+//     return count;
+//   }
+// }
 
