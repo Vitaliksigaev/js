@@ -634,3 +634,217 @@ let timerId = setTimeout(function request() {
 
 Задачка
 Выведите в консоль число 0. Через секунду выведите число 1, через две секунды выведите число 2, через 3 секунды выведите число 3. И так далее до бесконечности.
+
+
+
+
+
+
+
+Создание и вставка элементов на JavaScript
+
+метод appendChild
+позволяет вставить в конец какого-либо другой элемент.
+<div id="parent">
+	<p>1</p>
+	<p>2</p>
+	<p>3</p>
+</div>
+
+let parent = document.querySelector('#parent');
+let p = document.createElement('p');
+p.textContent = '!';
+parent.appendChild(p);
+
+<div id="parent">
+	<p>1</p>
+	<p>2</p>
+	<p>3</p>
+	<p>!</p>
+</div>
+
+
+appendChild append  prepend insertBefore insertAdjacentElement insertAdjacentHTML
+
+append 
+Метод append позволяет вставить в конец какого-либо элемента другой элемент. 
+<div id="parent">
+	<p>1</p>
+	<p>2</p>
+	<p>3</p>
+</div>
+
+
+let parent = document.querySelector('#parent');
+let p = document.createElement('p');
+p.innerHTML = '!';
+parent.append(p);
+//parent.append(p1, p2); Возможна вставка несколько элементов.
+
+<div id="parent">
+	<p>1</p>
+	<p>2</p>
+	<p>3</p>
+	<p>!</p>
+</div>
+
+prepend
+Метод prepend позволяет вставить в начало какого-либо элемента другой элемент. 
+<div id="parent">
+	<p>1</p>
+	<p>2</p>
+	<p>3</p>
+</div>
+
+let parent = document.querySelector('#parent');
+let p = document.createElement('p');
+p.innerHTML = '!';
+parent.prepend(p); // parent.prepend(p1, p2); Возможна вставка несколько элементов.
+
+<div id="parent">
+	<p>!</p>
+	<p>1</p>
+	<p>2</p>
+	<p>3</p>
+</div>
+
+insertBefore
+Метод insertBefore позволяет вставить элемент перед другим элементом.
+
+<div id="parent">
+	<p>elem 1</p>
+	<p id="before">elem 2</p>
+	<p>elem 3</p>
+</div>
+
+let parent = document.querySelector('#parent');
+let before = document.querySelector('#before');
+let p = document.createElement('p');
+p.innerHTML = '!';
+parent.insertBefore(p, before);
+
+<div id="parent">
+	<p>elem 1</p>
+	<p>!</p>
+	<p>elem 2</p>
+	<p>elem 3</p>
+</div>
+
+insertAdjacentElement
+Код вставляется относительно опорного элемента. 
+Вставка
+перед  (способ вставки beforeBegin)
+после  (способ вставки afterEnd)
+в начало (способ вставки afterBegin)
+в конец (способ вставки beforeEnd)
+
+<div id="target">
+	<p>elem</p>
+</div>
+
+let p = document.createElement('p');
+p.innerHTML = '!';
+let target = document.querySelector('#target');
+
+// Вставка перед
+target.insertAdjacentElement('beforeBegin', p);
+// Вставка после
+target.insertAdjacentElement('afterEnd', p);
+// Вставка в начало
+target.insertAdjacentElement('afterBegin', p);
+// Вставка в конец
+target.insertAdjacentElement('beforeEnd', p);
+
+
+<p>!</p> //('beforeBegin', p)
+<div id="target">
+  <p>!</p> //('afterBegin', p);
+	<p>elem</p>
+  <p>!</p> //('beforeEnd', p);
+</div>
+<p>!</p> //('afterEnd', p);
+
+insertAdjacentHTML
+Метод insertAdjacentHTML позволяет вставить строку HTML кода в любое место страницы.
+Код вставляется относительно опорного элемента.
+
+<div id="target">
+	<p>elem</p>
+</div>
+
+let target = document.querySelector('#target');
+
+// Вставка перед
+target.insertAdjacentHTML('beforeBegin', '<p>!</p>');
+// Вставка после
+target.insertAdjacentHTML('afterEnd', '<p>!</p>');
+// Вставка в начало
+target.insertAdjacentHTML('afterBegin', '<p>!</p>');
+// Вставка в конец
+target.insertAdjacentHTML('beforeEnd', '<p>!</p>');
+
+
+<p>!</p> //('beforeBegin', '<p>!</p>')
+<div id="target">
+  <p>!</p> //('afterBegin', '<p>!</p>');
+	<p>elem</p>
+  <p>!</p> //('beforeEnd', '<p>!</p>');
+</div>
+<p>!</p> //('afterEnd', '<p>!</p>');
+
+
+
+
+
+
+
+
+Клонирование элементов на JavaScript
+
+Клонировать элемент можно с помощью метода cloneNode. В этот метод нужно передавать параметром true либо false. Если передан true, то элемент клонируется полностью, вместе со всем атрибутами и дочерними элементами, а если false - только сам элемент.
+
+Давайте посмотрим на примере. Пусть у нас есть вот такой код:
+
+<div id="parent">
+	<div class="elem">
+		<p>первый абзац</p>
+		<p>второй абзац</p>
+	</div>
+</div>
+Сделаем копию блока с классом elem и вставим его в конец блока #parent:
+
+let parent = document.querySelector('#parent');
+let elem = parent.querySelector('.elem');
+
+let clone = elem.cloneNode(true);
+parent.appendChild(clone);
+В результате получится следующее:
+
+<div id="parent">
+	<div class="elem">
+		<p>первый абзац</p>
+		<p>второй абзац</p>
+	</div>
+	<div class="elem">
+		<p>первый абзац</p>
+		<p>второй абзац</p>
+	</div>
+</div>
+
+
+Удаление элементов на JavaScript
+
+<p>elem 1</p>
+<p>elem 2</p>
+<p>elem 3</p>
+<p>elem 4</p>
+<p>elem 5</p>
+
+let elems = document.querySelectorAll('p');
+
+//любой абзац удаляется по клику на нем
+for (let elem of elems) {
+	elem.addEventListener('click', function() {
+		elem.remove();
+	});
+}

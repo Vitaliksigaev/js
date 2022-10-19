@@ -8555,9 +8555,11 @@ console.log(max)*/
 // let elem = document.querySelector('#elem');
 // elem.insertAdjacentHTML('beforeBegin', '<div class="www"><p>text</p><p>text</p><input></div> ');
 
-let parent = document.querySelector('#parent');
-let elem = parent.querySelector('.elem');
+// let parent = document.querySelector('#parent');
+// let elem = parent.querySelector('.elem');
 
-let clone = elem.cloneNode(false);
-parent.appendChild(clone);
-console.log(clone)
+// let clone = elem.cloneNode(false);
+// parent.appendChild(clone);
+// console.log(clone)
+
+

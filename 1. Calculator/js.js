@@ -17,13 +17,29 @@ for (let bt of btnAll){
                 if(num.value == 0) {
                     num.value = 0; 
                 } else {
-                    num.value = Number(num.value) - 1;
+                    // num.value = Number(num.value) - 1;
+                    // if(bt.classList.contains('tiles')) {
+                    // console.log('tiles');
+                    // num.value = Number(num.value) - 1;
+                    // }
+                    console.log(num.classList.contains('111'));
+                    if(num.classList.contains('111')){
+                        num.value = Number(num.value) - 5;
+                    } else {
+                        num.value = Number(num.value) - 1;
+                    }
                 }
             } else {
-                num.value = Number(num.value) + 1;
+                if(num.classList.contains('111')){
+                    num.value = Number(num.value) + 5;
+                } else {
+                    num.value = Number(num.value) + 1;
+                }
+                // num.value = Number(num.value) + 1;
             }        
-        console.log(num.value)
-        allSum()
+        console.log(num.value);
+        allSum();
+        // console.log(allSum());
     })
 }
 
@@ -34,13 +50,13 @@ function allSum(){
     let num4 = Number(document.getElementById("num4").value);
     let num5 = Number(document.getElementById("num5").value);
     let sumRows = ((Math.sqrt(num1))/(num3)*100);
-    console.log(' рядов = ' + sumRows)
-    let sumColumn = ((Math.sqrt(num1))/(num3)*100);
-    console.log(' колонок = '+ sumColumn)
+    // console.log(' рядов = ' + sumRows)
+    let sumColumn = ((Math.sqrt(num2))/(num3)*100);
+    // console.log(' колонок = '+ sumColumn)
     let m1 = num4*sumColumn*(sumRows-1);
-    console.log(' количество по рядам = ' + m1)
+    // console.log(' количество по рядам = ' + m1)
     let m2 = num5*sumRows*(sumColumn-1);
-    console.log(' количество по колонкам = ' + m2)
+    // console.log(' количество по колонкам = ' + m2)
     let result = Math.round(m1 + m2);
     document.getElementById("result").innerHTML = result + " шт";
     let result2 = Math.round(0.65*result);
@@ -50,4 +66,3 @@ function allSum(){
 };
 allSum()
 
-TextDecoderStream
