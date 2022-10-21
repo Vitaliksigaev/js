@@ -5,7 +5,9 @@ git checkout main
 git status
 git add .
 git commit -m "Add: next 1 "
-git push -u origin master */
+git push -u origin master
+git pull
+ */
 
 
 
