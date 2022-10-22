@@ -920,20 +920,186 @@ function dataReverse(data) {
 // getCommonCharacterCount('aabcc', 'adcaa')//=>3
 // getCommonCharacterCount('aabcc', 'aaaaaaaa')//=>3
 
-function deleteDigit(n) {
-  let st = n.toString();
-  let st1 = [];
-  for (let i = 0; i < st.length; i++) {
-    st1.push(+((st.slice(0,i) + (st.slice(i + 1,st.length)))));
-  }
-  function getMaxOfArray(numArray) {
-    return Math.max.apply(null, numArray);
-  }
+// function deleteDigit(n) {
+//   let st = n.toString();
+//   let st1 = [];
+//   for (let i = 0; i < st.length; i++) {
+//     st1.push(+((st.slice(0,i) + (st.slice(i + 1,st.length)))));
+//   }
+//   function getMaxOfArray(numArray) {
+//     return Math.max.apply(null, numArray);
+//   }
 
-  return getMaxOfArray(st1)
+//   return getMaxOfArray(st1)
+// }
+
+
+// module.exports = {
+//   deleteDigit
+// };
+
+
+//src/dns-stats.js.
+
+// function getDNSStats(domains) {
+//   console.log(domains);
+//   let obj = {};
+//   let arr = domains.map(elem => check(elem.split('.').map(elem => '.'+ elem).reverse()));
+// function check(elem) {
+//   let num = '';
+//   for( let i = 0 ; i< elem.length; i++) {
+//     num += elem[i];
+//     obj.hasOwnProperty(num) ? obj[num]++ : obj[num] = 1;
+//   }
+// }
+//   console.log(obj);
+//   return obj;
+// }
+
+
+
+// function getDNSStats( domains ) {
+//   let newArr = domains.map(t=> {
+//       t = t.split('.');  
+//       let arr = [];
+//       for (let i = 0; i < t.length; i++){
+//           arr.push('.' + t.slice(i).reverse().join('.'));
+//       }
+//       return arr ;      
+//   }).flat().sort();
+//      let obj = {};
+//      newArr.map(t=> {
+//          obj.hasOwnProperty(t) ? obj[t]++ : obj[t] = 1
+//      })
+//      console.log(obj)
+//      return obj
+//  }
+
+
+// getDNSStats(['code.yandex.ru', 'music.yandex.ru', 'yandex.ru'])
+
+//{'.ru': 3, '.ru.yandex': 3, '.ru.yandex.code': 1,'.ru.yandex.music': 1}
+
+// function encodeLine(str) {
+//   let arr = [];
+//   let count = 1;
+//   let arrStr = str.split('');
+//   for (let i = 0; i < arrStr.length; i++) {
+//     if (arrStr[i] === arrStr[i + 1]) {
+//       count++;
+//     } else {
+//       if (count !== 1) {
+//         arr.push(count);
+//       }
+//       arr.push(arrStr[i]);
+//       count = 1;
+//     }
+//   }
+//   console.log(arr.join(''))
+//   return arr.join('');
+// }
+
+
+///Ваша задача — реализовать функцию, которая принимает строку ( str) и возвращает ее закодированную версию.
+
+// решение ниже помогает в том случае если идет сбор жлементов по всему объекту. Если в строке повторяющие элементы то она их сортирует .
+
+// function encodeLine(str) {
+//   let arrStr1 = str.split('');
+//   let obj = {};
+//   arrStr1.map(t=> {
+//     obj.hasOwnProperty(t) ? obj[t]++ : obj[t] = 1
+//   })
+
+//   let arr = [];
+//   for (let key in obj) {
+//     (obj[key] == 1) ? arr.push(key) : arr.push(obj[key] +  key );
+
+//   }
+//   console.log(arr.join(''))
+// }
+
+
+// function encodeLine(str) {
+//   let strArr = str.split('');
+//   let counter = 1;
+//   let array = [];
+//   for (let i = 0; i < strArr.length; i++) {
+//     if (strArr[i] === strArr[i + 1]) {
+//       counter++;
+//     } else {
+//       if (counter !== 1) {
+//         array.push(counter);
+//       }
+//       array.push(strArr[i]);
+//       counter = 1;
+//     }
+//   }
+//   console.log(array.join(''))
+//   return array.join('');
+// }
+
+// encodeLine('aabbbc')//=>'2a3bc'
+// encodeLine('abbcca')
+
+// function renameFiles(names) {
+
+//   console.log(names);
+
+// }
+// renameFiles(["file", "file", "image", "file(1)", "file"]);
+
+
+// function renameFiles(names) {
+//   names.map(name => {
+//     let counter = 0;
+//     for( let i=0; i< names.length; i++) {
+//       if(name == names[i]) {
+//         if(counter>0) {
+//           names[i] = names[i] + `(${counter})`
+//         }
+//         counter++;
+//       }
+//     }
+//   })
+//   console.log(names);
+//   return names;
+// }
+// console.log(["file", "file", "image", "file(1)", "file"]);
+// renameFiles(["file", "file", "image", "file(1)", "file"])
+
+
+
+// function getEmailDomain(email) {
+//   email.split('@').reverse()[0]
+//   console.log(email.split('@').pop())
+// return email.split('@').pop()
+// }
+// getEmailDomain('prettyandsimple@example.com') // =>'example.com'
+
+
+function isMAC48Address(n) {
+  // console.log(n.split('-'));
+  let num = n.split('-');
+
+  num.map(t => {
+    if(t.match(/([0-9a-fA-F])/)) {
+      console.log('yes')
+    } else {
+      console.log('no')
+    }
+  })
+  // let regExp = /([0-9a-fA-F]{2}([:-]|$)){6}$|([0-9a-fA-F]{4}([.]|$)){3}/
+  // return regExp.test(n)
 }
+isMAC48Address('00-1B-63-84-45-E6')
+
+console.log('00'.match(/([0-9a-fA-F])/))
+console.log('1B-'.match(/([0-9a-fA-F][0-9a-fA-F]-)/))
+console.log('1B-11'.match(/([0-9a-fA-F][0-9a-fA-F]-[0-9a-fA-F][0-9a-fA-F])/))
 
 
-module.exports = {
-  deleteDigit
-};
+// function isMAC48Address(n) {
+//   let regExp = /([0-9a-fA-F]{2}([:-]|$)){6}$|([0-9a-fA-F]{4}([.]|$)){3}/
+//   return regExp.test(n)
+// }
