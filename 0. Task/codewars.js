@@ -1078,28 +1078,62 @@ function dataReverse(data) {
 // getEmailDomain('prettyandsimple@example.com') // =>'example.com'
 
 
-function isMAC48Address(n) {
-  // console.log(n.split('-'));
-  let num = n.split('-');
+// function isMAC48Address(n) {
+//   let test = /([0-9a-fA-F][0-9a-fA-F])-([0-9a-fA-F][0-9a-fA-F])-([0-9a-fA-F][0-9a-fA-F])-([0-9a-fA-F][0-9a-fA-F])-([0-9a-fA-F][0-9a-fA-F])-([0-9a-fA-F][0-9a-fA-F])/
+//   return test.test(n)
+  // // console.log(n.split('-'));
+  // let num = n.split('-');
 
-  num.map(t => {
-    if(t.match(/([0-9a-fA-F])/)) {
-      console.log('yes')
-    } else {
-      console.log('no')
-    }
-  })
+  // num.map(t => {
+  //   if(t.match(/([0-9a-fA-F])/)) {
+  //     console.log('yes')
+  //   } else {
+  //     console.log('no')
+  //   }
+  // })
   // let regExp = /([0-9a-fA-F]{2}([:-]|$)){6}$|([0-9a-fA-F]{4}([.]|$)){3}/
   // return regExp.test(n)
-}
-isMAC48Address('00-1B-63-84-45-E6')
+// }
+// isMAC48Address('00-1B-63-84-45-E6')
 
-console.log('00'.match(/([0-9a-fA-F])/))
-console.log('1B-'.match(/([0-9a-fA-F][0-9a-fA-F]-)/))
-console.log('1B-11'.match(/([0-9a-fA-F][0-9a-fA-F]-[0-9a-fA-F][0-9a-fA-F])/))
+// console.log('00'.match(/([0-9a-fA-F])/))
+// console.log('1B-'.match(/([0-9a-fA-F][0-9a-fA-F]-)/))
+// console.log('1B-1B-1B-12'.match(/([0-9a-fA-F][0-9a-fA-F])-([0-9a-fA-F][0-9a-fA-F])-([0-9a-fA-F][0-9a-fA-F])-([0-9a-fA-F][0-9a-fA-F])/))
 
 
 // function isMAC48Address(n) {
 //   let regExp = /([0-9a-fA-F]{2}([:-]|$)){6}$|([0-9a-fA-F]{4}([.]|$)){3}/
+//   let test = /([0-9a-fA-F]{2}-[0-9a-fA-F]{2}-[0-9a-fA-F]{2}-[0-9a-fA-F]{2}-[0-9a-fA-F]{2}-[0-9a-fA-F]{2})/
+//   console.log(regExp.test(n))
+//   console.log(test.test(n))
 //   return regExp.test(n)
 // }
+// isMAC48Address('00-1B-63-84-45-E6')
+
+
+
+
+
+const matrix = [
+  [0, 1, 1, 2],
+  [0, 5, 0, 0],
+  [2, 0, 3, 3]
+ ];
+
+function getMatrixElementsSum(matrix) {
+  let sum = 0;
+  console.log(matrix);
+  for (let i=0; i< matrix[0].length; i++) {
+    for(let j=0; j<matrix.length; j++) {
+      if(matrix[j][i] !==0) {
+        sum += matrix[j][i]
+      } else {
+        break
+      }
+      console.log(matrix[j][i]);
+    }
+  }
+  console.log(sum)
+  return sum
+}
+getMatrixElementsSum(matrix)// => 9
