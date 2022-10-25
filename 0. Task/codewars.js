@@ -1114,26 +1114,254 @@ function dataReverse(data) {
 
 
 
-const matrix = [
-  [0, 1, 1, 2],
-  [0, 5, 0, 0],
-  [2, 0, 3, 3]
- ];
+// const matrix = [
+//   [0, 1, 1, 2],
+//   [0, 5, 0, 0],
+//   [2, 0, 3, 3]
+//  ];
 
-function getMatrixElementsSum(matrix) {
-  let sum = 0;
-  console.log(matrix);
+// function getMatrixElementsSum(matrix) {
+//   let sum = 0;
+//   console.log(matrix);
+//   for (let i=0; i< matrix[0].length; i++) {
+//     for(let j=0; j<matrix.length; j++) {
+//       if(matrix[j][i] !==0) {
+//         sum += matrix[j][i]
+//       } else {
+//         break
+//       }
+//       console.log(matrix[j][i]);
+//     }
+//   }
+//   console.log(sum)
+//   return sum
+// }
+// getMatrixElementsSum(matrix)// => 9
+
+
+function minesweeper(matrix) {
+  // console.log(matrix);
   for (let i=0; i< matrix[0].length; i++) {
     for(let j=0; j<matrix.length; j++) {
-      if(matrix[j][i] !==0) {
-        sum += matrix[j][i]
-      } else {
-        break
-      }
-      console.log(matrix[j][i]);
+      // sumMatrix (j, i)
+
+      // if(matrix[j][i]) {
+      //   matrix[j][i] = 1;
+      // } else {
+      //   matrix[j][i] = 0;
+      // }
+      // console.log(matrix[j][i]);
     }
   }
-  console.log(sum)
+  // console.log(matrix);
+  // return sum
+}
+
+// let matrix = [
+//     [true, false, false],
+//     [false, true, false],
+//     [false, false, false]
+//    ]
+
+  //  minesweeper(matrix)
+
+  //  console.log(true + false);
+
+
+// let matrix =  [true, false, false, false, true, true ]
+// function sumMatrix (matrix) {
+//   let num1 = 0;
+//   for( let i = num1; i<=num2; i++) {
+
+//   }
+
+// }
+
+// let matrix = [
+//     [1, 2, 3],
+//     [3, 4, 5],
+//     [6, 7, 8]
+//    ]
+
+// function sumMatrix(matrix, num1, num2){
+//   let sum = 0;
+
+//   for (let i = num1 - 1 ; i <= num1 + 1; i++) {
+//     for(let j = num2 - 1; j<= num2 + 1; j++) {
+//       sum += matrix[i][j]
+//     }
+//   }
+//   console.log(sum)
+
+// }
+
+// sumMatrix(matrix, 1, 1)
+
+// console.log('work')
+
+// let matrix = [
+//   [false, false, false],
+//   [false, false, false],
+// ];
+// console.log(matrix);
+
+
+// let matrixSum = matrix.map(function (item) {
+// 	return [...item]
+// })
+
+// function sumM( i , j ) {
+//   if(matrix[i][j]==1) {
+//     return matrixSum[i][j] = 1;
+    
+//   }
+//     console.log(i ,j)
+//     // console.log(matrix.length)
+//     let startI;
+//     let finishI;
+//     let startJ;
+//     let finishJ;
+//     if(i == 0) {
+//          startI = 0;
+//          finishI = 1;
+//     }
+//     if(i > 0 && i < matrix.length-1) {
+//          startI = i - 1;
+//          finishI = i + 1;
+//         // console.log(i);
+//     }
+//     if(i == matrix.length-1) {
+//          startI = i - 1;
+//          finishI = i;
+//     }
+
+//     if(j == 0) {
+//          startJ = 0;
+//          finishJ = 1;
+//     }
+//     if(j > 0 && j < matrix[0].length-1) {
+//          startJ = j - 1;
+//          finishJ = j + 1;
+//     }
+//     if(j == matrix[0].length-1) {
+//          startJ = j - 1;
+//          finishJ = j;
+//     }
+//     let sum = 0;
+    
+//     for( let i = startI; i <= finishI; i++) {
+//         for( let j = startJ; j <= finishJ; j++) {
+//             sum += matrix[i][j];
+//             // console.log(matrixSum[i][j]);
+            
+//         }
+//     }
+    
+//     matrixSum[i][j] = sum;
+//     console.log(matrixSum[i][j]);
+//     console.log( sum );
+//     // console.log(matrixSum)
+//     return sum;
+// }
+
+// // sumM( 1 , 1 )
+// // console.log(matrixX)
+
+// // let matrixX = []
+// function showM (matrix){
+//     for( let i = 0; i< matrix.length; i++){
+//         for( let j = 0; j< matrix[0].length; j++){
+//             // console.log(i,j);
+//             console.log(sumM(i,j))
+//            // matrixX.push(sumM(i,j))
+//         }
+//     }
+//     console.log(matrix);
+//     console.log(matrixSum);
+//     return matrixSum;
+// }
+// showM(matrix);
+
+// let matrix = [
+//     [true, false, false],
+//     [false, true, false],
+//     [false, false, false]
+//    ]
+
+
+
+// function minesweeper(matrix) {
+//   matrix = matrix.map((t, index, array) => {
+//       t = t.map((e, indexE, arrayE) => {
+//           let arr = [];
+//           if (arrayE[indexE - 1]) {
+//               arr.push(arrayE[indexE - 1]);
+//           }
+//           if (arrayE[indexE + 1]) {
+//               arr.push(arrayE[indexE + 1]);
+//           }
+//           if (index > 0 && array[index - 1][indexE - 1]) {
+//               arr.push(array[index - 1][indexE - 1]);
+//           }
+//           if (index > 0 && array[index - 1][indexE]) {
+//               arr.push(array[index - 1][indexE]);
+//           }
+//           if (index > 0 && array[index - 1][indexE + 1]) {
+//               arr.push(array[index - 1][indexE + 1]);
+//           }
+//           if (index < matrix.length - 1 && array[index + 1][indexE - 1]) {
+//               arr.push(array[index + 1][indexE - 1]);
+//           }
+//           if (index < matrix.length - 1 && array[index + 1]) {
+//               arr.push(array[index + 1][indexE]);
+//           }
+//           if (index < matrix.length - 1 && array[index + 1][indexE + 1]) {
+//               arr.push(array[index + 1][indexE + 1]);
+//           }
+//           console.log( arr.filter((t) => t === true).length);
+//           return arr.filter((t) => t === true).length;
+//       });
+//       console.log(t);
+//       return t;
+//   });
+//   console.log(matrix);
+//   return matrix;
+// }
+
+// minesweeper(matrix)
+
+// arr = [-1, 150, 190, 170, -1, -1, 160, 180]
+// arr = [ 11, 16, 2, 2, 4, 9 ]
+// function sortByHeight(arr) {
+//   // console.log(arr.sort());
+//   console.log(arr.filter(e => e > 0).sort((a,b) => a-b));
+//   let arr2 = arr.filter(e => e > 0).sort((a,b) => a-b);
+//   let i = 0;
+//   let r = arr.map( elem => {
+//     if (elem<0) {
+//       return elem;
+//     } else {
+//       i++;
+//       return arr2[i-1]
+//     }
+//   })
+//   console.log(r);
+//   return r
+// }
+
+// sortByHeight(arr)
+
+function getSumOfDigits( n ) {
+  let sum = 0;
+  let arr = n.toString().split('');
+  console.log(arr);
+  arr.map(elem => {
+    sum += +elem;
+  })
+  if (sum > 9) {
+    sum = getSumOfDigits(sum)
+  }
+  console.log(sum);
   return sum
 }
-getMatrixElementsSum(matrix)// => 9
+getSumOfDigits( 164556 )
