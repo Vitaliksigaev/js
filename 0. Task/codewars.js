@@ -1351,17 +1351,18 @@ function minesweeper(matrix) {
 
 // sortByHeight(arr)
 
-function getSumOfDigits( n ) {
-  let sum = 0;
-  let arr = n.toString().split('');
-  console.log(arr);
-  arr.map(elem => {
-    sum += +elem;
-  })
-  if (sum > 9) {
-    sum = getSumOfDigits(sum)
-  }
-  console.log(sum);
-  return sum
-}
-getSumOfDigits( 164556 )
+// function getSumOfDigits( n ) {
+//   let sum = 0;
+//   let arr = n.toString().split('');
+//   console.log(arr);
+//   arr.map(elem => {
+//     sum += +elem;
+//   })
+//   if (sum > 9) {
+//     sum = getSumOfDigits(sum)
+//   }
+//   console.log(sum);
+//   return sum
+// }
+// getSumOfDigits( 164556 )
+
