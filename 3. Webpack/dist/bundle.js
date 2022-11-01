@@ -1,1 +1,0 @@
-(()=>{"use strict";var e={127:(e,o)=>{Object.defineProperty(o,"__esModule",{value:!0}),o.test=void 0,o.test=function(){console.log("heelo from test")}}},o={};(0,function t(r){var s=o[r];if(void 0!==s)return s.exports;var n=o[r]={exports:{}};return e[r](n,n.exports,t),n.exports}(127).test)(),console.log("hello from src - index")})();

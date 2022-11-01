@@ -1,12 +1,30 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { AutomaticPrefetchPlugin } = require('webpack');
 
-module.exports = {
-  entry: './src/index.ts',
+
+const devServer = (isDev) => !isDev ? {} : {
+  devServer: {
+    open: true,
+    hot: true,
+    port: 8080,
+    // contentBase: path.join(__dirname, 'public'),// путь к папке статичных файлов
+  }
+};
+
+module.exports = ({develop}) => ({
+  mode: develop ? 'development' : 'production',
+  // devtool: (develop) ? ('inline-source-map') : ('none'),// генерация
+  entry: {
+    app:'./src/index.ts',
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
-    assetModuleFilename:'assets/[name][ext]',
+    filename: '[name].[contenthash].js',
+    assetModuleFilename:'assets/[hash][ext]', //hash
   },
   module: {
     rules: [
@@ -20,8 +38,17 @@ module.exports = {
             type:'asset/resource',
         },
         {
-
+            test: /\.(woff(2)?|eot|ttf|otf)$/i,
+            type: 'asset/resource',
         },
+        {
+          test:/\.css$/i,
+          use: [MiniCssExtractPlugin.loader, 'css-loader']
+        },
+        {
+          test:/\.s[ac]ss$/i,
+          use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        }
     ]
   },
   resolve: {
@@ -29,7 +56,18 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-        title: 'Demo webpack'
+        // title: 'Demo webpack'
+        template:'./src/index.html'
     }),
+    new MiniCssExtractPlugin ({
+      filename:'[name].[contenthash].css'
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from:'./public'} // если не указывать в TO-  то копировать файлы будут в корень ДИСТ
+      ]
+    }),
+    new CleanWebpackPlugin({cleanStaleWebpackAssets: false}),
   ],
-};
+  ...devServer(develop),
+});
