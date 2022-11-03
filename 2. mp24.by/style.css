@@ -1,7 +1,11 @@
-
 body {
     margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+
 }
+
+/* -------------- ИКОНКИ ОБРАТНОЙ СВЯЗИ-------- */ */
+
 a svg{
     width: 25px;
     height: 25px;
@@ -13,7 +17,6 @@ a svg{
     width: 100%;
     z-index: 1000;
 }
-
 .btn-mob-stick-messenger-links {
     display: flex;
 }
@@ -21,12 +24,14 @@ a svg{
 margin: 0px;
 font-size: 10px;
 }
-
 .btn-mob-stick-messenger-links a {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 25%;
+    height: 35px;
+    padding: 5px;
+
     color: white;
     text-decoration:none;
 }
@@ -42,8 +47,6 @@ font-size: 10px;
 .style-call{
     background-color:rgb(0 206 44) ;
 }
-
-
 .bi {
     animation: rotating 8s infinite linear;
 }
@@ -59,6 +62,7 @@ font-size: 10px;
         transform: rotate(0deg); 
     }
 } */
+
 @keyframes rotating {
     0% {
         transform: rotateY(-360deg);
@@ -69,11 +73,8 @@ font-size: 10px;
     100% {
         transform: rotateY(0deg);
     }
-}
-
-
-
-/* .btn-mob-stick:after {
+} 
+.btn-mob-stick:after {
     content: "";
     display: block;
     width: 20px;
@@ -94,22 +95,6 @@ font-size: 10px;
     animation: movingFlare 8s ease-in-out 0.01s infinite;
   }
 
-
-@keyframes movingFlare {
-    0% {
-      left: -30px;
-      margin-left: 0px;
-    }
-    30% {
-      left: 110%;
-      margin-left: 80px;
-    }
-    100% {
-      left: 110%;
-      margin-left: 80px;
-    }
-  } */
-
   .btn-mob-stick:after {
     content: "";
     display: block;
@@ -122,7 +107,6 @@ font-size: 10px;
     left: -150%;
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
     animation: flareAnimation 3s infinite linear; // Время и тип анимации можно менять
-
   }
 
   @keyframes flareAnimation {
@@ -132,4 +116,147 @@ font-size: 10px;
     100% {
         left: 150%;
     }
+}
+
+/* ---------------------------------------------------- */
+
+
+
+
+
+/* /////////////// */
+.banner-dls {
+    /* margin: auto; */
+    width: 30%;
+    /* height: 100px; */
+    background-image: url("/2.\ mp24.by/img/dls-0.jpg");
+    background-size: 100%;
+    position: relative;
+    margin: 5px;
+}
+.banner-dls h2{
+    /* font-family: 'Montserrat', sans-serif; */
+    font-size: 18px;
+    font-weight: 300;
+    color: aliceblue;  
+    padding: 10px;
+    margin: 5px;
+}
+.dls-tegs a{
+    font-size: 8px;
+    display: inline-block;
+    text-decoration: none;
+    padding: 3px;
+    margin: 3px;
+    color: aliceblue;
+    background-color: rgba(100, 148, 237, 0.782);
+
+}
+
+/* ---------------------------------------------------- */
+
+
+.svp-vidy-obshhie {
+    max-width: 900px;
+    margin: auto;
+}
+.svp-vidy-obshhie h2 {
+    text-align: center;
+	margin:0px
+}
+.svp-vidy-obshhie h3 {
+    padding: 0px;
+    margin: 0px;
+	  text-align: center;
+}
+.svp-button-brand {
+    /* width: 640px; */
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+	justify-content: center;
+}
+.svp-button-brand a {
+    text-decoration: none;
+    padding: 5px;
+    margin: 5px;
+    font-size: 18px;
+    font-weight: 300;
+    color:black;
+    box-shadow: 0 2px 2px 0 rgba(0, 40, 120, .35);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width:180px;
+    overflow: hidden;	
+}
+
+.btn-svp-tm-mini-text {
+    font-size: 12px;
+    animation: slideUp 2s forwards;
+    display: inline-block;
+    transform: translateY(150%);
+}
+
+.btn-tm-anim1 {
+    animation-delay: 0.6s;
+}
+.btn-tm-anim2 {
+    animation-delay: 0.8s;
+}
+.btn-tm-anim3 {
+    animation-delay: 1.0s;
+}
+.btn-tm-anim4 {
+    animation-delay: 1.2s;
+}
+.btn-tm-anim5 {
+    animation-delay: 1.4s;
+}
+.btn-tm-anim6 {
+    animation-delay: 1.6s;
+}
+.btn-tm-anim7 {
+    animation-delay: 1.9s;
+}
+.btn-tm-anim8 {
+    animation-delay: 2.0s;
+}
+.btn-tm-anim9 {
+    animation-delay: 2.2s;
+}
+.btn-tm-anim10 {
+    animation-delay: 2.4s;
+}
+.btn-tm-anim11 {
+    animation-delay: 2.6s;
+}
+@keyframes slideUp {
+  0% {
+    transform: translateY(150%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+.svp-img-info {
+    width: 50px;
+    height: 50px;
+    float: left;
+	margin:10px;
+}
+@media (max-width: 600px) { 
+    .svp-button-brand a {
+        min-width:150px
+    }
+}
+
+
+
+
+
+#btn-dls-banner {
+ background-image: url("/2.\ mp24.by/img/dls-0.jpg");
+ background-size: 100%;
 }

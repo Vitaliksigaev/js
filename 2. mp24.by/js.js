@@ -156,76 +156,83 @@
 
 // sumArr(arr2)
 
-console.log('work')
 
-let matrix = [
-    [1,2,3],
-    [4,5,6],
-    [7,8,9]
-];
-console.log(matrix);
- let matrixX = []
 
-function showM (matrix){
-    for( let i = 0; i< matrix.length; i++){
-        for( let j = 0; j< matrix.length; j++){
-            // console.log(i,j);
-            console.log(sumM(i,j))
-            matrixX.push(sumM(i,j))
-        }
-    }
-    console.log(matrix)
-}
-showM(matrix)
+// --------------  ИКОНКИ ОБРАТНОЙ СВЯЗИ   --------------  
+// console.log('work')
 
-function sumM( i , j ) {
-    console.log(i ,j)
-    // console.log(matrix.length)
-    let startI;
-    let finishI;
-    let startJ;
-    let finishJ;
+// let matrix = [
+//     [1,2,3],
+//     [4,5,6],
+//     [7,8,9]
+// ];
+// console.log(matrix);
+//  let matrixX = []
 
-    if(i == 0) {
-         startI = 0;
-         finishI = 1;
-    }
-    if(i > 0 && i < matrix.length-1) {
-         startI = i - 1;
-         finishI = i + 1;
-        // console.log(i);
-    }
-    if(i == matrix.length-1) {
-         startI = i - 1;
-         finishI = i;
-    }
+// function showM (matrix){
+//     for( let i = 0; i< matrix.length; i++){
+//         for( let j = 0; j< matrix.length; j++){
+//             // console.log(i,j);
+//             console.log(sumM(i,j))
+//             matrixX.push(sumM(i,j))
+//         }
+//     }
+//     console.log(matrix)
+// }
+// showM(matrix)
 
-    if(j == 0) {
-         startJ = 0;
-         finishJ = 1;
-    }
-    if(j > 0 && j < matrix.length-1) {
-         startJ = j - 1;
-         finishJ = j + 1;
-    }
-    if(j == matrix.length-1) {
-         startJ = j - 1;
-         finishJ = j;
-    }
-    let sum = 0;
-    let matrixSum = [];
-    for( let i = startI; i <= finishI; i++) {
-        for( let j = startJ; j <= finishJ; j++) {
-            sum += matrix[i][j];
-            // let matrixSum[i][j] = sum;
-        }
-    }
+// function sumM( i , j ) {
+//     console.log(i ,j)
+//     // console.log(matrix.length)
+//     let startI;
+//     let finishI;
+//     let startJ;
+//     let finishJ;
 
-    // console.log( sum );
-    // console.log(matrixSum)
-    return sum;
+//     if(i == 0) {
+//          startI = 0;
+//          finishI = 1;
+//     }
+//     if(i > 0 && i < matrix.length-1) {
+//          startI = i - 1;
+//          finishI = i + 1;
+//         // console.log(i);
+//     }
+//     if(i == matrix.length-1) {
+//          startI = i - 1;
+//          finishI = i;
+//     }
 
-}
+//     if(j == 0) {
+//          startJ = 0;
+//          finishJ = 1;
+//     }
+//     if(j > 0 && j < matrix.length-1) {
+//          startJ = j - 1;
+//          finishJ = j + 1;
+//     }
+//     if(j == matrix.length-1) {
+//          startJ = j - 1;
+//          finishJ = j;
+//     }
+//     let sum = 0;
+//     let matrixSum = [];
+//     for( let i = startI; i <= finishI; i++) {
+//         for( let j = startJ; j <= finishJ; j++) {
+//             sum += matrix[i][j];
+//             // let matrixSum[i][j] = sum;
+//         }
+//     }
 
-sumM( 1 , 1 )
-console.log(matrixX)
+//     // console.log( sum );
+//     // console.log(matrixSum)
+//     return sum;
+
+// }
+
+// sumM( 1 , 1 )
+// console.log(matrixX)
+
+// --------------  ИКОНКИ ОБРАТНОЙ СВЯЗИ   --------------  
+
+
