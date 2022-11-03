@@ -1366,3 +1366,25 @@ function minesweeper(matrix) {
 // }
 // getSumOfDigits( 164556 )
 
+
+// basic-gs-gs
+console.log('w')
+
+//            remove-from-list 
+
+//решение рабочее если к является массивом.
+// let l = [3, 1, 2, 3, 4, 5];
+// let k = 3;
+// let arr = [];
+// arr.push(k);
+// console.log(arr)
+// let rez = l.filter(elem => {
+//   if(!arr.includes(elem)) {
+//     return elem
+//   }
+// });
+// console.log(rez)
+// console.log(l.includes(k.filter(elem => elem)));
+
+
+
