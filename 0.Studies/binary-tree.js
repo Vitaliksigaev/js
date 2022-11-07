@@ -113,7 +113,7 @@ class Node {
       return node.value; // возвращаем самого левого или минимального элемента
     }
   
-    max() {
+    max() {  // поиск максимального значение
       if (!this.root) {// наличие узла
         return;
       }
@@ -127,18 +127,18 @@ class Node {
     }
   
     leftTraverse(cb) {  //левые обходы 
-      doLeft(this.root, cb);
+      doLeft(this.root, cb); // вызываем метод который будем применять на данном узле
   
       function doLeft(node, cb) {
-        if (node) {
-          doLeft(node.left, cb);
-          cb(node.value);
+        if (node) { // есть ли вообще узел
+          doLeft(node.left, cb); // рекурсивынй метод на левый узел, доходим когда нод лефт = нул
+          cb(node.value); // колл бэк с текущим значением 
           doLeft(node.right, cb);          
         }
       }
     }
   
-    rightTraverse(cb) {
+    rightTraverse(cb) { // аналогично как и обход по левому
       doRight(this.root, cb);
   
       function doRight(node, cb) {
@@ -150,13 +150,13 @@ class Node {
       }
     }
   }
-  
-  console.log('s01e12 - BST (Binary Search Tree)');
-  
-  function addItems() {
+
+console.log('s01e12 - BST (Binary Search Tree)');
+
+function addItems() {
     console.log('\n  Add Items');
     console.log('add 13, 15, 9, 20, 18, 32, 25');
-  
+
     bst.add(13);
     bst.add(15);
     bst.add(9);
@@ -164,8 +164,8 @@ class Node {
     bst.add(18);
     bst.add(32);
     bst.add(25);
-  
-  
+
+
     //  Should get something like this:
     //    13
     //   /  \
@@ -176,38 +176,38 @@ class Node {
     //       18   32
     //           /
     //          25
-  }
-  
-  function getItems() {
+}
+
+function getItems() {
     console.log('\n  Get Items');
-  
+
     console.log('has 10', bst.has(10));
     console.log('has 15', bst.has(15));
     console.log('\n', bst);
-  
+
     console.log('  Left Traverse:');
     bst.leftTraverse((val) => console.log(val));
-  
+
     console.log('  Right Traverse:');
     bst.rightTraverse((val) => console.log(val)); 
-  
+
     console.log('min:', bst.min());
     console.log('max:', bst.max());
-  }
-  
-  function removeItem() {
+}
+
+function removeItem() {
     console.log('  Remove Item');
-  
+
     bst.remove(15);
     console.log('remove 15');
     console.log(bst);
-  
+
     console.log('  Left Traverse:');
     bst.leftTraverse((val) => console.log(val));
-  }
-  
-  
-  const bst = new BinarySearchTree();
-  
-  addItems();
-  getItems();
+}
+
+
+const bst = new BinarySearchTree();
+
+addItems();
+getItems();
