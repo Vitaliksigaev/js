@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Калькулятор</title>
+    <link href="/2. mp24.by/1. Calculator/v2/style.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+    <div id="calcSvp">
+        <div id="calcSvpSum">
+            <div class="calc-input-box-h2">
+                <h2> Калькулятор СВП</h2>
+            </div>
+
+            <div class="calc-input-box">
+
+                <div class="calc-input-description">
+                    <img class="calc-svg" src="/2. mp24.by/img/icon/08189208190209143208177-13-18-57-50.svg">           
+                    <p>Количество, м2</p>
+                </div>
+
+                <div class="box_input">                    
+                    <button class="btn-calc num1">-</button>
+                    <input class="calc-input" id="num1" type=”number” value="100">
+                    <button class="btn-calc num1">+</button>
+                </div>
+            </div>
+            
+            <div class="calc-input-box">
+                <div class="calc-input-description">
+                    <img class="calc-svg svg-style-rotate" src="/2. mp24.by/img/icon/3039287.svg">           
+                    <p>A: Длина плитки, см</p>
+                </div>
+                <div class="box_input">
+                    <button class="btn-calc num2">-</button>
+                    <input class="calc-input input-change-5ps" type=”number”   id="num2" value="60" class="111"/>
+                    <button class="btn-calc num2">+</button>
+                </div>
+            </div>
+            <div class="calc-input-box">
+                <div class="calc-input-description">
+                    <img class="calc-svg" src="/2. mp24.by/img/icon/3039287.svg">           
+                    <p>B: Ширина плитки, см</p>
+                </div>
+                
+                <div class="box_input">
+                    <button class="btn-calc num3">-</button>
+                    <input class="calc-input input-change-5ps" type=”number” id="num3" value="60" class="111"/>
+                    <button class="btn-calc num3">+</button>
+                </div>
+            </div>
+            <div class="calc-input-box">
+                <div class="calc-input-description">
+                    <img class="calc-svg" src="/2. mp24.by/img/icon/6117420.svg">           
+                    <p>C: Штук по длине</p>
+                </div>
+                
+                <div class="box_input">
+                    <button class="btn-calc num4">-</button>
+                    <input class="calc-input" type=”number” id="num4" value="2" />
+                    <button class="btn-calc num4">+</button>
+                </div>
+            </div>
+            <div class="calc-input-box">
+                <div class="calc-input-description">
+                    <img class="calc-svg svg-style-rotate" src="/2. mp24.by/img/icon/6117420.svg" >           
+                    <p>D: Штук по ширине</p>
+                </div>
+                
+                <div class="box_input">
+                    <button class="btn-calc num5">-</button>
+                    <input class="calc-input" type=”number” id="num5" value="2"/>
+                    <button class="btn-calc num5">+</button>
+                </div>
+            </div>
+            <div class="box-results">
+                <div class="results">
+                    <div>
+                        <img class="calc-svg" src="/2. mp24.by/img/icon/5194031.svg">
+                    </div>
+                    <div class="result-num">
+                        <span id="result3" class="result-style">10 шт</span>
+                        <span>*Расход на м<sup><small>2</small></sup></span>
+                    </div>  
+                </div>
+
+                    <div class="results">
+                        <div>
+                            <img class="calc-svg" src="/2. mp24.by/img/icon/4717189.svg">
+                        </div>
+                        <div class="result-num">
+                            <span id="result" class="result-style">1044 шт</span>
+                            <span>Итого <br></span>
+                        </div>
+                    </div>   
+
+            </div>
+            <div class="results-bias">
+                <span>* При смещении на 50% расход =</span>
+                <span id="result2"></span><br>    
+                </span>
+            </div>  
+        </div>
+    </div>
+
+
+
+    <script src="/2. mp24.by/1. Calculator/v2/jsv2.js"></script>
+
+</body>
+</html>
