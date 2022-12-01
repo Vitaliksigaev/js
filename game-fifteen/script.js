@@ -29,16 +29,18 @@ function generateRandomNumbers (num) {
 
 // функция создания кнопок - переменная колво
 let sumClicks = 0;
+let starTimer = 0;
+let numberSquares = 9;
+
 function generateBtnGame (num) {
 
     if(localStorage.getItem('btnSavePosition')){
         console.log('local esti');
         removeBtnGames ();
         gameArea.innerHTML = localStorage.getItem('btnSavePosition');
-        //add time
-        //add stat
 
-
+        //Возобновление работы счетчика шагов
+        sumClicks = Number(localStorage.getItem('moves'));
         btnGames = body.querySelectorAll('.btn-game');
     
         for( let i = 0; i < btnGames.length; i++) {
@@ -53,10 +55,14 @@ function generateBtnGame (num) {
                     btnZeroId.setAttribute('id', btnIdOld);
     
                     sumClicks += 1;
-                    if(sumClicks == 1) {
+                    starTimet +=1;
+                    if(starTimer == 1) {
                         timerStart();
                     }
-    
+                    // if(sumClicks == Number(localStorage.getItem('moves')) + 1) {
+
+                    // }
+
                     statMoves.innerText = `${sumClicks} Moves` ;
                     setTimeout(() => {
                         checkWinGame()
@@ -120,7 +126,9 @@ function generateBtnGame (num) {
                 btnZeroId.setAttribute('id', btnIdOld);
 
                 sumClicks += 1;
-                if(sumClicks == 1) {
+                starTimer +=1;
+
+                if(starTimer == 1) {
                     timerStart();
                 }
 
@@ -135,7 +143,6 @@ function generateBtnGame (num) {
     }
 
 }
-let numberSquares= 16;
 generateBtnGame (numberSquares);
 
 // Delete button
@@ -146,11 +153,109 @@ function removeBtnGames () {
     }
 }
 
+
+
+// создания блока управления игры
+let sectionGameControl = document.createElement('div');
+sectionGameControl.classList.add('game-area-controls');
+sectionGame.appendChild(sectionGameControl);
+
+
+// Ауто финиш
+let gameControlAuto = document.createElement('button');
+gameControlAuto.innerText = 'Auto';
+sectionGameControl.appendChild(gameControlAuto);
+
+gameControlAuto.addEventListener ('click', () => {
+    // localStorage.clear();
+    let btnGames = body.querySelectorAll('.btn-game').length; 
+    removeBtnGames ();
+    generateBtnGame (btnGames);
+    refreshResults ();
+    //перезиписали на верные значения
+    let newbtnGames = body.querySelectorAll('.btn-game'); 
+
+    for( let i = 0; i < newbtnGames.length; i++) {
+        newbtnGames[i].innerText = i + 1;
+    }
+    setTimeout(()=>{
+        alert('Сдвиньте последний квадрат и верните его на место, чтобы выйграть! Пока реализованиа на 3-3')
+    }, 1000)
+})
+
+
+// работа перемешивание кнопки
+let gameControlReset = document.createElement('button');
+gameControlReset.innerText = 'Shuffle';
+sectionGameControl.appendChild(gameControlReset);
+gameControlReset.addEventListener('click', () => {
+    localStorage.clear();
+    let btnGames = body.querySelectorAll('.btn-game'); 
+    removeBtnGames ();
+    generateBtnGame (btnGames.length);
+    refreshResults ();
+})
+
+//  Кнопка остановка игры
+let gameControlStop = document.createElement('button');
+gameControlStop.innerText = 'Stop';
+sectionGameControl.appendChild(gameControlStop);
+gameControlStop.addEventListener('click', () => {
+    clearInterval(intervalID);
+    starTimer = 0;
+    let timerAll = document.getElementById('statTime');
+    let timerArr = timerAll.innerText.split(':').reverse();
+    let timerSec = timerArr[0];
+    let timerMin = timerArr[1];
+    let timerH = timerArr[2];
+    
+    localStorage.setItem('timerSec', `${timerSec}`);
+    localStorage.setItem('timerMin', `${timerMin}`);
+    localStorage.setItem('timerH', `${timerH}`);
+})
+
+// Кнопка сохранения
+let gameControlSave = document.createElement('button');
+gameControlSave.innerText = 'Save';
+sectionGameControl.appendChild(gameControlSave);
+
+gameControlSave.addEventListener ('click', () => {
+    clearInterval(intervalID);
+    let statPosition = gameArea.innerHTML;
+    let statStatistics = statSection.innerHTML;
+    let timerAll = document.getElementById('statTime');
+    let timerArr = timerAll.innerText.split(':').reverse();
+    let timerSec = timerArr[0];
+    let timerMin = timerArr[1];
+    let timerH = timerArr[2];
+    let moves = statMoves.innerText.replace(/[\D]+/g, '');
+    
+    localStorage.setItem('btnSavePosition', `${statPosition}`);
+    localStorage.setItem('btnSaveStat', `${statStatistics}`);
+    localStorage.setItem('timerSec', `${timerSec}`);
+    localStorage.setItem('timerMin', `${timerMin}`);
+    localStorage.setItem('timerH', `${timerH}`);
+    localStorage.setItem('moves', `${moves}`); // Отделяю секунды минуты и часы чтобы таймер запустился с нужного места
+})
+
+// Кнопка вывода результатов
+let gameControlResults = document.createElement('button');
+gameControlResults.innerText = 'Results';
+sectionGameControl.appendChild(gameControlResults);
+
+
+function refreshResults () {
+    clearInterval(intervalID);
+    statMoves.innerText = `0 Moves` ;
+    statTime.innerText = "0:0:0" ;
+    timerSec = 0;
+    sumClicks = 0;
+}
 function checkWinGame (){
     let btnGames = body.querySelectorAll('.btn-game');
     let num = 0;
-    let sizeMatrix = Math.sqrt(btnGames.length);
-    console.log(sizeMatrix);
+    // let sizeMatrix = Math.sqrt(btnGames.length);
+    // console.log(sizeMatrix);
 
     for( let i = 0; i < btnGames.length; i++) {
         if(btnGames[i].id == '00' && btnGames[i].innerText == '1') {
@@ -181,108 +286,27 @@ function checkWinGame (){
 
     if (num == btnGames.length - 1) {        
         clearInterval(intervalID);
-        let finishTime = document.getElementById('statTime').innerHTML;
-        alert(`Ура! Вы решили головоломку за ${finishTime} и ${sumClicks} ходов!`);
-        localStorage.setItem('person', `Ура! Вы решили головоломку за ${finishTime} и ${sumClicks} ходов!`);
+        // let finishTime = document.getElementById('statTime').innerHTML;
+        alert(`Ура! Вы решили головоломку за ${statTime.innerText} и ${sumClicks} ходов!`);
+
+        winnerSortToLocal (statTime.innerText);
+
+
+        localStorage.setItem('person', `Ура! Вы решили головоломку за ${statTime.innerText} и ${sumClicks} ходов!`);
     }
 }
 
-
-
-// создания блока управления игры
-let sectionGameControl = document.createElement('div');
-sectionGameControl.classList.add('game-area-controls');
-sectionGame.appendChild(sectionGameControl);
-
-// Ауто финиш
-
-let gameControlAuto = document.createElement('button');
-gameControlAuto.innerText = 'Auto';
-sectionGameControl.appendChild(gameControlAuto);
-
-gameControlAuto.addEventListener ('click', () => {
-    localStorage.removeItem('btnSaveStat'); 
-    localStorage.removeItem('btnSavePosition'); 
-    let btnGames = body.querySelectorAll('.btn-game');
-    
-    for( let i = 0; i < btnGames.length; i++) {
-        btnGames[i].innerText = i + 1;
-    }
-})
-
-
-// работа перемешивание кнопки
-let gameControlReset = document.createElement('button');
-gameControlReset.innerText = 'Shuffle';
-sectionGameControl.appendChild(gameControlReset);
-
-//  Кнопка остановка игры
-let gameControlStop = document.createElement('button');
-gameControlStop.innerText = 'Stop';
-sectionGameControl.appendChild(gameControlStop);
-gameControlStop.addEventListener('click', () => {
-    clearInterval(intervalID);
-})
-
-// Кнопка сохранения
-let gameControlSave = document.createElement('button');
-gameControlSave.innerText = 'Save';
-sectionGameControl.appendChild(gameControlSave);
-
-gameControlSave.addEventListener ('click', () => {
-    clearInterval(intervalID);
-    let statPosition = gameArea.innerHTML;
-    let statStatistics = statSection.innerHTML;
-
-    localStorage.setItem('btnSavePosition', `${statPosition}`);
-    localStorage.setItem('btnSaveStat', `${statStatistics}`);
-
-    // Отделяю секунды минуты и часы чтобы таймер запустился с нужного места
-
-
-
-})
-
-// Кнопка вывода результатов
-let gameControlResults = document.createElement('button');
-gameControlResults.innerText = 'Results';
-sectionGameControl.appendChild(gameControlResults);
-
-
-
-function refreshResults () {
-    clearInterval(intervalID);
-    statMoves.innerText = `0 Moves` ;
-    statTime.innerText = "0:0:0" ;
-    timerSec = 0;
-    sumClicks = 0;
-}
-
-
-    // Изменение позиции по клику + проверку надо сделать
-// window.addEventListener('keydown', (event) => {
-//     if(!event.key.includes('Arrow')) {
-//         return
-//     }
-//     console.log(event.key);
-// })
-
-
-// Изменение позиции по стрелочкам
-
-
-// Создание блока статистики
 
 //Создание если локал пустой если нет то вносим сохраненнный хтмл
 let statSection = document.createElement('div');
 let statTime = document.createElement('button');
 let statMoves = document.createElement('button');
 
-
 if(localStorage.getItem('btnSaveStat')){
     statSection.innerHTML = localStorage.getItem('btnSaveStat');
     sectionGame.appendChild(statSection); 
     statSection.classList.add('stat-section');
+    statMoves = document.getElementById('statMoves');
 } else {
     statSection.classList.add('stat-section');
     sectionGame.appendChild(statSection);  
@@ -293,15 +317,11 @@ if(localStorage.getItem('btnSaveStat')){
 
     statMoves.innerText = "0 Moves" ;
     statSection.appendChild(statMoves);
+    statMoves.setAttribute('id', "statMoves");
 }
-
-
-
 
 // Создание секундомера
 let intervalID;
-// функция сбора текущего значения.
-
 let timerSec = 0;
 let timerMin = 0;
 let timerHour = 0;
@@ -310,22 +330,19 @@ function timerStart() {
     if(localStorage.getItem('btnSaveStat')){
         // document.getElementById('statTime');
         setTimeout(() => {
-
-            timerSec = 5;
-            timerMin = 5;
-            timerHour = 5;
-          }, 0)
+            timerSec = Number(localStorage.getItem('timerSec'));
+            timerMin = Number(localStorage.getItem('timerMin'));
+            timerHour = Number(localStorage.getItem('timerH'));                 
+        }, 0)
     }
     intervalID = setInterval(timerS, 1000);
 }
 
 function timerS() {
-
-
-
     //собираем данные если было сохранение.
-
-
+    // timerSec = Number(localStorage.getItem('timerSec'));
+    // timerMin = Number(localStorage.getItem('timerMin'));
+    // timerHour = Number(localStorage.getItem('timerH'));   
 
     timerSec++;
     if( timerSec >= 60 ) {
@@ -339,19 +356,7 @@ function timerS() {
     document.getElementById('statTime').innerHTML = timerHour + ':' + timerMin + ':' + timerSec;
 }
 
-gameControlReset.addEventListener('click', () => {
-    // Сбор кнопок игры
-    let btnGames = body.querySelectorAll('.btn-game');
-    removeBtnGames ();
-    generateBtnGame (btnGames.length);
-    refreshResults ();
-})
-
-
-
-
 // создание блока выбора размера
-
 function generateBtnSizes () {
     let sectionBtnSizes = document.createElement('div'); 
     sectionGame.appendChild(sectionBtnSizes);
@@ -375,8 +380,144 @@ generateBtnSizes();
 
 
 
+// Создание блока статистики
+// создадим функцию которая будет принимать время и будем сортировать победителей по времени.
+// let player1 = {
+//     results: 106,
+// }
 
-// реализовать функционал для сохранения игры (например, с помощью localStorage), чтобы при перезагрузке страницы игрок мог продолжить с того места, на котором остановился
+// localStorage.setItem('arrWin','[{}, {}, {}, {}, {}, {}, {}, {}, {}, {}]');
+let arrPlayers = [ ];
+function createPlayers () {
+    for( let i = 0; i < 10; i++) {
+        let player = {
+            name: 'playerDefault',
+            moves: Number(`${[i]}`),
+            time: Number(`${[i]}`)
+        }        
+        arrPlayers.push(player);
+    }
+    console.log(arrPlayers);
+}
+createPlayers ();
+
+// Функиция сортировки и поиска максимального значение
+let maxTime;
+function sortArrPlayersStat (arr) {
+    arr.sort((a, b) => a.time > b.time ? 1 : -1);
+    console.log(arr[9].time);
+    maxTime = arr[9].time;
+
+}
+sortArrPlayersStat (arrPlayers);
+
+
+
+
+
+// localStorage.setItem('arrWin','10, 20, 1, 20, 21, 12, 57, 75, 55, 56');
+
+function winnerSortToLocal (time) {
+    // let now = new Date();
+
+    let moves = statMoves.innerText.replace(/[\D]+/g, '');
+
+    let timerArr = time.split(':').reverse();
+    let timerSec = timerArr[0];
+    let timerMin = timerArr[1];
+    let timerH = timerArr[2];
+    let sumSecAll = Number(timerSec) + Number(timerMin*60) + Number(timerH*3600);
+
+    if(sumSecAll < maxTime) {
+        arrPlayers.splice(-1, 1);
+
+        let playerBrayser = {
+            name: '***player***',
+            moves: Number(`${moves}`),
+            time:  Number(`${sumSecAll}`)
+        }; 
+        arrPlayers.push(playerBrayser);
+
+        sortArrPlayersStat (arrPlayers);
+        reiting(arrPlayers); 
+
+    }
+
+
+
+
+    // // console.log(sumSecAll);
+    // let newArr = localStorage.getItem('arrWin').split(', ').map(elem => Number(elem));
+    // newArr.push(sumSecAll);
+    // // console.log(newArr.sort(function(a, b) {
+    // //     return a - b;
+    // // }))
+    // newArr = newArr.sort(function(a, b) {
+    //     return a - b;
+    // });
+    // console.log(newArr);
+
+
+
+
+    
+    // newArr.push(sumSecAll);
+    // console.log(newArr);
+
+    // let newArrOnlyScore = arrWin.map( elem => elem.split('/')[0]);
+    
+
+
+
+    // 
+
+    // console.log( timerArr + "-" + timerSec + "-" + timerMin + "-" + timerH + "-" + moves + " было => " + now)
+    
+    // for( let i = 0 ; i <= 10; i++) {
+    //     if(arrWin[i] == undefined) {
+    //         console.log("-")
+            
+    //     } else {
+    //         console.log(arrWin[i])
+
+    //     }
+    // }
+
+    // localStorage.setItem('timerSec', `${timerSec}`);
+    // localStorage.setItem('timerMin', `${timerMin}`);
+    // localStorage.setItem('timerH', `${timerH}`);
+    // localStorage.setItem('moves', `${moves}`);    
+}
+
+// надо записать в локал и вытянуть из локала  массив с объектами через строку.
+
+// узнать максимальное время в локале
+
+// если оно больше то создаем объект и добавляем в массив и сортируем массив по ключам.
+
+// выводим в консоль первые 10 победителей
+
+// записываем результат в локол
+
+
+
+
+
+
+
+//Функция вывода к консоль рейтинг
+function reiting(arrPlayers) {
+    arrPlayers.forEach(function(obj, index){
+        let print = (index + 1) + '. ' ;
+        for (var key in obj){
+            // console.log(key, obj[key]);
+            print += key + "= " + (obj[key]) + ' / ' ;
+        }
+        console.log(print);
+    });
+    console.log(arrPlayers)
+}
+
 
 //есть возможность включения/выключения звукового сопровождения движения плитки
 
@@ -384,7 +525,23 @@ generateBtnSizes();
 //реализовано сохранение состояния игры и сохранение топ-10 результатов с помощью LocalStorage:+10
 
 
+
+
+
+
+
+
+
 //плитки можно перетаскивать в пустую ячейку с помощью мыши
 
-// баг если мы уже поиграли и хотим чтобы расставились все по местам то значение переписываются а стили нет
 
+// Изменение позиции по клику + проверку надо сделать
+// window.addEventListener('keydown', (event) => {
+//     if(!event.key.includes('Arrow')) {
+//         return
+//     }
+//     console.log(event.key);
+// })
+
+
+// Изменение позиции по стрелочкам
