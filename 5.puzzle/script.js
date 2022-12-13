@@ -8,7 +8,7 @@ body.appendChild(sectionGame);
 // создание названия игры
 
 let nameGame = document.createElement('h1');
-nameGame.innerText = 'Name Game';
+nameGame.innerText = 'FIFTEEN';
 sectionGame.appendChild(nameGame);
 
 // создания блока поля игры юзера
@@ -120,8 +120,17 @@ function generateBtnGame (num) {
 
             if(Math.abs(btn.id - btnZeroId.id) == 10 || Math.abs(btn.id - btnZeroId.id) == 1 ){                
                 let btnIdOld = btn.id;
-                btn.style.transform = `translate3d(  ${btnZeroId.id[0]}00%, ${btnZeroId.id[1]}00%, 0 )`;
-                btnZeroId.style.transform = `translate3d( ${btn.id[0]}00%, ${btn.id[1]}00%, 0 )`;
+                btn.style.transform = `translate3d(  ${btnZeroId.id[0]}00%, ${btnZeroId.id[1]}00%, 0 )` + "rotate(360deg)";
+                btnZeroId.style.transform = `translate3d( ${btn.id[0]}00%, ${btn.id[1]}00%, 0 )` + "rotate(360deg)";
+
+
+
+
+
+
+
+
+
                 btn.setAttribute('id', btnZeroId.id);
                 btnZeroId.setAttribute('id', btnIdOld);
 
@@ -243,6 +252,65 @@ let gameControlResults = document.createElement('button');
 gameControlResults.innerText = 'Results';
 sectionGameControl.appendChild(gameControlResults);
 
+gameControlResults.addEventListener ('click', () => {
+
+    function konc () {
+        let object = JSON.parse(localStorage.getItem("arrWin"));
+        console.log(object);
+        reiting(object);
+
+        return 
+    }
+    konc ();
+
+    tableResults.classList.toggle("hidden");
+
+
+
+
+})
+
+let tableResults = document.createElement('div');
+tableResults.classList.add('table-results');
+gameArea.appendChild(tableResults);
+
+//Функция вывода  рейтинг
+
+function reiting(arrPlayers) {
+    // var elem = document.querySelector('.table-results');
+    // elem.remove(); 
+
+    // let tableResults = document.createElement('div');
+    // tableResults.classList.add('table-results');
+    // gameArea.appendChild(tableResults);
+    while (tableResults.firstChild) {
+        tableResults.removeChild(tableResults.firstChild);
+    }
+
+    var table = document.createElement('table');   
+
+    arrPlayers.forEach(function(obj, index){
+        let print = (index + 1) + '. ' ;
+        for (var key in obj){
+            // console.log(key, obj[key]);
+            print += key + "= " + (obj[key]) + ' / ' ;
+        }
+        let tr = table.insertRow();
+        tr.innerText = print;
+    });
+    console.log(table);
+    let test = document.querySelector('.table-results');
+    test.appendChild(table);
+    
+    localStorage.setItem("arrWin", JSON.stringify(arrPlayers));
+
+}
+
+
+
+
+
+
 
 function refreshResults () {
     clearInterval(intervalID);
@@ -359,6 +427,8 @@ function timerS() {
 // создание блока выбора размера
 function generateBtnSizes () {
     let sectionBtnSizes = document.createElement('div'); 
+    sectionBtnSizes.setAttribute('id', 'allBtnSizes');
+
     sectionGame.appendChild(sectionBtnSizes);
     for( let i = 3; i <= 8; i++) {
         let btn = document.createElement('button');
@@ -412,10 +482,6 @@ function sortArrPlayersStat (arr) {
 sortArrPlayersStat (arrPlayers);
 
 
-
-
-
-// localStorage.setItem('arrWin','10, 20, 1, 20, 21, 12, 57, 75, 55, 56');
 
 function winnerSortToLocal (time) {
     // let now = new Date();
@@ -505,18 +571,7 @@ function winnerSortToLocal (time) {
 
 
 
-//Функция вывода к консоль рейтинг
-function reiting(arrPlayers) {
-    arrPlayers.forEach(function(obj, index){
-        let print = (index + 1) + '. ' ;
-        for (var key in obj){
-            // console.log(key, obj[key]);
-            print += key + "= " + (obj[key]) + ' / ' ;
-        }
-        console.log(print);
-    });
-    console.log(arrPlayers)
-}
+
 
 
 //есть возможность включения/выключения звукового сопровождения движения плитки
