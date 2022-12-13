@@ -1,0 +1,170 @@
+body {
+	background: linear-gradient(90deg, #69b7eb, #b3dbd3, #f4d6db);
+    margin: 0px;
+    user-select: none;
+
+}
+.box-game {
+    padding: 20px;
+    margin: auto;
+    margin-top: 20px;
+    max-width: 400px;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+
+
+} 
+.game-area-style {
+    width: 100%;
+    position: relative;
+    padding-bottom: 100%;
+    background-color: white;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-blend-mode: screen;
+	background:
+		linear-gradient(limegreen, transparent),
+		linear-gradient(90deg, skyblue, transparent),
+		linear-gradient(-90deg, coral, transparent);
+        box-shadow: 0 -5px 20px -5px rgba(0, 0, 0, .5);
+    border: none;
+
+
+}
+.btn-game {
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* width: 25%; */
+    height: 25%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 1px wheat;
+    transition: transform 1.0s;
+    border-radius: 25px;
+
+    background-color: #fa7794;
+    background-image: linear-gradient(60deg, #fa7794 10%, #fcab6a 50%, #fee040 100%);
+    color: white;
+    border-radius: 50px;
+    padding: 12px 48px;
+    border: solid 5px rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 25px 0 rgba(255, 255, 255, .35);
+    transition: all 0.5s ease;
+    text-shadow: -1px -1px 0 hsl(249, 90%, 32%),
+    -2px -2px 1px hsl(80, 60%, 1%);
+
+}
+.btn-game-zero{
+    background-color: white;
+    z-index: -100;
+}
+.game-area-controls {
+    width: 100%;
+    height: 50px;
+    text-shadow: -1px -1px 0 hsl(249, 90%, 32%),
+    -2px -2px 1px hsl(80, 60%, 1%);
+}
+.game-area-controls button{
+    width: 20%;
+    height: 100%;
+    color:rgb(255, 255, 255);
+    border: solid rgba(255, 255, 255, 0.50);
+    background-image: linear-gradient(60deg, #25bf5c 10%, #3afec0 50%, #106f62 100%);
+    box-shadow: 0 2px 25px 0 rgba(56, 254, 227, .35);
+    font-size: 16px;
+    text-shadow: -1px -1px 0 hsl(249, 90%, 12%),
+    -1px -1px 1px hsl(80, 60%, 1%);
+}
+
+.stat-section {
+    width: 100%;
+    padding: 10px 0px;
+}
+.stat-section button {
+    width: 50%;
+    padding: 30px;
+    font-size: 24px;
+    border: solid rgba(0, 0, 0, 0.70);
+    background-image: linear-gradient(60deg, #8c38fe 10%, #b72ee4 50%, #9c66e5 100%);
+    box-shadow: 0 2px 25px 0 rgba(111, 30, 138, .35);
+    color: white;
+    text-shadow: -1px -1px 0 hsl(249, 90%, 32%),
+    -2px -2px 1px hsl(80, 60%, 1%);
+}
+#allBtnSizes {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly
+}
+#allBtnSizes button{
+    width: calc(100%/7);
+    line-height: 50px;
+    background-color: #eaeaea;
+    border-radius: 32px;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 25%), 0 2px 3px rgb(0 0 0 / 10%);
+    border: solid rgba(255, 255, 255, 0.50);
+    background-image: linear-gradient(60deg, #4aa5fb 10%, #1ccafa 50%, #00e1f9 100%);
+    color: white;
+}
+
+
+.table-results {
+    position: absolute;
+    color: white;
+    width: 100%;
+    height: 100%;
+    z-index: 100500;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    background-blend-mode: screen;
+	background-blend-mode: multiply;
+	background-blend-mode: overlay;
+	background-blend-mode: darken;
+	background-blend-mode: soft-light;
+	background-blend-mode: luminosity;	
+	background:
+		linear-gradient(red, transparent),
+		linear-gradient(to top left, lime, transparent),
+		linear-gradient(to top right, blue, transparent);
+    
+        visibility: hidden;
+        opacity:0; /*Элемент полностью прозрачный (невидимый)*/
+
+}
+
+.hidden {
+    visibility: visible;
+    transition: 1s; /*Скорость перехода состояния элемента*/
+    animation: show 2s 1; /* Указываем название анимации, её время и количество повторов*/
+    animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
+    /* animation-delay: 1s; Задержка перед началом */
+}
+@keyframes show{
+    0%{
+    opacity:0;
+    }
+    100% {
+    opacity:1;
+    }
+}
+
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
