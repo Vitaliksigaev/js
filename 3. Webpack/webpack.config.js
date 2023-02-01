@@ -1,73 +1,62 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { AutomaticPrefetchPlugin } = require('webpack');
+// Generated using webpack-cli https://github.com/webpack/webpack-cli
 
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 
-const devServer = (isDev) => !isDev ? {} : {
+const isProduction = process.env.NODE_ENV == "production";
+
+const stylesHandler = "style-loader";
+
+const config = {
+  entry: "./src/index.ts",
+  output: {
+    path: path.resolve(__dirname, "dist"),
+  },
   devServer: {
     open: true,
-    hot: true,
-    port: 8080,
-    // contentBase: path.join(__dirname, 'public'),// путь к папке статичных файлов
-  }
-};
-
-module.exports = ({develop}) => ({
-  mode: develop ? 'development' : 'production',
-  // devtool: (develop) ? ('inline-source-map') : ('none'),// генерация
-  entry: {
-    app:'./src/index.ts',
-  },
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].js',
-    assetModuleFilename:'assets/[hash][ext]', //hash
-  },
-  module: {
-    rules: [
-        {
-            test: /\.[tj]s$/,
-            use: 'ts-loader',
-            exclude: /node_modules/,
-        },
-        {
-            test:/\.(?:ico|gif|png|jpg|jpeg|svg})$/i,
-            type:'asset/resource',
-        },
-        {
-            test: /\.(woff(2)?|eot|ttf|otf)$/i,
-            type: 'asset/resource',
-        },
-        {
-          test:/\.css$/i,
-          use: [MiniCssExtractPlugin.loader, 'css-loader']
-        },
-        {
-          test:/\.s[ac]ss$/i,
-          use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
-        }
-    ]
-  },
-  resolve: {
-    extensions:['.ts','.js']
+    host: "localhost",
   },
   plugins: [
     new HtmlWebpackPlugin({
-        // title: 'Demo webpack'
-        template:'./src/index.html'
+      template: "index.html",
     }),
-    new MiniCssExtractPlugin ({
-      filename:'[name].[contenthash].css'
-    }),
-    new CopyPlugin({
-      patterns: [
-        { from:'./public'} // если не указывать в TO-  то копировать файлы будут в корень ДИСТ
-      ]
-    }),
-    new CleanWebpackPlugin({cleanStaleWebpackAssets: false}),
+
+    // Add your plugins here
+    // Learn more about plugins from https://webpack.js.org/configuration/plugins/
   ],
-  ...devServer(develop),
-});
+  module: {
+    rules: [
+      {
+        test: /\.(ts|tsx)$/i,
+        loader: "ts-loader",
+        exclude: ["/node_modules/"],
+      },
+      {
+        test: /\.css$/i,
+        use: [stylesHandler, "css-loader", "postcss-loader"],
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+        type: "asset",
+      },
+
+      // Add your rules for custom modules here
+      // Learn more about loaders from https://webpack.js.org/loaders/
+    ],
+  },
+  resolve: {
+    extensions: [".tsx", ".ts", ".jsx", ".js", "..."],
+  },
+};
+
+module.exports = () => {
+  if (isProduction) {
+    config.mode = "production";
+
+    config.plugins.push(new WorkboxWebpackPlugin.GenerateSW());
+  } else {
+    config.mode = "development";
+  }
+  return config;
+};

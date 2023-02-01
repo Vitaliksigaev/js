@@ -1,16 +1,6 @@
-// import  { test } from './test'
-import './styles.scss';
+console.log('555')
 
-// test();
-// console.log('hello from src - index');
+const isFetching: boolean =  true
+const isLoading: boolean =  true
 
-// const img = require('./assets/test.jpg');
-// document.body.innerHTML = `
-// <img src="${img}" alt="test">
-// `;
-
-console.log('hello from src - index');
-
-// document.body.innerHTML = 'I want to go home'
-
-//1.40.00
+let int: number = 42

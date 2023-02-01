@@ -21,10 +21,10 @@ thumb.onmousedown = function(event) {
         let newLeft = event.clientX - shiftX - main.getBoundingClientRect().left;
         let newTop = event.clientY - shiftY - main.getBoundingClientRect().top;
 
-        if(event.clientX > 0 && event.clientY < 50 ) {
+        if(event.clientX > 50 && event.clientY < 50 ) {
             // console.log('GORIZONT')
-            // console.log(event.clientX )
-            // console.log(event.clientY )
+            console.log(event.clientX )
+            console.log(event.clientY )
             // курсор вышел из слайдера => оставить бегунок в его границах.
             if (newLeft < 0) {
                 newLeft = 0;
@@ -37,7 +37,8 @@ thumb.onmousedown = function(event) {
             positionA = newLeft;
         } 
 
-        // if(event.clientX < 50 && event.clientY < 100) {
+        // if(event.clientX < 50 && event.clientY > 50) {
+        //     thumb.style.left = 0 + 'px';
         //     console.log('VERTICAL')
         //     // курсор вышел из слайдера => оставить бегунок в его границах.
         //     if (newTop < 0) {
@@ -48,7 +49,6 @@ thumb.onmousedown = function(event) {
         //         newTop = rightEdge;
         //     }
         //     thumb.style.top = newTop + 'px'; 
-
         // }
         
         // if (event.clientX < 50 && event.clientY > 50 || event.clientX < 50 && event.clientY < 50  ) {
