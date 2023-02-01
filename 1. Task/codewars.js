@@ -1388,3 +1388,333 @@ console.log('w')
 
 
 
+
+
+// const person1 = { name: '1', age: 11, job: 'front1'}
+// const person2 = { name: '2', age: 22, job: 'front2'}
+
+// function fn1() {
+//     console.log(this)
+//     // console.log(`Person: ${this.name} , Age: ${this.age} , Job: ${this.job}.`)
+// }
+// function bild (context, fn) {
+//     return function (...args) {
+//         fn.apply(context, args)
+//     }
+    
+// }
+
+// bild(person1, fn1 )()
+
+
+let arr =  [7, 6, 15, 8]; // 3 23 29 13 30
+
+// function bild(arr) {
+//     let minN = arr[0];
+
+//     for (let i = 0; i < arr.length-1; i++) {
+//         for(let j = 0; j < arr.length-1; j++){
+//         }
+//         if (Math.clz32(arr[i]) > Math.clz32(minN)) {
+//             minN = arr[i];
+//         }
+//     }
+
+
+
+
+
+// function sortByBit(arr) {
+//     const countBits=(num)=>{
+//         // console.log(num);
+//         console.log([...(num).toString(2)].reduce((acc,el)=> el==='1' ? acc+1 : acc, 0));
+//         // return [...(num).toString(2)].reduce((acc,el)=> el==='1' ? acc+1 : acc, 0)
+//         return numZ
+//     }
+//   return arr.sort((a,b)=> countBits(a)-countBits(b) ||  a - b);
+// }
+// sortByBit(arr);
+// 
+
+
+
+
+
+    // console.log(arr);
+    // console.log(Math.clz32(arr[0]));
+    // let access = parseInt(String(arr[0], 32));
+    // console.log(access);
+    // let access2 = access.toString(32);
+    // console.log(access2);
+
+    // let access1 = parseInt(String(arr[1], 2));
+    // console.log(access1);
+    // let access3 = arr[1].toString(2);
+    // console.log(access3);
+
+// }
+
+// bild(arr) //[8, 6, 7, 15].
+
+
+
+// paper, glass, organic, и plastic.
+
+
+// input = [
+//     {"type": "rotten apples", "material": "organic"},
+//     {"type": "out of date yogurt", "material": "organic", "secondMaterial": "plastic"},
+//     {"type": "wine bottle", "material": "glass", "secondMaterial": "paper"},
+//     {"type": "amazon box", "material": "paper"},
+//     {"type": "beer bottle", "material": "glass", "secondMaterial": "paper"}
+//   ]
+
+
+  input = [
+    { type: 'printer box', material: 'plastic' },
+    { type: 'beef', material: 'glass' },
+    { type: 'broken record', material: 'plastic' },
+    { type: 'iphone box', material: 'paper' },
+    { type: 'sunglasses', material: 'paper', secondMaterial: 'glass' },
+    { type: 'pasta', material: 'paper', secondMaterial: 'plastic' },
+    { type: 'statue', material: 'glass' },
+    { type: 'glass', material: 'paper' },
+    { type: 'jar', material: 'plastic' },
+    { type: 'newspaper', material: 'organic' },
+    { type: 'sword', material: 'glass' },
+    {
+      type: 'rotten bananas',
+      material: 'glass',
+      secondMaterial: 'organic'
+    },
+    { type: 'chair', material: 'plastic', secondMaterial: 'glass' }
+  ]
+  
+//   output = [
+//     ["wine bottle", "amazon box", "beer bottle"],
+//     ["wine bottle", "beer bottle"],
+//     ["rotten apples", "out of date yogurt"],
+//     ["out of date yogurt"]
+//   ]
+
+// function recycle(array) {
+//     const types = [];
+//     array.map(elem => {
+//         types.push(elem.type);
+//     });
+//     // console.log(types);
+
+//     const material = [...new Set(array.map(obj => Object.values(obj)).flat())];
+//     // console.log(material);
+
+//     const onlyMaterial = material.filter(mat => !types.includes(mat));
+//     // console.log(onlyMaterial);
+
+    // const materialTest = [ 'paper', 'glass', 'organic', 'plastic']
+
+    // let testArray = [];
+    // for(let i = 0; i < materialTest.length; i++) {
+    //     testArray.push([]);
+    //     for(let j = 0; j < types.length; j++) {
+    //         if (materialTest[i] == array[j].material || materialTest[i]== array[j].secondMaterial) {
+    //             testArray[i].push(array[j].type);
+    //         }
+    //     }
+    // }
+    //Object.values(array[j]).includes(materialTest[i]) || 
+    // console.log(testArray);
+    // return testArray
+
+
+    // result = [...new Set(someData.map(obj => Object.keys(obj)).flat())]
+    // .filter(name => 'name' !== name) 
+    // .map(name => ({key: name, title: name, value: 0}));
+
+    // result = [...new Set(array.map(obj => Object.values(obj)).flat())].filter(name => 'type' !== name) 
+
+    // console.log(result);
+    // let testArray = [];
+    // for(let i = 0; i < type1.length; i++) {
+    //     testArray.push([]);
+    //     for(let j = 0; j <  array.length; j++) {
+    //         if (Object.values(array[j]).includes(type1[i])) {
+    //             testArray[i].push(array[j].type);
+    //         }
+    //     }
+    // }
+    // console.log(testArray);
+    // return testArray
+//   }
+//   recycle(input);
+
+// let gloves = [
+//     'Black',  'Teal',    'Yellow', 'Lime',
+//     'Red',    'Gray',    'Aqua',   'Olive',
+//     'Silver', 'Black',   'Olive',  'Maroon',
+//     'White',  'Navy',    'Blue',   'Black',
+//     'Navy',   'Aqua',    'Aqua',   'Gray',
+//     'Gray',   'Black',   'White',  'Yellow',
+//     'Blue',   'Fuchsia', 'Navy',   'Lime',
+//     'Yellow', 'Aqua',    'Aqua',   'Silver',
+//     'Olive',  'Yellow',  'Silver', 'Fuchsia',
+//     'Green',  'White',   'White',  'Yellow',
+//     'Black'
+//   ];
+
+// function numberOfPairs(gloves) {
+
+//     let testArray = gloves.slice(0);;
+//     console.log(gloves);
+//     let result = 0;
+//     for(let i = 0; i < testArray.length; i++) {
+//         for(let j = i + 1; j < testArray.length; j++) {
+//             if(testArray[i] === testArray[j]) {
+            
+//                 testArray.splice(j, 1);
+//                 // console.log(gloves);
+//                 result += 1;
+//                 break;
+//             }
+//         }
+//     }
+//     console.log(result);
+//     return result;
+// }
+
+// numberOfPairs(gloves);
+
+// let object = { people: ['John', 'Dave', 'Lisa'] };
+// let object1 = { user: { name: { first: 'John', last: 'Snow' } } }
+// let path = 'people.1';
+
+// function find(object, path) {
+//     let pathArray = path.split('.');
+
+//     // if(!object[pathArray[0]][pathArray[1]]){
+//     //     return undefined;
+//     // }
+//     // console.log(pathArray[0]);
+//     // console.log(pathArray[1]);
+//     // console.log(object[pathArray[0]][pathArray[1]])
+//     // console.log(Object.hasOwn(object, 'last'));
+//     // return object[pathArray[0]][pathArray[1]];
+
+
+//     // console.log(object.people[1]);
+//     console.log(Object.keys(object));
+// }
+
+// find(object1, path) 
+
+
+
+// function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
+//     var ms0 = Date.parse(currentDate);
+//     console.log(ms0)
+//     var ms1 = Date.parse(expirationDate);
+//     console.log(ms1)
+
+//     if(ms0 < ms1 && enteredCode === correctCode ) {
+//         console.log('right code')
+//     } else {
+//         return false;
+//     }
+// }
+
+// checkCoupon('123','123','September 5, 2014','October 1, 2014');
+// checkCoupon('123a','123','September 5, 2014','October 1, 2014');
+
+
+
+// let results = {"Java": 10, "Ruby": 80, "Python": 65}  //  -->  ["Ruby", "Python"]
+// {"Hindi": 60, "Dutch" : 93, "Greek": 71}  -->  ["Dutch", "Greek", "Hindi"]
+// {"C++": 50, "ASM": 10, "Haskell": 20}     -->  []
+
+
+// function myLanguages(results) {
+//     console.log(Object.keys(results))
+//     console.log(Object.keys(results).filter(r => results[r] > 59))
+//     console.log(Object.keys(results).filter(r => results[r] > 59).sort((a,b) => results[b] - results[a]))
+
+//     return Object.keys(results).filter(r => results[r] > 59).sort((a,b) => results[b] - results[a]);
+//   }
+
+//   myLanguages(results)
+
+
+// var runLengthEncoding = function(str){
+//     results = [];
+//     let splitStr = str.split('');
+//     console.log(splitStr);
+//     let count = 1;
+//     for (let i = 0; i < splitStr.length; i++) {
+//         let arr = [];
+
+//         if (splitStr[i] == splitStr[i + 1]) {
+//             count++;
+//         } else {
+//             arr.push(count);
+//             arr.push(splitStr[i]);
+
+//             results.push(arr);
+//             count = 1;
+//         }
+//     }
+
+// console.log(results);
+//     return results // << fix this
+//   }
+
+//   runLengthEncoding('hello')
+
+function makeDate (hours, minutes) {
+	const date = new Date();
+	date.setMinutes(minutes);
+	date.setHours(hours);
+	return date;
+}
+
+
+
+function handAngle (date) {
+    // console.log(date)
+    let minStep = 360 / 60;
+    let hourStep = 360 / 12;
+
+    let minNumber = date.getMinutes(date);
+    let hourNumber = date.getHours(date);
+    if(hourNumber == 12) {
+        hourNumber = 0;
+    }
+    console.log(minNumber);
+    console.log(hourNumber);
+    console.log(hourNumber*hourStep);
+    let result = Math.abs(minNumber*minStep - hourNumber*hourStep);
+    console.log(result);
+    console.log(Math.PI/2);
+
+    // if(result/ Math.PI > Math.PI) {
+    //     result = Math.PI * 2 - result/ Math.PI;
+    // }
+
+    // if (2 * Math.PI - result > Math.PI) {
+    //     result = Math.PI * 2 - result;
+    // }
+
+
+    console.log(result);
+    // часы минуты
+      return result
+  }
+// console.log(1.4398966328953218/Math.PI/30)
+//   handAngle(makeDate(0, 0))
+//   handAngle(makeDate(12, 0))
+//   handAngle(makeDate(6, 0))
+//   handAngle(makeDate(1, 0))
+//   handAngle(makeDate(9, 0))
+//   handAngle(makeDate(10, 0))
+  handAngle(makeDate(0, 15))
+  handAngle(makeDate(0, 45))
+//   handAngle(makeDate(12, 30))
+//   handAngle(makeDate(7, 15))
+//   handAngle(makeDate(6, 5))
