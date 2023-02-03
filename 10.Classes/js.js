@@ -109,3 +109,41 @@ class LegoBatMan extends LegoMan {
         console.log('|\\__/|');
     }
 }
+
+//JavaScript Classes & Prototypes / Классы и прототипы в JavaScript.
+//https://www.youtube.com/watch?v=QceUxKQeFDA
+
+классы - это шаблон по которому создаются объекты 
+
+class Declaration
+class definition
+constructor super
+private get set
+generator 
+Static
+extend
+prototype
+
+
+
+//https://www.youtube.com/watch?v=uy_6CeZ6MTU
+
+Содержание / Content:
+Принципы ООП.
+  Инкапсуляция
+  Полиморфизм
+  Наследование
+Класс. Смысл.
+Синтаксис
+  Класс - это функция
+  Prototype. Повторение.
+  Отличие от функции-конструктора
+  Классовое выражение / Class expression
+  Геттеры и сеттеры
+Наследование классов
+  Super
+Статические свойства и методы
+Приватные и защищённые методы и свойства
+  Внутренний и внешний интерфейсы
+Расширение встроенных классов
+Проверка класса: "instanceof"
