@@ -1,52 +1,110 @@
 // KATA https://www.codewars.com/kata/531489f2bb244a5b9f00077e/train/javascript
 // console.log(1)
 
-function undoRedo(object) {
-    let actionsSetDel = [];
-    let actionsRepeat = [];
+// function undoRedo(object) {
+//     let actionsSetDel = [];
+//     let actionsRepeat = [];
     
-      return {
-        set: function(key, value) {
-          actionsSetDel.push([key, object[key]]); // Отправляем что произошло
-          actionsRepeat = []; // обновляем что нужно повторить
-//           object.key = value;
+//       return {
+//         set: function(key, value) {
+//           actionsSetDel.push([key, object[key]]); // Отправляем что произошло
+//           actionsRepeat = []; // обновляем что нужно повторить
+// //           object.key = value;
           
-          if(object.key) {
-            object.key = value;
-          } else {
-            object[key] = value;        
-          }
-      },
-        get: function(key) {        
-        return object[key]     
-      },
-          del: function(key) {
-          actionsSetDel.push([key, object[key]]);// Отправляем что произошло
-          actionsRepeat = []; // обновляем что нужно повторить
-        // if (object[key]) {
-        //   var value = object[key];
-        // }
-          delete object[key]; // удаляем ключ      
-          console.log(actionsSetDel)      
-          console.log(actionsRepeat) 
-      },
-          undo: function() {
-            console.log(actionsSetDel)      
-            console.log(actionsRepeat)         
-          if (actionsSetDel.length == 0) throw Error();
-          let undoOp = actionsSetDel.pop();
-          actionsRepeat.push([undoOp[0], object[undoOp[0]]]);
-          object[undoOp[0]] = undoOp[1];           
-      },
-          redo: function() {
-          if (actionsRepeat.length == 0) throw Error();
-          var redoOp = actionsRepeat.pop();
-          actionsSetDel.push([redoOp[0], object[redoOp[0]]]);
-          if (redoOp[1] !== undefined) object[redoOp[0]] = redoOp[1];
-            else delete object[redoOp[0]];         
-          }
-      };
-  }
+//           if(object.key) {
+//             object.key = value;
+//           } else {
+//             object[key] = value;        
+//           }
+//       },
+//         get: function(key) {        
+//         return object[key]     
+//       },
+//           del: function(key) {
+//           actionsSetDel.push([key, object[key]]);// Отправляем что произошло
+//           actionsRepeat = []; // обновляем что нужно повторить
+//         // if (object[key]) {
+//         //   var value = object[key];
+//         // }
+//           delete object[key]; // удаляем ключ      
+//           console.log(actionsSetDel)      
+//           console.log(actionsRepeat) 
+//       },
+//           undo: function() {
+//             console.log(actionsSetDel)      
+//             console.log(actionsRepeat)         
+//           if (actionsSetDel.length == 0) throw Error();
+//           let undoOp = actionsSetDel.pop();
+//           actionsRepeat.push([undoOp[0], object[undoOp[0]]]);
+//           object[undoOp[0]] = undoOp[1];           
+//       },
+//           redo: function() {
+//           if (actionsRepeat.length == 0) throw Error();
+//           var redoOp = actionsRepeat.pop();
+//           actionsSetDel.push([redoOp[0], object[redoOp[0]]]);
+//           if (redoOp[1] !== undefined) object[redoOp[0]] = redoOp[1];
+//             else delete object[redoOp[0]];         
+//           }
+//       };
+//   }
+
+//   function undoRedo(object) {
+//     let actionsSetDel = [];
+//     let actionsRepeat = [];
+    
+//       return {
+//         set: function(key, value) {
+//           actionsSetDel.push([key, value]); // Отправляем что произошло
+
+//           actionsRepeat = []; // обновляем что нужно повторить
+// //           object.key = value;
+          
+//           if(object.key) {
+//             object.key = value;
+//           } else {
+//             object[key] = value;        
+//           }
+//           console.log('set - ' + key + ' - ' + value);
+//           console.log(object)
+//           console.log(actionsSetDel);
+//       },
+//         get: function(key) {        
+//         return object[key]     
+//       },
+//           del: function(key) {
+//           actionsSetDel.push([key, object[key]]);// Отправляем что произошло
+//           actionsRepeat = []; // обновляем что нужно повторить
+//         // if (object[key]) {
+//         //   var value = object[key];
+//         // }
+//           delete object[key]; // удаляем ключ      
+//           //console.log(actionsSetDel)      
+//           //console.log(actionsRepeat) 
+//             console.log('delete - ' + object)
+//       },
+//           undo: function() {
+//             console.log('UNDO')
+//             console.log(object)
+//             console.log(actionsSetDel);      
+//             console.log(actionsRepeat);         
+//           if (actionsSetDel.length == 0) throw Error();
+//           let undoOp = actionsSetDel.pop();
+//           actionsRepeat.push([undoOp[0], object[undoOp[0]]]);
+//           object[undoOp[0]] = undoOp[1]; 
+//             console.log(actionsSetDel);      
+//             console.log(actionsRepeat); 
+//             console.log(object)
+//       },
+//           redo: function() {
+//             console.log(object)
+//           if (actionsRepeat.length == 0) throw Error();
+//           var redoOp = actionsRepeat.pop();
+//           actionsSetDel.push([redoOp[0], object[redoOp[0]]]);
+//           if (redoOp[1] !== undefined) object[redoOp[0]] = redoOp[1];
+//             else delete object[redoOp[0]];         
+//           }
+//       };
+//   }
 
 
 // function undoRedo(object) {
@@ -105,16 +163,16 @@ function undoRedo(object) {
 //   }
 
 
-  var obj = {
-    x: 1,
-    y: 2
-  };
+//   var obj = {
+//     x: 1,
+//     y: 2
+//   };
 
-  undoRedo(obj)
-  undoRedo(obj).get('x');
-  undoRedo(obj).del('y');
-  undoRedo(obj).undo();
-  undoRedo(obj).get('y');
+//   undoRedo(obj)
+//   undoRedo(obj).get('x');
+//   undoRedo(obj).del('y');
+//   undoRedo(obj).undo();
+//   undoRedo(obj).get('y');
 
 
 //   function undoRedo(obj) {
@@ -284,4 +342,109 @@ function undoRedo(object) {
 //     }
 //   }
 
+
+//https://www.codewars.com/kata/53583765d5493bfdf5001b35/train/javascript
+
+//Метод становится новым Object.defineProperty()или изменяет Существующее свойство существенное на объекте, возвращая этот объект.
+
+// var Cat = (function () {
+//     const cats = [];
+
+//     const constructor = function (name, weight) {
+//         if(!name || !weight) throw  Error('name or weight is required');
+//         Object.defineProperty(this, 'name', { get: () => name });
+//         Object.defineProperty(this, 'weight', { get: () => weight, set: value => weight = value });
+//         cats.push(this);
+//     }
+
+//     constructor.averageWeight = () => {
+//         console.log(cats);
+//         return cats.reduce((sum, cat) => (sum + cat.weight), 0) / cats.length;
+//     }
+//     return constructor;
+// }() )
+
+// fluffy = new Cat('fluffy', 15);
+// garfield = new Cat('garfield', 25);
+
+
+// (fluffy.weight, 15)
+// console.log(Cat.averageWeight());
+// Test.assertEquals(fluffy instanceof Cat, true);
+// Test.assertEquals(fluffy.averageWeight, undefined);
+// Test.assertEquals(typeof Cat.averageWeight, "function");
+// Test.assertEquals(Cat.averageWeight(), 20);
+
+
+//https://www.codewars.com/kata/5366cfe48d004ce19600104b/train/javascript
+
+// 15.2.3.5 Object.create ( O [, Properties] ) # Ⓣ Ⓡ 
+//// Функция create создает новый объект с указанным прототипом. При вызове функции создания выполняются следующие шаги:
+//// Если Type ( O ) не является Object или Null, генерируется исключение TypeError .
+// Пусть obj будет результатом создания нового объекта как бы с помощью выражения new Object(), где Object — это стандартный встроенный конструктор с таким именем
+// Установите для внутреннего свойства [[Prototype]] obj значение O .
+// Если аргумент Properties присутствует, а не undefined , добавьте собственные свойства в obj , как если бы вызывали стандартную встроенную функцию Object.defineProperties с аргументами obj и Properties .
+// Вернуть объект .
+
+// const citizen = {
+//     sleep: function(){ return "zzZ..."; },
+//     panic: function(){ return "AaAaAaAa!"; }
+//   };
+
+//   const citizen = 0;
+
+
+// Object.create = function(prototype, properties) {
+//     console.log( typeof prototype );
+//     console.log( prototype );
+//     console.log( properties );
+  
+//     let obj = new Object(prototype);
+//     Object.setPrototypeOf(obj, properties);  
+  
+//     if (typeof prototype !== 'object' || prototype !== null) {
+//         console.log('Sorry this is not object')
+//         throw new Error();
+//     }
+
+//     if (properties !== undefined) {
+//         Object.defineProperties(obj, properties);
+//     } else {
+//         Object.setPrototypeOf(obj, properties);
+//     }
+//       return obj
+//     }
+//   };
+//   assert(veteran !== citizen, "veteran is equal citizen. wat??");
+//   assert(veteran instanceof citizen.constructor, "veteran must inherit citizen");
+//   assert.strictEqual(veteran.sleep(), "zzZ...", "first argument was not handled properly");
+//   assert.strictEqual(veteran.panic(), "SNAFU", "`properties` argument was not handled properly");
+
+
+
+// const veteran = Object.create(citizen, {panic: {
+//     value: function(){
+//                 return "SNAFU";
+//             }
+//         }
+//     }
+// );
+
+// console.log(veteran.panic());
+// console.log(veteran.sleep());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// console.log('END')
 
