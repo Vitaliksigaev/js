@@ -436,15 +436,321 @@
 
 
 
+//https://www.codewars.com/kata/6210fb7aabf047000f3a3ad6/train/javascript
+
+// function assembleString(array){
+//     if (array[0] == undefined) {
+//         return undefined
+//     }
+//     console.log(array);
+//     console.log(array[0]);
+  
+//     let word = array[0].split('');
+//     console.log(word);
+//     for ( let i = 0; i < word.length; i++) {
+//         if (word[i] == "*") {
+//             //console.log(array[0][i]);        
+//           for ( let j = 0; j < array.length; j++) { 
+           
+//             if( array[j][i] !== "*" ) {
+//               console.log(array[j][i]);
+//               word[i] = array[j][i];
+//               console.log(word[i]);
+//             };
+//             if (word[i] == "*" && j == array.length - 1) {
+//               word[i] = '#';
+//             }            
+//           }
+//         }
+//     }  
+//   console.log(word.join(''));
+//   return word.join('');
+// }
+
+////////////////////////////////////////////////////////////////
+
+// const assembleString = a => {
+//     return [...Array((a[0] || []).length).keys()]
+//       .map(i => a.map(s => s[i])
+//       .filter(c => c != '*')[0] || '#')
+//       .join('');
+//   }
 
 
+//   function assembleString(array){  
+//     console.log([...array[0]]);
+//     return !array.length ? "" : [...array[0]].map((x, i) => {
+//       let s = array.find(y => y[i] != "*")
+//       return !s ? "#" : s[i]
+//     }).join``
+//   }
 
 
+// assembleString(["H*llo, W*rld!", "Hel*o, *or*d!", "*ello* World*"])
 
 
+// https://www.codewars.com/kata/527a6e602a7db3456e000a2b/train/javascript
 
 
+// var obj = {
+//     person: {
+//       name: 'joe',
+//       history: {
+//         hometown: 'bratislava',
+//         bio: {
+//           funFact: 'I like fishing.'
+//         }
+//       }
+//     }
+//   };
 
+//   Object.prototype.hash = function(string) {
+    
+// let thi = 'this';
+// let str = string.split('.');
+
+// for ( let i = 0; i<= str.length; i++) {
+//   console.log(thi);
+//   console.log('this.' + `${string}`);
+//   if ( thi == 'this.' + `${string}`){
+//     console.log(thi);
+//     return eval(thi);
+//   }
+//   if (eval(thi) == undefined ) {
+//     return undefined
+//   } else {
+//      thi = thi +'.' +`${str[i]}`;     
+//   }      
+// }
+
+
+// // str = string.split('.');
+// // str1 = this + `${'.person.name'}`;
+
+
+// // console.log(str2);
+// // console.log(this);
+// // for (const [key, value] of Object.entries(this)) {
+// //     console.log(`${key}: ${value}`);
+// //   }
+
+// // console.log(Object.hasOwn(this, 'person'));
+// // console.log(eval(str2));
+
+//   }
+  
+//   obj.hash('person.name'); // 'joe'
+//   obj.hash('person.history.bio'); // { funFact: 'I like fishing.' }
+//   obj.hash('person.history.homeStreet'); // undefined
+//   obj.hash('person.animal.pet.needNoseAntEater'); // undefined
+
+
+// Object.prototype.hash = function(string) {
+//     var arr = string.split('.');
+//     return arr.reduce(function(pv, cv){
+//       return (pv) ? pv[cv] : pv;
+//     }, this);
+//   }
+
+//   Object.prototype.hash = function(string) {
+//     var obj = this;
+//     string.split(".").forEach(function(el) { 
+//       try {
+//         obj = obj[el];
+//       }
+//       catch(e) { 
+//         obj = undefined;
+//       }
+//     });
+//     return obj;
+//   }
+
+//   Object.prototype.hash = function(s) {
+//     s = s.split('.');
+//     let o = this;
+//     for (let i=0; o && i<s.length; i++) 
+//       o = o[s[i]] ;
+//     return o;
+//  }
+
+
+//  Object.prototype.hash = function(string) {
+//     return string.split('.').reduce((result = this, item) => result = result[item], this);
+//   }
+
+// Object.prototype.hash = function(string) {
+//     try {
+//       return string.split('.').reduce((acc, item) => acc[item], this);
+//     } catch(err) {
+//       return undefined;
+//     }
+   
+//   }
+
+
+//https://www.codewars.com/kata/57eb936de1051801d500008a/solutions/javascript
+
+// function explode(x){
+//     console.log(x);
+//     let sum;
+//       if (typeof x[0] === "number") {
+//       sum = x[0];
+//       console.log(sum)
+//     } 
+//     if (typeof x[1] === "number") {
+//       sum = x[1];
+//       console.log(sum)
+//     }
+//     if (typeof x[0] === "number" && typeof x[1] === "number") {
+//       console.log('Два числа');
+//       console.log(typeof x[0]);
+//       console.log(typeof x[1]);
+      
+//       sum = x[0] + x[1];
+//       console.log(sum)
+//     } 
+//     if (typeof x[0]  !== "number" && typeof x[1] !== "number") {
+//       return 'Void!';
+//     } 
+  
+    
+//     let resultArr = [];
+    
+//     for( let i = 0; i < sum; i++) {
+//       console.log(sum)
+//       resultArr.push(x);
+//     }
+//     console.log(resultArr)
+//     return resultArr 
+    
+  
+//   }
+
+//   const chai = require("chai");
+// const assert = chai.assert;
+// chai.config.truncateThreshold=0;
+
+// describe("Array Array Array", () => {
+//   it("Testing for fixed tests", () => {
+//     assert.deepEqual(explode([9, 3]), [[9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3]]);
+//     assert.deepEqual(explode(['a', 3]), [['a', 3], ['a', 3], ['a', 3]] ); 
+//     assert.deepEqual(explode([6, 'c']), [[6, 'c'], [6, 'c'], [6, 'c'], [6, 'c'], [6, 'c'], [6, 'c']]); 
+//     assert.deepEqual(explode(['a', 'b']), 'Void!');  
+//     assert.deepEqual(explode(["a", 0]), []); 
+//   })
+// });
+
+//const explode=([x,y])=>x+0!=x&&y+0!=y?"Void!":Array((+x||0)+(+y||0)).fill([x,y])
+
+//function explode(x){
+//     let [a,b] = x;
+  
+//     if(typeof a == "number" && typeof b == "number") return new Array(a+b).fill(x);
+//     else if(typeof a == "number") return new Array(a).fill(x);
+//     else if(typeof b == "number") return new Array(b).fill(x);
+    
+//     return 'Void!';
+//   }
 
 // console.log('END')
 
+
+//https://www.codewars.com/kata/525d50d2037b7acd6e000534/train/javascript
+// // TODO
+
+// Object.prototype.square = function () {
+//     let ar1 = this.map(x => x**2);
+//     console.log(ar1);
+//     return ar1;
+// }
+// Object.prototype.cube = function () {
+//     let ar1 = this.map(x => x**3);
+//     console.log(ar1);
+//     return ar1;
+// }
+
+// Object.prototype.sum = function () {
+//     let resSum = 0;
+//     this.forEach(elem => resSum = resSum + elem);
+//     return resSum;
+// }
+
+// Object.prototype.average = function () {
+//   if(this[0] == undefined) {
+//     return NaN
+//   }
+    
+//     let resSum = 0;
+//     this.forEach(elem => resSum = resSum + elem);
+//     return resSum / this.length;
+// }
+
+// Object.prototype.even = function () {
+//     let evenArr = [];
+//   console.log(this);
+//     this.forEach(elem => {
+//       if( elem % 2 == 0) {
+//       evenArr.push(elem);
+//       }
+//     });
+//     return evenArr;
+// }
+
+
+// Object.prototype.odd = function () {
+//     let resodd =[] ;
+//   console.log(this);
+//     this.forEach(elem => {
+//       if( elem % 2 ) {
+//       resodd.push(elem);
+//       }
+//     });
+//     return resodd;
+// }
+
+
+// Array.prototype.square  = function () { return this.map(function(n) { return n*n; }); }
+// Array.prototype.cube    = function () { return this.map(function(n) { return n*n*n; }); }
+// Array.prototype.average = function () { return this.sum() / this.length; }
+// Array.prototype.sum     = function () { return this.reduce(function(a, b) { return a + b; }, 0); }
+// Array.prototype.even    = function () { return this.filter(function(item) { return 0 == item % 2; }); }
+// Array.prototype.odd     = function () { return this.filter(function(item) { return 0 != item % 2; }); }
+
+
+
+class Person {
+    // You can't redeclare "Person", so this won't work...
+    constructor(firstName, lastName) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+    }
+    
+    getName() {
+      return this.firstName + ' ' + this.lastName;
+    }
+    
+    get name(){
+      return this.firstName + ' ' + this.lastName;
+    }
+    set name(str){
+    //   console.log(str)
+      let arr = str.split(' ');
+      this.firstName = arr[0];
+      this.lastName = arr[1];
+    }
+}
+
+
+
+
+  let augustusCole = new Person('Augustus', 'Cole');
+  console.log(augustusCole.getName()); // Augustus Cole
+  augustusCole.name = 'Cole Train';
+//   console.log(augustusCole)
+//   console.log(augustusCole.getName());
+//   console.log(augustusCole.name);
+  console.log(augustusCole.firstName); // => 'Cole'
+  console.log(augustusCole.lastName); // => 'Train'
+  console.log(augustusCole.getName()); // => 'Cole Train'
+  console.log(augustusCole.name); // => 'Cole Train'
+  console.log(augustusCole)
