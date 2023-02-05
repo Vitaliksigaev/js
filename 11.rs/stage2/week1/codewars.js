@@ -718,39 +718,212 @@
 
 
 
-class Person {
-    // You can't redeclare "Person", so this won't work...
-    constructor(firstName, lastName) {
-      this.firstName = firstName;
-      this.lastName = lastName;
-    }
+// class Person {
+//     // You can't redeclare "Person", so this won't work...
+//     constructor(firstName, lastName) {
+//       this.firstName = firstName;
+//       this.lastName = lastName;
+//     }
     
-    getName() {
-      return this.firstName + ' ' + this.lastName;
-    }
+//     getName() {
+//       return this.firstName + ' ' + this.lastName;
+//     }
     
-    get name(){
-      return this.firstName + ' ' + this.lastName;
-    }
-    set name(str){
-    //   console.log(str)
-      let arr = str.split(' ');
-      this.firstName = arr[0];
-      this.lastName = arr[1];
-    }
-}
+//     // get name(){
+//     //   return this.firstName + ' ' + this.lastName;
+//     // }
+//     // set name(str){
+//     // //   console.log(str)
+//     //   let arr = str.split(' ');
+//     //   this.firstName = arr[0];
+//     //   this.lastName = arr[1];
+//     // }
+// }
+
+// Object.defineProperty(Person.prototype, "name", {
+//     get: function() { 
+//       return this.firstName + ' ' + this.lastName;
+//     },
+//     set: function(str) {    
+//       let arr = str.split(' ');    
+//       this.firstName = arr[0]; 
+//       this.lastName = arr[1];
+//     }
+//   });
+
+// Object.prototype.name1 = function(str){
+//     alert(str);
 
 
+//         // let arr = str.split(' ');
+//         // this.firstName = arr[0];
+//         // this.lastName = arr[1];
+//         // return this.firstName + ' ' + this.lastName;
+// };
 
 
-  let augustusCole = new Person('Augustus', 'Cole');
-  console.log(augustusCole.getName()); // Augustus Cole
-  augustusCole.name = 'Cole Train';
+//   let augustusCole = new Person('Augustus', 'Cole');
+//   console.log(augustusCole.getName()); // Augustus Cole
+//   augustusCole.name = 'Cole Train';
+
+//   console.log(augustusCole.firstName); // => 'Cole'
+//   console.log(augustusCole.lastName); // => 'Train'
+//   console.log(augustusCole.getName()); // => 'Cole Train'
+//   console.log(augustusCole.name); // => 'Cole Train'
 //   console.log(augustusCole)
-//   console.log(augustusCole.getName());
-//   console.log(augustusCole.name);
-  console.log(augustusCole.firstName); // => 'Cole'
-  console.log(augustusCole.lastName); // => 'Train'
-  console.log(augustusCole.getName()); // => 'Cole Train'
-  console.log(augustusCole.name); // => 'Cole Train'
-  console.log(augustusCole)
+
+// Object.defineProperty(Person.prototype, "name", {
+//     get: Person.prototype.getName,
+//     set: function(name) { [this.firstName, this.lastName] = name.split(" "); },
+//   });
+
+//   Object.defineProperties(Person.prototype, {
+//     name: {
+//       get() {
+//         return this.firstName + ' ' + this.lastName;
+//       },
+//       set(v) {
+//         this.firstName = v.split(' ')[0]
+//         this.lastName = v.split(' ')[1]
+  
+//       }
+//     }
+//   });
+
+
+
+//https://www.codewars.com/kata/586a933fc66d187b6e00031a/train/javascript
+
+
+// const alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+// function generateName()
+// {
+//   let result = Array(6);// создаем массив Array
+//   result = result.fill(null) // заполняем значениями null
+//   result = result.map( elem => alpha[Math.floor(Math.random()*52)])
+//   result = result.join('');
+ 
+//   console.log(result)
+//   return photoManager.nameExists(result) ? generateName() : result 
+  
+//   // make sure to check the name is unique via the photoManager object
+// }
+
+// generateName()
+
+// function generateName() {
+//     let str = Math.random().toString(36).substring(0, 6);
+//     return str;
+// }
+
+//https://www.codewars.com/kata/52b50a20fa0e77b304000103/train/javascript
+
+// function isSantaClausable(obj) {
+
+//     if(typeof obj['sayHoHoHo'] == 'function' && typeof obj['distributeGifts'] == 'function'&& typeof obj['goDownTheChimney'] == 'function') {
+//       return true
+//     } else {
+//       return false
+//     }
+  
+    
+    
+//   //   return ['sayHoHoHo', 'distributeGifts', 'goDownTheChimney'].every(function(methodName) {
+//   //     return typeof obj[methodName] == 'function';
+//   //   });
+//   }
+
+
+//https://www.codewars.com/kata/5411e3e95f3a7f6a7a0000e3/train/javascript
+//6 kyu Array#reduce
+// // RIGHT ANSWER
+// for( let i = 0; i < this.length; i++) {
+//     if (typeof initial === 'undefined' || typeof initial === 'null') {
+//       initial = this[0];
+//       ++i
+//     }
+//     initial = process (initial, this[i]);
+//     //initial = process.apply ( this, [initial, this[i]])
+//   }
+//   return initial
+// //
+
+
+
+
+
+
+
+// Array.prototype.reduce = function(process, initial) {
+//     //console.log("START =" + process);
+//     console.log(initial);
+//     //console.log(this);
+//     let result = '';
+//     if(initial === undefined) {
+//       result = this[0];
+//     } 
+    
+//     if(initial) {
+//         initial ={};
+//       result = process(initial, this[0]);
+//       console.log(result);
+//     } 
+    
+//     for ( let i = 1 ; i < this.length; i++) {
+//         if(this[i] !== "" && this[i] !== 'undefined' && this[i] !== null&& this[i] !== undefined) {
+
+//         result = process(result, this[i])
+//         console.log(result);
+//         console.log(this[i]);    
+//       }
+//     }
+    
+    
+  
+//     console.log(result);
+//     return result
+//     // ...
+//   }
+
+
+// let arr1 = [ 'bee', 'bird','bee', 'undefined', undefined ];
+
+// let process1 = function count(obj,elem){
+//     //console.log(obj[elem]);
+//     if(!obj[elem]) obj[elem] = 0;
+//     obj[elem] += 1;
+//     return obj
+//   }
+// let initial1 = { bird: 0, bee: 0, coc: 1};
+//   arr1.reduce(process1, initial1);
+
+
+
+//https://www.codewars.com/kata/513e1e47c600c93cef000001/train/javascript
+
+// class Animal {
+//     constructor (name,type) {
+//       this.name = name,
+//       this.type = type
+//     }
+//     toString() {
+//         console.log(this.name)
+//         return `${this.name} is a ${this.type}`;
+//     }
+//     // get name() {
+//     //   return this.name
+//     // }
+//     set name (value) {
+//         console.log(this.name)
+//         this.name = value;
+//     }
+//   }
+
+
+//   let dog = new Animal('Max', 'dog');
+//   dog.toString(); // should return 'Max is a dog'
+//   dog.type; // should == 'dog'
+//   dog.name; // should == 'Max'
+//   dog.name = 'Lassie'; // should set name to 'Lassie'
+
