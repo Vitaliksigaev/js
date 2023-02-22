@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Калькулятор</title>
-    <link href="/2. mp24.by/1. Calculator/style.css" rel="stylesheet" type="text/css">
+    <link href="/2. mp24.by/1.Calculator/v1/style.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -13,42 +13,42 @@
             <div class="calc-input-box">                
                 <p>Количество, м2</p>
                 <div class="box_input">                    
-                    <button class="btn num1">-</button>
+                    <button class="btn num1"><span class="btn-minus">-</span></button>
                     <input class="calc-input" id="num1" value="100">
-                    <button class="btn num1">+</button>
+                    <button class="btn num1"><span class="btn-plus">+</span></button>
                 </div>
             </div>
             
             <div class="calc-input-box">
                 <p>A: Длина плитки, см</p>
                 <div class="box_input">
-                    <button class="btn num2">-</button>
+                    <button class="btn num2"><span class="btn-minus">-</span></button>
                     <input class="calc-input input-change-5ps"  id="num2" value="60" class="111"/>
-                    <button class="btn num2">+</button>
+                    <button class="btn num2"><span class="btn-plus">+</span></button>
                 </div>
             </div>
             <div class="calc-input-box">
                 <p>B: Ширина плитки, см</p>
                 <div class="box_input">
-                    <button class="btn num3">-</button>
+                    <button class="btn num3"><span class="btn-minus">-</span></button>
                     <input class="calc-input input-change-5ps"  id="num3" value="60" class="111"/>
-                    <button class="btn num3">+</button>
+                    <button class="btn num3"><span class="btn-plus">+</span></button>
                 </div>
             </div>
             <div class="calc-input-box">
                 <p>C: Штук по длине</p>
                 <div class="box_input">
-                    <button class="btn num4">-</button>
+                    <button class="btn num4"><span class="btn-minus">-</span></button>
                     <input class="calc-input"  id="num4" value="2" />
-                    <button class="btn num4">+</button>
+                    <button class="btn num4"><span class="btn-plus">+</span></button>
                 </div>
             </div>
             <div class="calc-input-box">
                 <p>D: Штук по ширине</p>
                 <div class="box_input">
-                    <button class="btn num5">-</button>
+                    <button class="btn num5"><span class="btn-minus">-</span></button>
                     <input class="calc-input"  type=”number” id="num5" value="2"/>
-                    <button class="btn num5">+</button>
+                    <button class="btn num5"><span class="btn-plus">+</span></button>
                 </div>
             </div>
             <div class="box-results">
@@ -64,7 +64,7 @@
                     </div>   
 
             </div>
-            <div>
+            <div  class="box-results-add">
                 <span>* При смещении на 50% расход =</span>
                 <span id="result2"></span><br>    
                 </span>
@@ -73,7 +73,7 @@
     </div>
 
 
-    <script src="/2. mp24.by/1. Calculator/js.js"></script>
+    <script src="/2. mp24.by/1.Calculator/v1/js.js"></script>
 
 </body>
 </html>

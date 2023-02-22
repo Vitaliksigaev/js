@@ -1102,85 +1102,99 @@
 //         return this.value; },
 //   };
 
-const cssSelectorBuilder = {
-    result: '',
-    order: 0,
+// const cssSelectorBuilder = {
+//     result: '',
+//     order: 0,
   
-    check(order) {
-        console.log(this.order);
-        console.log(order);
-      if (this.order > order) {
-        throw new Error('Selector parts should be arranged in the following order: element, id, class, attribute, pseudo-class, pseudo-element');
-      }
-      if (order === this.order && (order === 1 || order === 2 || order === 6)) {
-        throw new Error('Element, id and pseudo-element should not occur more then one time inside the selector');
-      }
-    },
+//     check(order) {
+//         console.log(this.order);
+//         console.log(order);
+//       if (this.order > order) {
+//         throw new Error('Selector parts should be arranged in the following order: element, id, class, attribute, pseudo-class, pseudo-element');
+//       }
+//       if (order === this.order && (order === 1 || order === 2 || order === 6)) {
+//         throw new Error('Element, id and pseudo-element should not occur more then one time inside the selector');
+//       }
+//     },
   
-    element(value) {
-      this.check(1);
-      const obj = Object.create(cssSelectorBuilder);
-      obj.result = this.result + value;
-      obj.order = 1;
-      return obj;
-    },
+//     element(value) {
+//       this.check(1);
+//       const obj = Object.create(cssSelectorBuilder);
+//       obj.result = this.result + value;
+//       obj.order = 1;
+//       return obj;
+//     },
   
-    id(value) {
-      this.check(2);
-      const obj = Object.create(cssSelectorBuilder);
-      obj.result = `${this.result}#${value}`;
-      obj.order = 2;
-      return obj;
-    },
+//     id(value) {
+//       this.check(2);
+//       const obj = Object.create(cssSelectorBuilder);
+//       obj.result = `${this.result}#${value}`;
+//       obj.order = 2;
+//       return obj;
+//     },
   
-    class(value) {
-      this.check(3);
-      const obj = Object.create(cssSelectorBuilder);
-      obj.result = `${this.result}.${value}`;
-      obj.order = 3;
-      return obj;
-    },
+//     class(value) {
+//       this.check(3);
+//       const obj = Object.create(cssSelectorBuilder);
+//       obj.result = `${this.result}.${value}`;
+//       obj.order = 3;
+//       return obj;
+//     },
   
-    attr(value) {
-      this.check(4);
-      const obj = Object.create(cssSelectorBuilder);
-      obj.result = `${this.result}[${value}]`;
-      obj.order = 4;
-      return obj;
-    },
+//     attr(value) {
+//       this.check(4);
+//       const obj = Object.create(cssSelectorBuilder);
+//       obj.result = `${this.result}[${value}]`;
+//       obj.order = 4;
+//       return obj;
+//     },
   
-    pseudoClass(value) {
-      this.check(5);
-      const obj = Object.create(cssSelectorBuilder);
-      obj.result = `${this.result}:${value}`;
-      obj.order = 5;
-      return obj;
-    },
+//     pseudoClass(value) {
+//       this.check(5);
+//       const obj = Object.create(cssSelectorBuilder);
+//       obj.result = `${this.result}:${value}`;
+//       obj.order = 5;
+//       return obj;
+//     },
   
-    pseudoElement(value) {
-      this.check(6);
-      const obj = Object.create(cssSelectorBuilder);
-      obj.result = `${this.result}::${value}`;
-      obj.order = 6;
-      return obj;
-    },
+//     pseudoElement(value) {
+//       this.check(6);
+//       const obj = Object.create(cssSelectorBuilder);
+//       obj.result = `${this.result}::${value}`;
+//       obj.order = 6;
+//       return obj;
+//     },
   
-    combine(selector1, combinator, selector2) {
-      const obj = Object.create(cssSelectorBuilder);
-      obj.result = `${selector1.result} ${combinator} ${selector2.result}`;
-      return obj;
-    },
+//     combine(selector1, combinator, selector2) {
+//       const obj = Object.create(cssSelectorBuilder);
+//       obj.result = `${selector1.result} ${combinator} ${selector2.result}`;
+//       return obj;
+//     },
   
-    stringify() {
-        console.log(this.result);
-      return this.result;
-    },
-  };
+//     stringify() {
+//         console.log(this.result);
+//       return this.result;
+//     },
+//   };
   
 
-const builder = cssSelectorBuilder;
+// const builder = cssSelectorBuilder;
 
-builder.id('nav-bar').stringify();
-builder.element('div').stringify();
-builder.id('nav-bar1').stringify();
-builder.element('li').id('main').stringify();
+// builder.id('nav-bar').stringify();
+// builder.element('div').stringify();
+// builder.id('nav-bar1').stringify();
+// builder.element('li').id('main').stringify();
+
+
+
+
+function reverseInteger(num) {
+  const arr = num.toString().split('');
+  console.log((arr));
+  const arrRev = arr.reverse();
+  const result = arrRev.join('');
+  console.log(result);
+  return Number(result);
+}
+
+reverseInteger(12345)
