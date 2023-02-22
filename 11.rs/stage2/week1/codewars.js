@@ -927,3 +927,274 @@
 //   dog.name; // should == 'Max'
 //   dog.name = 'Lassie'; // should set name to 'Lassie'
 
+// function swapHeadAndTail(arr) {
+//     if (arr.length === 0 || arr.length === 1) {
+//       return arr;
+//     }
+//     const middle = Math.floor(arr.length / 2);
+//     console.log(middle); //
+//     let head = [];
+//     let tail = [];
+//     if (arr.length % 2 !== 0) {
+//       head = arr.slice(0, middle);
+//       console.log(head);
+//       tail = arr.slice(middle + 1, arr.length);
+//       console.log(tail);
+//       console.log([...tail, arr[middle], ...head]);
+//       console.log(arr[1]);
+//       return [...tail, arr[middle], ...head];
+//     }
+//     if (arr.length % 2 === 0 && arr.length > 1) {
+//       head = arr.slice(0, arr.length / 2);
+//       tail = arr.slice(arr.length / 2);
+//       return [...tail, ...head];
+//     }
+//     return arr;
+//   }
+
+// const arr = [1, 2, 3]; //
+// swapHeadAndTail(arr); //
+
+
+// function generateOdds(len) {
+//     console.log(Array.from({ length: len }, (v, i) => 2 * i + 1));
+//     return Array.from({ length: len }, (v, i) => 2 * i + 1);
+//   }
+//   generateOdds(5)
+
+
+// function encodeToRot13(str) {
+//     const abcNorm = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+//     const abcRor13 = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+//     console.log(abcNorm);
+//     console.log(abcRor13);
+//     // let strEncode = '';
+//     // for (const i of str) {
+//     //   const index = abcNorm.indexOf(i);
+//     //   strEncode += index === -1 ? i : abcRor13[index];
+//     // }
+//     // return strEncode;
+  
+//     let strEncode = '';
+//     console.log(strEncode);
+//     console.log(str);
+//     console.log(str.length);
+
+//     // for (let i = 0; i < str.length - 1; i + 1) {
+//     //     console.log(i);
+//     //   //const index = abcNorm.indexOf(str[i]);
+//     //   //strEncode += abcRor13[index];
+//     // }
+
+//     return strEncode;
+// }
+// encodeToRot13('hello');
+
+
+
+// function getMovingSum(arr) {
+//     let sum = 0;
+//     // return arr.forEach((el) => {
+//     //   sum += el;
+//     // }, sum);
+//     console.log(arr.map((elem) => {
+//         console.log(elem);
+//         elem = elem + sum;
+//         sum = elem;
+//         return  elem;
+//         console.log(sum);
+//       }, sum));
+
+//     return arr.map((elem) => {
+//       elem = elem + sum;
+//     }, sum);
+//     // result.push(arr[0]);
+//     // for (let i = 1; i < arr.length; i += 1) {
+//     //   result.push(arr[i - 1] + arr[i]);
+//     // }
+  
+//     // return arr.map((el, index) => {
+  
+//     // })
+  
+//     // return arr.map((element, index) => {
+//     //   if (index === 0) {
+//     //     return element;
+//     //   }
+//     //   return arr[index - 1] + arr[index];
+//     // });
+//   }
+
+
+//   getMovingSum([ 1, 1, 1, 1, 1 ] )
+
+// let arr = [ 'a', 'b', 'c', null ];
+// function propagateItemsByPositionIndex(arr) {
+//   // arr.map( function(x, ind){
+//   //   arr.splice( ind, 1, Array( ind + 1 ).fill(x));
+//   //   return arr });
+//   //   console.log(arr.flat());
+//   // return [].concat.apply([], arr);
+
+//   arr.map((x, ind) => { arr.splice(ind, 1, Array(ind + 1).fill(x)); console.log(arr); return arr; });
+//   console.log(arr);
+//   return arr.flat();
+// }
+// propagateItemsByPositionIndex(arr)
+
+
+// function getElementByIndexes(arr, indexes) {
+//     console.log(arr);
+//     console.log(indexes);
+
+//     return indexes.reduce((accumulator, currentValue) => 
+//     accumulator[currentValue], arr);
+// }
+
+// getElementByIndexes([[1, 2], [3, 4], [5, 6]], [0,0])//  => 1        (arr[0][0])
+// getElementByIndexes(['one','two','three'], [2])//       => 'three'  (arr[2])
+// getElementByIndexes([[[ 1, 2, 3]]], [ 0, 0, 1 ])//      => 2        (arr[0][0][1])
+
+
+// const cssSelectorBuilder = {
+//     value: '',
+//     // order: ['element', 'id', 'class', 'atrr', 'pseudoClass', 'pseudoElement'],
+//     // errorMsg: {
+//     //   order: 'Selector parts should be arranged in the following order: element, id, class, attribute, pseudo-class, pseudo-element',
+//     //   dublicate: 'Element, id and pseudo-element should not occur more then one time inside the selector',
+//     // },
+//     // error(value) {
+//     //   if (this.order.indexOf(this.nameValue) > this.order.indexOf(value)) {
+//     //     throw new Error(this.errorMsg.order);
+//     //   }
+//     //   if (value === this.nameValue && ['element', 'id', 'pseudoElement'].includes(value)) {
+//     //     throw new Error(this.errorMsg.dublicate);
+//     //   }
+//     // //   if(value) {
+//     // //     console.log('1');//        this.value ='1';
+//     // //   }
+//     // },
+
+//     element(value) {
+//         this.value = value; 
+//         return this; 
+//     },
+//     id(value) { this.value = `${this.value}#${value}`; 
+//     return this; 
+// },
+//     class(value) { this.value = `${this.value}.${value}`; 
+//     return this;
+//  },
+//     attr(value) { this.value = `${this.value}[${value}]`; 
+//     return this;
+//  },
+//     pseudoClass(value) { this.value = `${this.value}:${value}`; 
+//     return this;
+//  },
+//     pseudoElement(value) { this.value = `${this.value}::${value}`; 
+//     return this;
+//  },
+//     combine(selector1, combinator, selector2) { this.value = `${selector1.value} ${combinator} ${selector2.value}`; 
+//     return this;
+//  },
+//     stringify() { 
+//         console.log(this.value);
+//         return this.value; },
+//   };
+
+// const cssSelectorBuilder = {
+//     result: '',
+//     order: 0,
+  
+//     check(order) {
+//         console.log(this.order);
+//         console.log(order);
+//       if (this.order > order) {
+//         throw new Error('Selector parts should be arranged in the following order: element, id, class, attribute, pseudo-class, pseudo-element');
+//       }
+//       if (order === this.order && (order === 1 || order === 2 || order === 6)) {
+//         throw new Error('Element, id and pseudo-element should not occur more then one time inside the selector');
+//       }
+//     },
+  
+//     element(value) {
+//       this.check(1);
+//       const obj = Object.create(cssSelectorBuilder);
+//       obj.result = this.result + value;
+//       obj.order = 1;
+//       return obj;
+//     },
+  
+//     id(value) {
+//       this.check(2);
+//       const obj = Object.create(cssSelectorBuilder);
+//       obj.result = `${this.result}#${value}`;
+//       obj.order = 2;
+//       return obj;
+//     },
+  
+//     class(value) {
+//       this.check(3);
+//       const obj = Object.create(cssSelectorBuilder);
+//       obj.result = `${this.result}.${value}`;
+//       obj.order = 3;
+//       return obj;
+//     },
+  
+//     attr(value) {
+//       this.check(4);
+//       const obj = Object.create(cssSelectorBuilder);
+//       obj.result = `${this.result}[${value}]`;
+//       obj.order = 4;
+//       return obj;
+//     },
+  
+//     pseudoClass(value) {
+//       this.check(5);
+//       const obj = Object.create(cssSelectorBuilder);
+//       obj.result = `${this.result}:${value}`;
+//       obj.order = 5;
+//       return obj;
+//     },
+  
+//     pseudoElement(value) {
+//       this.check(6);
+//       const obj = Object.create(cssSelectorBuilder);
+//       obj.result = `${this.result}::${value}`;
+//       obj.order = 6;
+//       return obj;
+//     },
+  
+//     combine(selector1, combinator, selector2) {
+//       const obj = Object.create(cssSelectorBuilder);
+//       obj.result = `${selector1.result} ${combinator} ${selector2.result}`;
+//       return obj;
+//     },
+  
+//     stringify() {
+//         console.log(this.result);
+//       return this.result;
+//     },
+//   };
+  
+
+// const builder = cssSelectorBuilder;
+
+// builder.id('nav-bar').stringify();
+// builder.element('div').stringify();
+// builder.id('nav-bar1').stringify();
+// builder.element('li').id('main').stringify();
+
+
+
+
+function reverseInteger(num) {
+  const arr = num.toString().split('');
+  console.log((arr));
+  const arrRev = arr.reverse();
+  const result = arrRev.join('');
+  console.log(result);
+  return Number(result);
+}
+
+reverseInteger(12345)
