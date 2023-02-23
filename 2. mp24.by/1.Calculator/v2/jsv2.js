@@ -1,4 +1,5 @@
-console.log('js2')
+console.log('js2');
+
 let calcInputs = document.querySelectorAll('.calc-input')
 
 for(let input of calcInputs) { // console.log( input.value )
@@ -116,7 +117,7 @@ function allSum(){
                 }
                 l.innerHTML = numMax + " шт";
             }, 
-               100);
+            100);
         }
         calcResultNumberMaxToMin(result, calcOldResult);
 
@@ -144,7 +145,7 @@ function allSum(){
                 }
 
             }, 
-               100);
+            100);
         }
         calcResultNumberMinToMax(calcOldResult, result);
     }
