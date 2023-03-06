@@ -121,3 +121,103 @@ const user: IUser = {
     login: 'LOGINI4',
     password: 'PASSWORD'
 };
+
+//classes
+
+class Person21 {
+    name: string;
+    age: number | null;
+    constructor(name = 'ana', age = 20) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+// const person11 = new Person21();
+const person21 = new Person21('JOe', 11);
+
+
+//https://www.youtube.com/watch?v=CegrbRXGw20
+
+class Person22 {
+    name: string;
+    age: number ;
+    constructor(name = 'ana', age = 30) {
+        this.name = name;
+        this.age = age;
+    }
+    sayHi(): void {
+        console.log("1")
+    }
+}
+
+// const person11 = new Person21();
+const person22 = new Person22('JOe22', 11);
+
+
+// class and interfaces
+
+interface IPerson1 {
+    name:string;
+    age: number;
+}
+
+class Person implements IPerson1 {
+    name: string;
+    age:number;
+    
+    constructor(name = 'Anonymous', age = 10500) {
+        this.name = name;
+        this.age = age;
+    }
+    sayHi = () => {
+        console.log(this.age);
+    }
+
+}
+
+// abstract class
+
+abstract class Abdtract {
+    abstract sayHi(): void;
+}
+
+class MyGreeter extends Abdtract {
+    sayHi() {
+        console.log('Hi');
+    }
+}
+
+// GENERIC 
+
+function identity <T> (value :T) : T {
+    return value;
+}
+
+interface MyStorage<T> {
+    value : T[];
+    getValue: () => T[];
+}
+
+const numericStorage: MyStorage<number> = {
+    value: [1, 2, 3],
+    getValue() {
+        return this.value
+    }
+}
+
+class IdebClass<T> {
+    value : T;
+    constructor(value : T) {
+        this.value = value;
+    }
+    getIden(): T {
+        return this.value;
+    }
+}
+
+const num1: IdebClass<number> = new IdebClass(1);
+const sring1: IdebClass<string> = new IdebClass('xds')
+
+// TYPE MANIPULATION
+
