@@ -1,6 +1,7 @@
 body {
-    background-color: rgb(203, 203, 203);
+    /* //background-color: rgb(203, 203, 203); */
     margin: 0px;
+    color: mix(rgb(176, 176, 176), rgb(179, 179, 179));
 }
 
 .game-box{
@@ -85,3 +86,9 @@ body {
     width: 20%;
 
 } */
+
+
+
+div{
+    display: inline-block
+}
